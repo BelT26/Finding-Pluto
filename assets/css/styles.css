@@ -57,6 +57,35 @@ header h1 {
     margin-left: 20px;
 }
 
+#gauge-container h2 {
+    display: inline-block;
+}
+
+#fuel-number {
+    height: 30px;
+    width: 30px;
+}
+
+
+#gauge {
+    border: solid black 1px;
+    width: 50px;
+    height: 250px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    margin: 20px;
+}
+
+#fuel-in-gauge {
+    border: solid black 1px;
+    width: 50px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: yellow;    
+}
+
+
 #questions-container {
     height: 50vh;
     width: 80%;
