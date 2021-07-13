@@ -68,6 +68,21 @@ header h1 {
     background-color: azure;
 }
 
+#flight-container {
+    display:flex;
+    justify-content: space-around;
+    background-color: azure;
+    height:15vh;
+    align-self: center;
+    width: 90%;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px auto;
+    grid-column: 2 / span 3;
+    position: relative;
+    top: 20vh;
+}
+
 #current-planet {
     width: 80%;
     height: 50vh;
