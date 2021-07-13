@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Pluto</title>    
+</head>
+<body>
+    <header>
+        <h1>Finding Pluto</h1>
+    </header>
+    <main>
+        <div id="background-container">
+            <div id="game-container">
+                <div id="gauge-container">
+                    <h2>Fuel Remaining</h2>
+                    <div id="fuel-number"></div>
+                    <div id="gauge">
+                    <div id="fuel-in-gauge"></div>
+                </div>
+                <button id="add-fuel">Add fuel</button> 
+                <button id="lose-fuel">Lose fuel</button>
+                <button id="reset-fuel">Reset</button>
+            </div>
+            <div id="questions-container">
+                <div id="question-image"></div>
+                <div id="question-text">
+                <h2>Question goes here</h2>
+                </div>
+                <div id="answers-container">
+                    <div class="answer" id="A"></div>
+                    <div class="answer" id="B"></div>
+                    <div class="answer" id="C"></div>
+                </div>                      
+                <div id="current-planet">
+                    <div id=current-title>
+                    <h2>Current Planet</h2>
+                    </div>
+                    <div id="planet-img"></div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th id=planet-name></th>
+                            </tr>
+                        </thead>
+                        <tbody>   
+                            <tr>
+                                <td>SIZE:</td>
+                                <td id="size"></td>
+                            </tr>
+                            <tr>
+                                <td>DAY LENGTH:</td>
+                                <td id="day"></td>
+                            </tr>
+                            <tr>
+                                <td>YEAR LENGTH:</td>
+                                <td id="year"></td>
+                            </tr>
+                            <tr>
+                                <td>DISTANCE FROM THE SUN:</td>
+                                <td id="distance"></td>
+                            </tr>
+                            <tr>
+                                <td>MOONS:</td>
+                                <td id="moons"></td>
+                            </tr>
+                        </tbody> 
+                    </table>                                
+                </div>
+                </div>
+            <div id="progess">
+                <h2>Flight Progress</h2>
+                <div id="flight-container"></div>
+                <button id="advance">Advance</button>
+                <button id="retreat">Retreat</button>
+            </div>            
+        </div>
+    </main>  
+</body>
+</html>
