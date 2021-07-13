@@ -13,7 +13,7 @@ header {
     background-color: black;
     color:rgb(110, 196, 247);
     position:relative;
-    height: 100px;
+    height: 12vh;
     z-index: 2;
 }
 
@@ -27,11 +27,32 @@ header h1 {
 
 #background-container {
     width: 100%;
-    height: 800px;
+    height: 100vh;
     margin: 0;
     background: url('../images/Space-background.jpg') no-repeat center center;
     background-size: cover;
-    position: relative;
-    top: -80px;
-    padding-top: 20px;
+    position: absolute;
+    top: 0px;
+}
+
+#game-container {
+    position: relative; 
+    top: 20vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-content: space-around;
+    align-items: center;   
+}
+
+#gauge-container {
+    display: flex;
+    width: 40%;
+    height: 50vh;
+    justify-self: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: azure;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 20px;
 }
