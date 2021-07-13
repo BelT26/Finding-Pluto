@@ -46,7 +46,7 @@ header h1 {
 
 #gauge-container {
     display: flex;
-    width: 40%;
+    width: 60%;
     height: 50vh;
     justify-self: center;
     flex-direction: column;
@@ -55,4 +55,27 @@ header h1 {
     border-radius: 20px;
     padding: 10px;
     margin-left: 20px;
+}
+
+#questions-container {
+    height: 50vh;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    justify-items: center;
+    border-radius: 20px;
+    background-color: azure;
+}
+
+#current-planet {
+    width: 80%;
+    height: 50vh;
+    display:flex;
+    padding: 15px;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    background-color: azure;    
 }
