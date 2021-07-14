@@ -250,4 +250,11 @@ let planetQIndex = 0;
 let qIndex = Math.floor(Math.random()*3);
 let currentQuestion = questions[planetQIndex][qIndex];
 
+//variables to set and display gauge and fuel level
+let currentFuel = 1;
+const maxFuel = 10;
+const gaugeHeight = 250;
+const fuelUnit = gaugeHeight / maxFuel;
+
+fuelNumber.innerHTML = `<h2>${currentFuel}</h2>`;
 
