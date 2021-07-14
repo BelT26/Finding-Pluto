@@ -258,3 +258,4 @@ const fuelUnit = gaugeHeight / maxFuel;
 
 fuelNumber.innerHTML = `<h2>${currentFuel}</h2>`;
 
+
