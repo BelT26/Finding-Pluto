@@ -267,6 +267,96 @@ const fuelUnit = gaugeHeight / maxFuel;
 fuelNumber.innerHTML = `<h2>${currentFuel}</h2>`;
 
 
+//variable to keep track of current stats to display
+let currentStatsIndex = 0;
+
+//array of objects containing an image and information about each planet
+const planetStats = [
+    {
+        name: 'Mercury',
+        imgSrc: 'Assets/Images/flight1.jpg',
+        size: '3,031 miles',
+        dayLength: '59 days',
+        yearLength: '88 days',
+        distance: '36 million miles',
+        moons: '0'
+    },
+    {
+        name: 'Venus',
+        imgSrc: 'Assets/Images/flight2.jpg',
+        size: '7,521 miles',
+        yearLength: '243 days',
+        dayLength: '224 days',
+        distance: '67 million miles',
+        moons: '0'
+    },
+    {
+        name: 'Earth',
+        imgSrc: 'Assets/Images/flight3.jpg',
+        size: '7,926 miles',
+        yearLength: '365.25 days',
+        dayLength: '24 hours',
+        distance: '93 million miles',
+        moons: '1'
+    },
+    {
+        name: 'Mars',
+        imgSrc: 'Assets/Images/flight4.jpg',
+        size: '4,222 miles',
+        dayLength: '24.6 hours',
+        yearLength: '687 days',
+        distance: '142 million miles',
+        moons: '2'
+    },
+    {
+        name: 'Jupiter',
+        imgSrc: 'Assets/Images/flight5.jpg',
+        size: '88,846 miles',
+        dayLength: '10 hours',
+        yearLength: '12 years',
+        distance: '483 million miles',
+        moons: '79'
+    },
+    {
+        name: 'Saturn',
+        imgSrc: 'Assets/Images/flight6.jpg',
+        size: '74,900 miles',
+        dayLength: '10.6 hours',
+        yearLength: '29 years',
+        distance: '889 million miles',
+        moons: '82'
+    },
+    {
+        name: 'Uranus',
+        imgSrc: 'Assets/Images/flight7.jpg',
+        size: '31,763 miles',
+        dayLength: '17 hours',
+        yearLength: '84 hours',
+        distance: '1,784 million miles',
+        moons: '27'
+    },
+    {
+        name: 'Neptune',
+        imgSrc: 'Assets/Images/flight8.jpg',
+        size: '30,779 miles',
+        dayLength: '16 hours',
+        yearLength: '165 years',
+        distance: '2,798 miles',
+        moons: '14'
+    },
+]    
+const pl = planetStats[currentStatsIndex];
+
+//set content of planet stats
+planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="200px">`
+planetName.innerText = pl.name;
+size.innerText = pl.size;
+year.innerText = pl.yearLength;
+day.innerText = pl.dayLength;
+distance.innerText = pl.distance;
+moons.innerText = pl.moons;
+
+
 //functions for quiz
 
 //show the next question
