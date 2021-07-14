@@ -250,6 +250,14 @@ let planetQIndex = 0;
 let qIndex = Math.floor(Math.random()*3);
 let currentQuestion = questions[planetQIndex][qIndex];
 
+//set the image and the text of the questions and answers
+questionImage.innerHTML = `<img src="${currentQuestion.qImg}">`
+questionText.innerText = currentQuestion.question;
+answerA.innerText = currentQuestion.aAnswer;
+answerB.innerText = currentQuestion.bAnswer;
+answerC.innerText = currentQuestion.cAnswer;
+
+
 //variables to set and display gauge and fuel level
 let currentFuel = 1;
 const maxFuel = 10;
@@ -259,3 +267,45 @@ const fuelUnit = gaugeHeight / maxFuel;
 fuelNumber.innerHTML = `<h2>${currentFuel}</h2>`;
 
 
+//functions for quiz
+
+//show the next question
+function displayQuestion() {
+    questionImage.innerHTML = `<img src="${currentQuestion.qImg}">`
+    questionText.innerText = currentQuestion.question;
+    answerA.innerText = currentQuestion.aAnswer;
+    answerB.innerText = currentQuestion.bAnswer;
+    answerC.innerText = currentQuestion.cAnswer;
+}
+
+//set the initial number of tries to 2. check if the answer given matches the correct answer
+tries = 2;
+function checkAnswer(e) {
+    if (e.target.id === currentQuestion.correct) {
+        if(planetQIndex == 7) {
+            alert('You reached Pluto!')
+        }
+        else {
+            correctModal.classList.remove('hide')
+        }   
+    } 
+    else {
+        tries --;
+        if(tries > 0) {
+            tryAgainModal.classList.remove('hide')
+            
+        } else {
+            currentFuel--
+            updateFuelDisplay()
+            wrongAgainModal.classList.remove('hide')
+        }
+    }  
+}
+
+//update question index variables and display new question for next planet
+function updateQuestion(){
+    planetQIndex++;
+    qIndex = Math.floor(Math.random()*4);
+    currentQuestion = questions[planetQIndex][qIndex];
+    displayQuestion()
+}
