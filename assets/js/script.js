@@ -284,7 +284,7 @@ let currentStatsIndex = 0;
 const planetStats = [
     {
         name: 'Mercury',
-        imgSrc: 'Assets/Images/flight1.jpg',
+        imgSrc: '../images/flight1.jpg',
         size: '3,031 miles',
         dayLength: '59 days',
         yearLength: '88 days',
@@ -293,7 +293,7 @@ const planetStats = [
     },
     {
         name: 'Venus',
-        imgSrc: 'Assets/Images/flight2.jpg',
+        imgSrc: '../images/flight2.jpg',
         size: '7,521 miles',
         yearLength: '243 days',
         dayLength: '224 days',
@@ -302,7 +302,7 @@ const planetStats = [
     },
     {
         name: 'Earth',
-        imgSrc: 'Assets/Images/flight3.jpg',
+        imgSrc: '../images/flight3.jpg',
         size: '7,926 miles',
         yearLength: '365.25 days',
         dayLength: '24 hours',
@@ -311,7 +311,7 @@ const planetStats = [
     },
     {
         name: 'Mars',
-        imgSrc: 'Assets/Images/flight4.jpg',
+        imgSrc: '../images/flight4.jpg',
         size: '4,222 miles',
         dayLength: '24.6 hours',
         yearLength: '687 days',
@@ -320,7 +320,7 @@ const planetStats = [
     },
     {
         name: 'Jupiter',
-        imgSrc: 'Assets/Images/flight5.jpg',
+        imgSrc: '../images/flight5.jpg',
         size: '88,846 miles',
         dayLength: '10 hours',
         yearLength: '12 years',
@@ -329,7 +329,7 @@ const planetStats = [
     },
     {
         name: 'Saturn',
-        imgSrc: 'Assets/Images/flight6.jpg',
+        imgSrc: '../images/flight6.jpg',
         size: '74,900 miles',
         dayLength: '10.6 hours',
         yearLength: '29 years',
@@ -338,7 +338,7 @@ const planetStats = [
     },
     {
         name: 'Uranus',
-        imgSrc: 'Assets/Images/flight7.jpg',
+        imgSrc: '../images/flight6.jpg',
         size: '31,763 miles',
         dayLength: '17 hours',
         yearLength: '84 hours',
@@ -347,7 +347,7 @@ const planetStats = [
     },
     {
         name: 'Neptune',
-        imgSrc: 'Assets/Images/flight8.jpg',
+        imgSrc: '../images/flight8.jpg',
         size: '30,779 miles',
         dayLength: '16 hours',
         yearLength: '165 years',
@@ -375,6 +375,8 @@ const flightPathPlanetNames = ['Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupi
 can be higlighted and modified by functions*/
 const flightPathPlanets = [];
 
+
+
 /*for loop that loops through the list of planet names and creates a div element to each planet.
 An img element and span element that contain the image and name of each planet are created and appended to the div.
 The loop assigns a class to the div and determines the image height. 
@@ -387,7 +389,7 @@ for(let i=0; i<flightPathPlanetNames.length; i++) {
     const newImg = document.createElement('img');
     newImg.classList.add('planet-img');
     newImg.style.height = '80px';
-    newImg.src = `Assets/Images/flight${i}.jpg`;
+    //newImg.src = `../images/flight${i}.jpg`;
     flightPlanet.appendChild(newImg);
     flightPlanet.appendChild(planetLabel);
     flightContainer.appendChild(flightPlanet);
@@ -446,3 +448,9 @@ function updateQuestion(){
     currentQuestion = questions[planetQIndex][qIndex];
     displayQuestion()
 }
+
+
+//event listeners for answer buttons
+answerA.addEventListener('click', checkAnswer);
+answerB.addEventListener('click', checkAnswer);
+answerC.addEventListener('click', checkAnswer);
