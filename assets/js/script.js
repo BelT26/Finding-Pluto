@@ -454,3 +454,41 @@ function updateQuestion(){
 answerA.addEventListener('click', checkAnswer);
 answerB.addEventListener('click', checkAnswer);
 answerC.addEventListener('click', checkAnswer);
+
+/*functions to move to next level after correctly answering question. Hides success modal. Increments fuel level by one.
+Moves active class on flight path to next planet. Updates the planet stats and question displayed. Resets number of tries*/
+
+function triggerBlastOff() {
+    correctModal.classList.add('hide');
+    addFuel();
+    advanceFlightPath();
+    changePlanetStats();
+    updateQuestion();
+    tries = 2;
+}
+
+/* hides modal to give user a second attempt to give a correct answer */
+function secondTry() {
+    tryAgainModal.classList.add('hide');
+}
+
+/* after 2 incorrect tries, hides the wrong answer modal, updates the question by generating a new question index but using the
+same planet index. Resets the number of tries to 2 */
+function secondQuestionSamePlanet() {
+    wrongAgainModal.classList.add('hide')
+    qIndex = Math.floor(Math.random()*4);
+    currentQuestion = questions[planetQIndex][qIndex];
+    tries = 2;
+    displayQuestion()
+}
+
+//displays a message if the user decides to quit game
+function endGame() {
+    alert('game over')
+
+}
+
+blastOff.addEventListener('click', triggerBlastOff);
+tryAgainButton.addEventListener('click', secondTry)
+tryNextButton.addEventListener('click', secondQuestionSamePlanet)
+quitButton.addEventListener('click', endGame)
