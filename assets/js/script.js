@@ -24,6 +24,16 @@ const moons = document.getElementById('moons');
 //html elements for flight path
 const flightContainer = document.getElementById('flight-container');
 
+//html modal elements
+const correctModal = document.getElementById('correct');
+const tryAgainModal = document.getElementById('incorrect');
+const wrongAgainModal = document.getElementById('wrong-again')
+const noFuelModal = document.getElementById('no-fuel');
+const blastOff = document.getElementById('blast-off');
+const tryAgainButton = document.getElementById('try-again');
+const tryNextButton = document.getElementById('try-next')
+const quitButton = document.getElementsByClassName('quit')
+
 //date variable for use in question about Neptune
 let date = new Date()
 let currentYear = date.getFullYear()
