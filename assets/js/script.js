@@ -488,7 +488,61 @@ function endGame() {
 
 }
 
+
+//add event listeners to modal buttons
 blastOff.addEventListener('click', triggerBlastOff);
 tryAgainButton.addEventListener('click', secondTry)
 tryNextButton.addEventListener('click', secondQuestionSamePlanet)
 quitButton.addEventListener('click', endGame)
+
+//changes the planet displayed in the planet stats section
+function changePlanetStats() {
+    currentStatsIndex++;
+    let pl = planetStats[currentStatsIndex];
+    planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="150px">`
+    planetName.innerText = pl.name;
+    size.innerText = pl.size;
+    year.innerText = pl.yearLength;
+    day.innerText = pl.dayLength;
+    distance.innerText = pl.distance;
+    moons.innerText = pl.moons;
+}
+
+//functions to amend fuel
+
+//updates both the fuel number and the height of the fuel showing in the fuel gauge
+function updateFuelDisplay() {
+    fuelNumber.innerHTML = `<h2>${currentFuel}</h2>`;
+    fuelGauge.style.height = fuelUnit * currentFuel + "px";
+    if (currentFuel === 0) {
+        fuelGauge.style.display = 'none';
+    } else {
+        fuelGauge.style.display = 'block';
+    }
+    
+}
+
+function resetFuel() {
+    currentFuel = 1;
+    updateFuelDisplay();
+}
+
+//adds 1 to the fuel and updates the display
+function addFuel() {
+    if (currentFuel < maxFuel) {
+    currentFuel++;
+    updateFuelDisplay();
+    }
+}
+
+//decrements fuel by 1. If fuel is already at 0 moves user back to previous planet
+function loseFuel() {
+    if(currentFuel === 0){
+        alert('Emergency!  Fuel reserves depleted! Retreating to previous planet')
+    } else {
+    currentFuel--;
+    updateFuelDisplay();
+    }
+}
+
+
