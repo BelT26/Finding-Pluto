@@ -26,7 +26,7 @@ const flightContainer = document.getElementById('flight-container');
 
 //date variable for use in question about Neptune
 let date = new Date()
-let year = date.getFullYear()
+let currentYear = date.getFullYear()
 
 
 //multi dimensional array containing quiz question objects
@@ -220,9 +220,9 @@ const questions = [
         {
             question: 'Neptune takes the longest time of all plaents to orbit the sun.  One year on Neptune is the same as 165 years on earth. What year would it have been on Earth one Neptunian year ago?',
             qImg: '',
-            aAnswer: date-165,
-            bAnswer: date-155,
-            cAnswer:date-145,
+            aAnswer: currentYear-165,
+            bAnswer: currentYear-155,
+            cAnswer: currentYear-145,
             correct:'A'
         },
         {
@@ -368,7 +368,10 @@ function displayQuestion() {
     answerC.innerText = currentQuestion.cAnswer;
 }
 
-//set the initial number of tries to 2. check if the answer given matches the correct answer
+/*set the initial number of tries to 2. Check if the answer given matches the correct answer. Display a success message as a modal 
+if answer is correct. If the next planet is Pluto display message to inform user that they have successfully completed their mission.
+If answer is incorrect decrement number of tries by 1. If remaining tries are greater than 0 display a modal to enable user to try again.  
+If remaining tries are 0, decrement fuel by 1 and display 'wrong again' modal.*/
 tries = 2;
 function checkAnswer(e) {
     if (e.target.id === currentQuestion.correct) {

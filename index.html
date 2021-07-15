@@ -74,6 +74,45 @@
             </div>            
         </div>
     </main> 
+    <div class="modal hide" id="correct">
+        <div class="modal-info" id="correct-contents">
+            <h2>Correct! Congratulations!</h2>
+            <h3>Click the button to zoom off to the next planet!</h3>
+            <button id="blast-off">Blast Off</button>
+        </div>    
+    </div>
+    
+    <div class="modal hide" id="incorrect">
+        <div class="modal-info" id="incorrect-contents">
+            <h2>Sorry that's not the correct answer</h2>
+            <h3>Have another guess</h3>
+            <button id="try-again">Try Again</button>
+        </div>    
+    </div>
+    <div class="modal hide" id="wrong-again">
+        <div class="modal-info" id="wrong-again-contents">
+            <h2>Sorry that's wrong too</h2>
+            <h3>Fuel decreased by 1 unit</h3>
+            <button id="try-next">NEXT QUESTION</button>
+            <button class="quit">ABORT MISSION</button>
+        </div>    
+    </div>
+    <div class="modal hide" id="no-fuel">
+        <div class="modal-info" id="no-fuel-contents">
+            <h2>EMERGENCY!<br>
+            Out of fuel!</h2>
+            <h3>Retreating to previous planet!</h3>
+            <button id="continue">CONTINUE</button>
+            <button class="quit">ABORT MISSION</button>
+        </div>    
+    </div>
+    <div class="modal hide" id="end-game">
+        <div class="modal-info" id="end-game-contents">
+            <h2>Sorry to see you go</h2>
+            <h3>Come back and try again soon</h3>
+            <button id="close">Close</button>
+        </div>   
+    </div>
     <script src="assets/js/script.js"></script> 
 </body>
 </html>
