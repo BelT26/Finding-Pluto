@@ -32,7 +32,7 @@ const noFuelModal = document.getElementById('no-fuel');
 const blastOff = document.getElementById('blast-off');
 const tryAgainButton = document.getElementById('try-again');
 const tryNextButton = document.getElementById('try-next')
-const quitButton = document.getElementsByClassName('quit')
+const quitButtons = document.getElementsByClassName('quit')
 
 //date variable for use in question about Neptune
 let date = new Date()
@@ -260,14 +260,6 @@ let planetQIndex = 0;
 let qIndex = Math.floor(Math.random()*3);
 let currentQuestion = questions[planetQIndex][qIndex];
 
-//set the image and the text of the questions and answers
-questionImage.innerHTML = `<img src="${currentQuestion.qImg}">`
-questionText.innerText = currentQuestion.question;
-answerA.innerText = currentQuestion.aAnswer;
-answerB.innerText = currentQuestion.bAnswer;
-answerC.innerText = currentQuestion.cAnswer;
-
-
 //variables to set and display gauge and fuel level
 let currentFuel = 1;
 const maxFuel = 10;
@@ -277,236 +269,6 @@ const fuelUnit = gaugeHeight / maxFuel;
 fuelNumber.innerHTML = `<h2>${currentFuel}</h2>`;
 
 
-//variable to keep track of current stats to display
-let currentStatsIndex = 0;
-
-//array of objects containing an image and information about each planet
-const planetStats = [
-    {
-        name: 'Mercury',
-        imgSrc: '../images/flight1.jpg',
-        size: '3,031 miles',
-        dayLength: '59 days',
-        yearLength: '88 days',
-        distance: '36 million miles',
-        moons: '0'
-    },
-    {
-        name: 'Venus',
-        imgSrc: '../images/flight2.jpg',
-        size: '7,521 miles',
-        yearLength: '243 days',
-        dayLength: '224 days',
-        distance: '67 million miles',
-        moons: '0'
-    },
-    {
-        name: 'Earth',
-        imgSrc: '../images/flight3.jpg',
-        size: '7,926 miles',
-        yearLength: '365.25 days',
-        dayLength: '24 hours',
-        distance: '93 million miles',
-        moons: '1'
-    },
-    {
-        name: 'Mars',
-        imgSrc: '../images/flight4.jpg',
-        size: '4,222 miles',
-        dayLength: '24.6 hours',
-        yearLength: '687 days',
-        distance: '142 million miles',
-        moons: '2'
-    },
-    {
-        name: 'Jupiter',
-        imgSrc: '../images/flight5.jpg',
-        size: '88,846 miles',
-        dayLength: '10 hours',
-        yearLength: '12 years',
-        distance: '483 million miles',
-        moons: '79'
-    },
-    {
-        name: 'Saturn',
-        imgSrc: '../images/flight6.jpg',
-        size: '74,900 miles',
-        dayLength: '10.6 hours',
-        yearLength: '29 years',
-        distance: '889 million miles',
-        moons: '82'
-    },
-    {
-        name: 'Uranus',
-        imgSrc: '../images/flight6.jpg',
-        size: '31,763 miles',
-        dayLength: '17 hours',
-        yearLength: '84 hours',
-        distance: '1,784 million miles',
-        moons: '27'
-    },
-    {
-        name: 'Neptune',
-        imgSrc: '../images/flight8.jpg',
-        size: '30,779 miles',
-        dayLength: '16 hours',
-        yearLength: '165 years',
-        distance: '2,798 miles',
-        moons: '14'
-    },
-]    
-const pl = planetStats[currentStatsIndex];
-
-//set content of planet stats
-planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="200px">`
-planetName.innerText = pl.name;
-size.innerText = pl.size;
-year.innerText = pl.yearLength;
-day.innerText = pl.dayLength;
-distance.innerText = pl.distance;
-moons.innerText = pl.moons;
-
-//set content of flight path
-
-//Array with a list of planet names
-const flightPathPlanetNames = ['Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
-
-/*empty array to contain divs created within a loop containing each planets name and image. Created so that the active planet
-can be higlighted and modified by functions*/
-const flightPathPlanets = [];
-
-
-
-/*for loop that loops through the list of planet names and creates a div element to each planet.
-An img element and span element that contain the image and name of each planet are created and appended to the div.
-The loop assigns a class to the div and determines the image height. 
-The divs are appended to the flightContainer div and pushed to the flightPathPlanets array. */
-for(let i=0; i<flightPathPlanetNames.length; i++) {
-    const flightPlanet = document.createElement('div');
-    flightPlanet.classList.add('flight-planet');
-    const planetLabel = document.createElement('span');
-    planetLabel.textContent = flightPathPlanetNames[i];
-    const newImg = document.createElement('img');
-    newImg.classList.add('planet-img');
-    newImg.style.height = '80px';
-    //newImg.src = `../images/flight${i}.jpg`;
-    flightPlanet.appendChild(newImg);
-    flightPlanet.appendChild(planetLabel);
-    flightContainer.appendChild(flightPlanet);
-    flightPathPlanets.push(flightPlanet);
-}
-
-
-let currentProgress = 1;
-let activePlanet = flightPathPlanets[currentProgress];
-activePlanet.classList.add('active');
-
-
-
-//functions for quiz
-
-//show the next question
-function displayQuestion() {
-    questionImage.innerHTML = `<img src="${currentQuestion.qImg}">`
-    questionText.innerText = currentQuestion.question;
-    answerA.innerText = currentQuestion.aAnswer;
-    answerB.innerText = currentQuestion.bAnswer;
-    answerC.innerText = currentQuestion.cAnswer;
-}
-
-/*set the initial number of tries to 2. Check if the answer given matches the correct answer. Display a success message as a modal 
-if answer is correct. If the next planet is Pluto display message to inform user that they have successfully completed their mission.
-If answer is incorrect decrement number of tries by 1. If remaining tries are greater than 0 display a modal to enable user to try again.  
-If remaining tries are 0, decrement fuel by 1 and display 'wrong again' modal.*/
-tries = 2;
-function checkAnswer(e) {
-    if (e.target.id === currentQuestion.correct) {
-        if(planetQIndex == 7) {
-            alert('You reached Pluto!')
-        }
-        else {
-            correctModal.classList.remove('hide')
-        }   
-    } 
-    else {
-        tries --;
-        if(tries > 0) {
-            tryAgainModal.classList.remove('hide')
-            
-        } else {
-            currentFuel--
-            updateFuelDisplay()
-            wrongAgainModal.classList.remove('hide')
-        }
-    }  
-}
-
-//update question index variables and display new question for next planet
-function updateQuestion(){
-    planetQIndex++;
-    qIndex = Math.floor(Math.random()*4);
-    currentQuestion = questions[planetQIndex][qIndex];
-    displayQuestion()
-}
-
-
-//event listeners for answer buttons
-answerA.addEventListener('click', checkAnswer);
-answerB.addEventListener('click', checkAnswer);
-answerC.addEventListener('click', checkAnswer);
-
-/*functions to move to next level after correctly answering question. Hides success modal. Increments fuel level by one.
-Moves active class on flight path to next planet. Updates the planet stats and question displayed. Resets number of tries*/
-
-function triggerBlastOff() {
-    correctModal.classList.add('hide');
-    addFuel();
-    advanceFlightPath();
-    changePlanetStats();
-    updateQuestion();
-    tries = 2;
-}
-
-/* hides modal to give user a second attempt to give a correct answer */
-function secondTry() {
-    tryAgainModal.classList.add('hide');
-}
-
-/* after 2 incorrect tries, hides the wrong answer modal, updates the question by generating a new question index but using the
-same planet index. Resets the number of tries to 2 */
-function secondQuestionSamePlanet() {
-    wrongAgainModal.classList.add('hide')
-    qIndex = Math.floor(Math.random()*4);
-    currentQuestion = questions[planetQIndex][qIndex];
-    tries = 2;
-    displayQuestion()
-}
-
-//displays a message if the user decides to quit game
-function endGame() {
-    alert('game over')
-
-}
-
-
-//add event listeners to modal buttons
-blastOff.addEventListener('click', triggerBlastOff);
-tryAgainButton.addEventListener('click', secondTry)
-tryNextButton.addEventListener('click', secondQuestionSamePlanet)
-quitButton.addEventListener('click', endGame)
-
-//changes the planet displayed in the planet stats section
-function changePlanetStats() {
-    currentStatsIndex++;
-    let pl = planetStats[currentStatsIndex];
-    planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="150px">`
-    planetName.innerText = pl.name;
-    size.innerText = pl.size;
-    year.innerText = pl.yearLength;
-    day.innerText = pl.dayLength;
-    distance.innerText = pl.distance;
-    moons.innerText = pl.moons;
-}
 
 //functions to amend fuel
 
@@ -544,5 +306,4 @@ function loseFuel() {
     updateFuelDisplay();
     }
 }
-
 
