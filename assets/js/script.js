@@ -263,6 +263,17 @@ let planetQIndex = 0;
 let qIndex = Math.floor(Math.random()*3);
 let currentQuestion = questions[planetQIndex][qIndex];
 
+//set the image and the text of the questions and answers
+function displayQuestion() {
+    questionImage.innerHTML = `<img src="${currentQuestion.qImg}">`
+    questionText.innerText = currentQuestion.question;
+    answerA.innerText = currentQuestion.aAnswer;
+    answerB.innerText = currentQuestion.bAnswer;
+    answerC.innerText = currentQuestion.cAnswer;
+}
+
+displayQuestion()
+
 //variables to set and display gauge and fuel level
 let currentFuel = 1;
 const maxFuel = 10;
