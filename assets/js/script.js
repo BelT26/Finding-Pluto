@@ -403,11 +403,11 @@ const planetStats = [
         moons: '14'
     },
 ]    
-const pl = planetStats[currentStatsIndex];
+let pl = planetStats[currentStatsIndex];
 
 //set content of planet stats
 
-function displayStats(planet) { 
+function displayStats() { 
 //planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="200px">`
 planetName.innerText = pl.name;
 size.innerText = pl.size;
@@ -416,4 +416,17 @@ day.innerText = pl.dayLength;
 distance.innerText = pl.distance;
 moons.innerText = pl.moons;
 }
-displayStats(pl)
+displayStats()
+
+//changes the planet displayed in the planet stats section
+function nextPlanetStats() {
+    currentStatsIndex++;
+    pl = planetStats[currentStatsIndex];
+    displayStats()
+}
+
+function previousPlanetStats() {
+    currentStatsIndex--;
+    pl = planetStats[currentStatsIndex];
+    displayStats()
+}
