@@ -332,7 +332,7 @@ let currentStatsIndex = 0;
 const planetStats = [
     {
         name: 'Mercury',
-        //imgSrc: '../images/flight1.jpg',
+        imgSrc: 'assets/images/flight1.jpg',
         size: '3,031 miles',
         dayLength: '59 days',
         yearLength: '88 days',
@@ -341,7 +341,7 @@ const planetStats = [
     },
     {
         name: 'Venus',
-        //imgSrc: '../images/flight2.jpg',
+        1mgSrc: 'assets/images/flight2.jpg',
         size: '7,521 miles',
         yearLength: '243 days',
         dayLength: '224 days',
@@ -350,7 +350,7 @@ const planetStats = [
     },
     {
         name: 'Earth',
-        //imgSrc: '../images/flight3.jpg',
+        imgSrc: 'assets/images/flight3.jpg',
         size: '7,926 miles',
         yearLength: '365.25 days',
         dayLength: '24 hours',
@@ -359,7 +359,7 @@ const planetStats = [
     },
     {
         name: 'Mars',
-        //imgSrc: '../images/flight4.jpg',
+        imgSrc: 'assets/images/flight4.jpg',
         size: '4,222 miles',
         dayLength: '24.6 hours',
         yearLength: '687 days',
@@ -368,7 +368,7 @@ const planetStats = [
     },
     {
         name: 'Jupiter',
-        //imgSrc: '../images/flight5.jpg',
+        imgSrc: 'assets/images/flight5.jpg',
         size: '88,846 miles',
         dayLength: '10 hours',
         yearLength: '12 years',
@@ -377,7 +377,7 @@ const planetStats = [
     },
     {
         name: 'Saturn',
-        //imgSrc: '../images/flight6.jpg',
+        imgSrc: 'assets/images/flight6.jpg',
         size: '74,900 miles',
         dayLength: '10.6 hours',
         yearLength: '29 years',
@@ -386,7 +386,7 @@ const planetStats = [
     },
     {
         name: 'Uranus',
-        //imgSrc: '../images/flight6.jpg',
+        imgSrc: 'assets/images/flight6.jpg',
         size: '31,763 miles',
         dayLength: '17 hours',
         yearLength: '84 hours',
@@ -395,7 +395,7 @@ const planetStats = [
     },
     {
         name: 'Neptune',
-        //imgSrc: '../images/flight8.jpg',
+        imgSrc: 'assets/images/flight8.jpg',
         size: '30,779 miles',
         dayLength: '16 hours',
         yearLength: '165 years',
@@ -408,7 +408,7 @@ let pl = planetStats[currentStatsIndex];
 //set content of planet stats
 
 function displayStats() { 
-//planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="200px">`
+planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="200px">`
 planetName.innerText = pl.name;
 size.innerText = pl.size;
 year.innerText = pl.yearLength;
