@@ -291,8 +291,7 @@ function updateFuelDisplay() {
         fuelGauge.style.display = 'none';
     } else {
         fuelGauge.style.display = 'block';
-    }
-    
+    }  
 }
 
 function resetFuel() {
@@ -438,15 +437,17 @@ const flightPathPlanets = [];
 
 /*for loop that loops through the list of planet names and creates a div element to each planet.
 An img element and span element that contain the image and name of each planet are created and appended to the div.
-The loop assigns a class to the div and determines the image height. 
+The loop styles the divs and determines the image height. 
 The divs are appended to the flightContainer div and pushed to the flightPathPlanets array. */
 for(let i=0; i<flightPathPlanetNames.length; i++) {
     const flightPlanet = document.createElement('div');
-    flightPlanet.classList.add('flight-planet');
+    flightPlanet.style.textAlign = 'center';
+    flightPlanet.style.padding = '5px';
     const planetLabel = document.createElement('span');
     planetLabel.textContent = flightPathPlanetNames[i];
+    planetLabel.style.display = 'block';
+    planetLabel.style.fontFamily = 'Nova Square';
     const newImg = document.createElement('img');
-    newImg.classList.add('planet-img');
     newImg.style.height = '70px';
     if (i === 9) {
         newImg.src = `assets/images/flight${i}.png`;
@@ -460,4 +461,6 @@ for(let i=0; i<flightPathPlanetNames.length; i++) {
     flightPathPlanets.push(flightPlanet);
 }
 
-
+let currentProgress = 1;
+let activePlanet = flightPathPlanets[currentProgress];
+activePlanet.style.backgroundColor = 'gold';
