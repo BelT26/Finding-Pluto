@@ -341,7 +341,7 @@ const planetStats = [
     },
     {
         name: 'Venus',
-        1mgSrc: 'assets/images/flight2.jpg',
+        imgSrc: 'assets/images/flight2.jpg',
         size: '7,521 miles',
         yearLength: '243 days',
         dayLength: '224 days',
@@ -430,3 +430,40 @@ function previousPlanetStats() {
     pl = planetStats[currentStatsIndex];
     displayStats()
 }
+
+//set content of flight path
+
+//Array with a list of planet names
+const flightPathPlanetNames = ['Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
+
+/*empty array to contain divs created within a loop containing each planets name and image. Created so that the active planet
+can be higlighted and modified by functions*/
+const flightPathPlanets = [];
+
+
+
+/*for loop that loops through the list of planet names and creates a div element to each planet.
+An img element and span element that contain the image and name of each planet are created and appended to the div.
+The loop assigns a class to the div and determines the image height. 
+The divs are appended to the flightContainer div and pushed to the flightPathPlanets array. */
+for(let i=0; i<flightPathPlanetNames.length; i++) {
+    const flightPlanet = document.createElement('div');
+    flightPlanet.classList.add('flight-planet');
+    const planetLabel = document.createElement('span');
+    planetLabel.textContent = flightPathPlanetNames[i];
+    const newImg = document.createElement('img');
+    newImg.classList.add('planet-img');
+    newImg.style.height = '70px';
+    if (i === 9) {
+        newImg.src = `assets/images/flight${i}.png`;
+    }
+    else {
+        newImg.src = `assets/images/flight${i}.jpg`;
+    }
+    flightPlanet.appendChild(newImg);
+    flightPlanet.appendChild(planetLabel);
+    flightContainer.appendChild(flightPlanet);
+    flightPathPlanets.push(flightPlanet);
+}
+
+
