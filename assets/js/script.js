@@ -401,7 +401,7 @@ let pl = planetStats[currentStatsIndex];
 //set content of planet stats
 
 function displayStats() { 
-planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="200px">`
+planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="150px">`
 planetName.innerText = pl.name;
 planetName.style.fontFamily = 'Nova Square';
 planetName.style.textAlign = 'center';

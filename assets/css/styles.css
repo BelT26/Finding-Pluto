@@ -27,6 +27,7 @@ header h1 {
 
 }
 
+
 /* styles for game background image */
 #background-container {
     width: 100%;
@@ -156,8 +157,10 @@ header h1 {
 .answer:active {
     box-shadow: 0 4px #558;
     background-color: rgb(11, 11, 70);
-    transform: translateY(4px)
+    transform: translateY(4px);
 }  
+
+
 
 /* styles for planet-stats section */
 #current-planet {
@@ -167,10 +170,28 @@ header h1 {
     padding: 15px;
     border-radius: 20px;
     flex-direction: column;
+    text-align: center;
     justify-content: flex-start;
     align-content: center;
     background-color: azure;    
 }
+
+#current-title h2 {
+    font-family: 'Nova Square', cursive;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+#current-planet th {
+    font-weight: 600;
+    font-size: x-large;
+    padding-bottom: 5px;
+}
+
+#current-planet td {
+    text-align: left;
+}
+
 
 /*styles for flight path */
 #flight-container {
