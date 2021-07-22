@@ -3,9 +3,6 @@
 const gauge = document.getElementById('gauge');
 const fuelGauge = document.getElementById('fuel-in-gauge');
 const fuelNumber = document.getElementById("fuel-number");
-const addFuelBtn = document.getElementById('add-fuel');
-const loseFuelBtn = document.getElementById('lose-fuel');
-const resetFuelBtn = document.getElementById('reset-fuel');
 
 //html elements in quiz container
 const questionImage = document.getElementById('question-image');
@@ -321,9 +318,6 @@ function loseFuel() {
     }
 }
 
-addFuelBtn.addEventListener('click', addFuel);
-loseFuelBtn.addEventListener('click', loseFuel);
-resetFuelBtn.addEventListener('click', resetFuel);
 
 //variable to keep track of current stats to display
 let currentStatsIndex = 0;
