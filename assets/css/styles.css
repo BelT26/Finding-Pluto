@@ -63,10 +63,13 @@ header h1 {
 }
 
 #gauge-container h2 {
+    text-align: center;
     display: inline-block;
+    font-family: 'Nova Square', cursive;
 }
 
 #fuel-number {
+    text-align: center;
     height: 30px;
     width: 30px;
 }

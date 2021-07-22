@@ -403,12 +403,15 @@ let pl = planetStats[currentStatsIndex];
 function displayStats() { 
 planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="200px">`
 planetName.innerText = pl.name;
+planetName.style.fontFamily = 'Nova Square';
+planetName.style.textAlign = 'center';
 size.innerText = pl.size;
 year.innerText = pl.yearLength;
 day.innerText = pl.dayLength;
 distance.innerText = pl.distance;
 moons.innerText = pl.moons;
 }
+
 displayStats()
 
 //changes the planet displayed in the planet stats section
