@@ -467,3 +467,32 @@ for(let i=0; i<flightPathPlanetNames.length; i++) {
 let currentProgress = 1;
 let activePlanet = flightPathPlanets[currentProgress];
 activePlanet.style.backgroundColor = 'gold';
+
+//set the initial number of available attempts to answer question to 2. 
+tries = 2;
+
+/*Check if the answer given matches the correct answer. Display a success message as a modal 
+if answer is correct. If the next planet is Pluto display message to inform user that they have successfully completed their mission.
+If answer is incorrect decrement number of tries by 1. If remaining tries are greater than 0 display a modal to enable user to try again.  
+If remaining tries are 0, decrement fuel by 1 and display 'wrong again' modal.*/
+function checkAnswer(e) {
+    if (e.target.id === currentQuestion.correct) {
+        alert('correct')        
+    } 
+    else {
+        alert('wrong')
+    }  
+}
+
+//update question index variables and display new question for next planet
+function updateQuestion(){
+    planetQIndex++;
+    qIndex = Math.floor(Math.random()*3);
+    currentQuestion = questions[planetQIndex][qIndex];
+    displayQuestion()
+}
+
+//event listeners for answer buttons
+answerA.addEventListener('click', checkAnswer);
+answerB.addEventListener('click', checkAnswer);
+answerC.addEventListener('click', checkAnswer);

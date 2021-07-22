@@ -39,6 +39,11 @@ header h1 {
     top: 0px;
 }
 
+/*style to hide modals */
+.hide {
+    display: none;
+}
+
 /* styles for container holding elements of the game */
 #game-container {
     position: relative; 
