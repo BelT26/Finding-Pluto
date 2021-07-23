@@ -28,18 +28,19 @@ const flightContainer = document.getElementById('flight-container');
 
 //html modal elements
 const correctModal = document.getElementById('correct');
-const answerInfo = document.getElementById('answer-info')
+const answerInfo = document.getElementById('answer-info');
 const tryAgainModal = document.getElementById('incorrect');
 const wrongAgainModal = document.getElementById('wrong-again')
 const noFuelModal = document.getElementById('no-fuel');
 const blastOff = document.getElementById('blast-off');
 const tryAgainButton = document.getElementById('try-again');
-const tryNextButton = document.getElementById('try-next')
-const quitButtons = document.getElementsByClassName('quit')
+const tryNextButton = document.getElementById('try-next');
+const quitButtons = document.getElementsByClassName('quit');
+const endGameModal = document.getElementById('end-game');
 
 //date variable for use in question about Neptune
-let date = new Date()
-let currentYear = date.getFullYear()
+let date = new Date();
+let currentYear = date.getFullYear();
 
 
 //multi dimensional array containing quiz question objects
@@ -286,7 +287,7 @@ function displayQuestion() {
     answerC.innerText = currentQuestion.cAnswer;
 }
 
-displayQuestion()
+displayQuestion();
 
 //variables to set and display gauge and fuel level
 let currentFuel = 1;
@@ -592,8 +593,15 @@ function secondQuestionSamePlanet() {
     displayQuestion();
 }
 
+function endGame() {
+    wrongAgainModal.classList.add('hide');
+    endGameModal.classList.remove('hide');
+}
+
 //add event listeners to modal buttons
 blastOff.addEventListener('click', triggerBlastOff);
 tryAgainButton.addEventListener('click', secondTry);
 tryNextButton.addEventListener('click', secondQuestionSamePlanet);
-
+for (button of quitButtons) {
+    button.addEventListener('click', endGame)
+}
