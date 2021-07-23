@@ -240,6 +240,20 @@ header h1 {
     padding: 10px;
    }
 
+#correct-contents {
+    border: rgb(106, 255, 47) 5px solid;
+    box-shadow: 0px 0px 20px 20px rgb(106, 255, 47);
+}
+
+#incorrect-contents {
+    border: #ffae00 5px solid;
+    box-shadow: 0px 0px 20px 20px #ffae00;  
+}
+
+#wrong-again-contents {
+    border: red 5px solid;
+    box-shadow: 0px 0px 20px 20px;
+}
 
 .modal-info button {
        background-color: rgb(2, 2, 41);

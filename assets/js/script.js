@@ -507,7 +507,7 @@ function checkAnswer(e) {
 
 
 //update question index variables and display new question for next planet
-function updateQuestion(){
+function updateQuestion() {
     planetQIndex++;
     qIndex = Math.floor(Math.random()*3);
     currentQuestion = questions[planetQIndex][qIndex];
