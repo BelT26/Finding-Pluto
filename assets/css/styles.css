@@ -39,10 +39,6 @@ header h1 {
     top: 0px;
 }
 
-/*style to hide modals */
-.hide {
-    display: none;
-}
 
 /* styles for container holding elements of the game */
 #game-container {
@@ -215,8 +211,21 @@ header h1 {
 }
 
 
-
 /*style modal elements */
+
+
+
+.modal {
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    justify-content: center;
+    align-items: center; 
+    display: flex;    
+}
+
+ 
 .modal-info {
     border-radius: 20px;
     background-color:rgb(246, 255, 255);
@@ -231,6 +240,7 @@ header h1 {
     padding: 10px;
    }
 
+
 .modal-info button {
        background-color: rgb(2, 2, 41);
        color:rgb(145, 216, 216);
@@ -241,7 +251,7 @@ header h1 {
        border-radius: 10px;
        margin: 20px auto;
        box-shadow: 0 8px #558;
-   }
+}
 
    
 .modal-info button:hover {
@@ -254,5 +264,11 @@ header h1 {
 .modal-info button:active {
     box-shadow: 0px 4px #558;
     background-color: rgb(11, 11, 70);
-    transform: translateY(4px)
+    transform: translateY(4px);
 }
+
+/*style to hide modals */
+.hide {
+    display: none !important;
+}
+

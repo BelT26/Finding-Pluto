@@ -1,3 +1,5 @@
+//game container div
+const gameContainer = document.getElementById('game-container');
 
 //html elements in fuel gauge
 const gauge = document.getElementById('gauge');
@@ -469,7 +471,8 @@ let activePlanet = flightPathPlanets[currentProgress];
 activePlanet.style.backgroundColor = 'gold';
 
 //set the initial number of available attempts to answer question to 2. 
-tries = 2;
+let tries = 2;
+
 
 /*Check if the answer given matches the correct answer. Display a success message as a modal 
 if answer is correct. If the next planet is Pluto display message to inform user that they have successfully completed their mission.
@@ -477,10 +480,28 @@ If answer is incorrect decrement number of tries by 1. If remaining tries are gr
 If remaining tries are 0, decrement fuel by 1 and display 'wrong again' modal.*/
 function checkAnswer(e) {
     if (e.target.id === currentQuestion.correct) {
-        alert('correct')        
+        if (planetQIndex == 7) {
+            alert('Reached Pluto');          
+        }
+        else {
+            gameContainer.classList.add('hide');
+            flightContainer.classList.add('hide');
+            correctModal.classList.remove('hide');         }           
     } 
     else {
-        alert('wrong')
+        tries --;
+        if (tries > 0) {
+            gameContainer.classList.add('hide');
+            flightContainer.classList.add('hide');
+            tryAgainModal.classList.remove('hide');        
+        } 
+        else {
+            currentFuel--
+            updateFuelDisplay()
+            gameContainer.classList.add('hide');
+            flightContainer.classList.add('hide');
+            wrongAgainModal.classList.remove('hide');
+        }
     }  
 }
 
