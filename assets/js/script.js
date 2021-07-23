@@ -499,27 +499,28 @@ function checkAnswer(e) {
             alert('Reached Pluto');          
         }
         else {
-            gameContainer.classList.add('hide');
-            flightContainer.classList.add('hide');
+            hideGame();
             correctModal.classList.remove('hide');         }           
     } 
     else {
         tries --;
         if (tries > 0) {
-            gameContainer.classList.add('hide');
-            flightContainer.classList.add('hide');
+            hideGame();
             tryAgainModal.classList.remove('hide');        
         } 
         else {
-            currentFuel--
-            updateFuelDisplay()
-            gameContainer.classList.add('hide');
-            flightContainer.classList.add('hide');
+            currentFuel--;
+            updateFuelDisplay();
+            hideGame();
             wrongAgainModal.classList.remove('hide');
         }
     }  
 }
 
+function hideGame() {
+    gameContainer.classList.add('hide');
+    flightContainer.classList.add('hide');
+}
 
 //update question index variables and display new question for next planet
 function updateQuestion() {
