@@ -483,7 +483,7 @@ for(let i=0; i<flightPathPlanetNames.length; i++) {
 
 let currentProgress = 1;
 let activePlanet = flightPathPlanets[currentProgress];
-activePlanet.style.backgroundColor = 'gold';
+
 
 //set the initial number of available attempts to answer question to 2. 
 let tries = 2;
@@ -522,6 +522,11 @@ function hideGame() {
     flightContainer.classList.add('hide');
 }
 
+function showGame() {
+    gameContainer.classList.remove('hide');
+    flightContainer.classList.remove('hide');
+}
+
 //update question index variables and display new question for next planet
 function updateQuestion() {
     planetQIndex++;
@@ -534,3 +539,41 @@ function updateQuestion() {
 answerA.addEventListener('click', checkAnswer);
 answerB.addEventListener('click', checkAnswer);
 answerC.addEventListener('click', checkAnswer);
+
+//functions to update currentProgress variable and active planet on flight path
+function advanceFlightPath() {
+    activePlanet.classList.remove('active');
+    currentProgress++; 
+    activePlanet = flightPathPlanets[currentProgress];
+    activePlanet.classList.add('active');
+}
+
+//changes the planet displayed in the planet stats section
+function changePlanetStats() {
+    currentStatsIndex++;
+    let pl = planetStats[currentStatsIndex];
+    planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="150px">`
+    planetName.innerText = pl.name;
+    size.innerText = pl.size;
+    year.innerText = pl.yearLength;
+    day.innerText = pl.dayLength;
+    distance.innerText = pl.distance;
+    moons.innerText = pl.moons;
+}
+
+/*functions to move to next level after correctly answering question. Hides success modal. Increments fuel level by one.
+Moves active class on flight path to next planet. Updates the planet stats and question displayed. Resets number of tries*/
+
+function triggerBlastOff() {
+    correctModal.classList.add('hide');
+    showGame();
+    addFuel();
+    advanceFlightPath();
+    changePlanetStats();
+    updateQuestion();
+    tries = 2;
+}
+
+//add event listeners to modal buttons
+blastOff.addEventListener('click', triggerBlastOff);
+
