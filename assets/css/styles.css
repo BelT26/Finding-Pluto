@@ -257,7 +257,7 @@ header h1 {
 
 #wrong-again-contents {
     border: red 5px solid;
-    box-shadow: 0px 0px 20px 20px;
+    box-shadow: 0px 0px 20px 20px red;
 }
 
 .modal-info button {

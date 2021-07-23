@@ -581,7 +581,19 @@ function secondTry() {
     showGame();
 }
 
+/* after 2 incorrect tries, hides the wrong answer modal, updates the question by generating a new question index but using the
+same planet index. Resets the number of tries to 2 */
+function secondQuestionSamePlanet() {
+    wrongAgainModal.classList.add('hide')
+    qIndex = Math.floor(Math.random()*3);
+    currentQuestion = questions[planetQIndex][qIndex];
+    tries = 2;
+    showGame();
+    displayQuestion();
+}
+
 //add event listeners to modal buttons
 blastOff.addEventListener('click', triggerBlastOff);
 tryAgainButton.addEventListener('click', secondTry);
+tryNextButton.addEventListener('click', secondQuestionSamePlanet);
 
