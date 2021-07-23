@@ -575,6 +575,13 @@ function triggerBlastOff() {
     tries = 2;
 }
 
+/* hides modal to give user a second attempt to give a correct answer */
+function secondTry() {
+    tryAgainModal.classList.add('hide');
+    showGame();
+}
+
 //add event listeners to modal buttons
 blastOff.addEventListener('click', triggerBlastOff);
+tryAgainButton.addEventListener('click', secondTry);
 
