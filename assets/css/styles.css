@@ -210,6 +210,11 @@ header h1 {
     top: 20vh;
 }
 
+/* shows user their progress through the flight path */
+.active {
+    background-color: gold;
+}
+
 
 /*style modal elements */
 

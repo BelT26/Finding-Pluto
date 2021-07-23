@@ -483,6 +483,7 @@ for(let i=0; i<flightPathPlanetNames.length; i++) {
 
 let currentProgress = 1;
 let activePlanet = flightPathPlanets[currentProgress];
+activePlanet.classList.add('active');
 
 
 //set the initial number of available attempts to answer question to 2. 
