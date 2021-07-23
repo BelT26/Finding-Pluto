@@ -28,6 +28,7 @@ const flightContainer = document.getElementById('flight-container');
 
 //html modal elements
 const correctModal = document.getElementById('correct');
+const answerInfo = document.getElementById('answer-info')
 const tryAgainModal = document.getElementById('incorrect');
 const wrongAgainModal = document.getElementById('wrong-again')
 const noFuelModal = document.getElementById('no-fuel');
@@ -257,6 +258,20 @@ const questions = [
     ],
         
 ]
+
+//provides the user with additional information when they answer the question correctly
+const correctInfo = [
+    ['Mercury is about a third of the size of the earth',
+    'Mercury is used in thermometers as it expands and contracts according to the temperature',
+    'You\'d have plenty of parties and presents on Mercury!'],
+    ['Despite being further from the sun, Venus is hotter than Mercury as it has a thick atmosphere of carbon dioxide that keeps the heat in',
+      'Venus is about 90% of the size of the earth',
+      'The Earth rotates from west to east whilst Venus rotates from east to west.'],
+    ['With water covering over 70% of it\'s surface, Earth is sometimes referred to as the "blue planet"', 
+    '100 years ago there were under 2 billion people on earth, meaning the word\'s population has quadrupled since then', 
+    'Neil Armstrong was the first man to set foot on the moon on July 20th 1969'],
+]
+
 //variables to determine which question to display. Questions are related to the planet the user has just reached. Each planet has three possible questions one of which is selected at random.
 let planetQIndex = 0;
 let qIndex = Math.floor(Math.random()*3);
