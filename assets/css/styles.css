@@ -255,7 +255,7 @@ header h1 {
     box-shadow: 0px 0px 20px 20px #ffae00;  
 }
 
-#wrong-again-contents {
+#wrong-again-contents #no-fuel-contents {
     border: red 5px solid;
     box-shadow: 0px 0px 20px 20px red;
 }

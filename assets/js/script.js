@@ -36,6 +36,7 @@ const blastOff = document.getElementById('blast-off');
 const tryAgainButton = document.getElementById('try-again');
 const tryNextButton = document.getElementById('try-next');
 const quitButtons = document.getElementsByClassName('quit');
+const continueButton = document.getElementById('continue');
 const endGameModal = document.getElementById('end-game');
 
 //date variable for use in question about Neptune
@@ -81,7 +82,7 @@ const questions = [
             correct:'A'
         },
         {
-            question: 'Venus is sometimes called this planet\.s twin as they are very similar in size',
+            question: 'Venus is sometimes called this planet\'s twin as they are very similar in size',
             qImg: '',
             aAnswer: 'Neptune',
             bAnswer:'Earth',
@@ -327,12 +328,8 @@ function addFuel() {
 
 //decrements fuel by 1. If fuel is already at 0 moves user back to previous planet
 function loseFuel() {
-    if(currentFuel === 0){
-        alert('Emergency!  Fuel reserves depleted! Retreating to previous planet')
-    } else {
     currentFuel--;
     updateFuelDisplay();
-    }
 }
 
 
@@ -416,7 +413,7 @@ const planetStats = [
 ]    
 let pl = planetStats[currentStatsIndex];
 
-//set content of planet stats
+//sets content of planet stats by retrieving information from planetStats array
 
 function displayStats() { 
 planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="150px">`
@@ -494,7 +491,8 @@ let tries = 2;
 /*Check if the answer given matches the correct answer. Display a success message as a modal 
 if answer is correct. If the next planet is Pluto display message to inform user that they have successfully completed their mission.
 If answer is incorrect decrement number of tries by 1. If remaining tries are greater than 0 display a modal to enable user to try again.  
-If remaining tries are 0, decrement fuel by 1 and display 'wrong again' modal.*/
+If remaining tries are 0, decrement fuel by 1 and display 'wrong again' modal.
+If fuel is already at 0 and current planet is not Mercury display a modal to inform user that they are moving back a planet*/
 function checkAnswer(e) {
     if (e.target.id === currentQuestion.correct) {
         if (planetQIndex == 7) {
@@ -502,7 +500,8 @@ function checkAnswer(e) {
         }
         else {
             hideGame();
-            correctModal.classList.remove('hide');         }           
+            correctModal.classList.remove('hide');         
+        }           
     } 
     else {
         tries --;
@@ -511,10 +510,21 @@ function checkAnswer(e) {
             tryAgainModal.classList.remove('hide');        
         } 
         else {
-            currentFuel--;
-            updateFuelDisplay();
-            hideGame();
-            wrongAgainModal.classList.remove('hide');
+            if (currentFuel > 0) {
+                loseFuel();
+                hideGame();
+                wrongAgainModal.classList.remove('hide');
+            }
+            else {
+                if (planetQIndex === 0) {
+                    hideGame();
+                    wrongAgainModal.classList.remove('hide');
+                }
+                else {
+                hideGame();
+                noFuelModal.classList.remove('hide');
+                }
+            }
         }
     }  
 }
@@ -548,6 +558,20 @@ function advanceFlightPath() {
     currentProgress++; 
     activePlanet = flightPathPlanets[currentProgress];
     activePlanet.classList.add('active');
+}
+
+function retreat () {
+    noFuelModal.classList.add('hide');
+    showGame();
+    activePlanet.classList.remove('active');
+    currentProgress--; 
+    activePlanet = flightPathPlanets[currentProgress];
+    activePlanet.classList.add('active');
+    planetQIndex--;
+    qIndex = Math.floor(Math.random()*3);
+    currentQuestion = questions[planetQIndex][qIndex];
+    displayQuestion();
+    previousPlanetStats();
 }
 
 //changes the planet displayed in the planet stats section
@@ -603,5 +627,6 @@ blastOff.addEventListener('click', triggerBlastOff);
 tryAgainButton.addEventListener('click', secondTry);
 tryNextButton.addEventListener('click', secondQuestionSamePlanet);
 for (button of quitButtons) {
-    button.addEventListener('click', endGame)
+    button.addEventListener('click', endGame);
 }
+continueButton.addEventListener('click', retreat);
