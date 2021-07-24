@@ -1,3 +1,11 @@
+//html elements in intro container
+const introContainer = document.getElementById('intro-container');
+const rulesButton = document.getElementById('rules-button');
+
+//html elements in rules container
+const rulesContainer = document.getElementById('rules-container');
+const startButton = document.getElementById('start');
+
 //game container div
 const gameContainer = document.getElementById('game-container');
 
@@ -263,9 +271,9 @@ const questions = [
 
 //provides the user with additional information when they answer the question correctly
 const correctInfo = [
-    ['Mercury is about a third of the size of the earth',
+    ['Although Mercury is bigger than Pluto, which is a dwarf planet, it is only about a third of the size of the earth',
     'Mercury is used in thermometers as it expands and contracts according to the temperature',
-    'You\'d have plenty of parties and presents on Mercury!'],
+    'With 4 birthdays a year. You\'d have plenty of parties and presents on Mercury!'],
     ['Despite being further from the sun, Venus is hotter than Mercury as it has a thick atmosphere of carbon dioxide that keeps the heat in',
       'Venus is about 90% of the size of the earth',
       'The Earth rotates from west to east whilst Venus rotates from east to west.'],
@@ -482,6 +490,22 @@ for(let i=0; i<flightPathPlanetNames.length; i++) {
 let currentProgress = 1;
 let activePlanet = flightPathPlanets[currentProgress];
 activePlanet.classList.add('active');
+
+//hides the initial introduction and displays the rules of the game
+function showRules() {
+    introContainer.classList.add('hide');
+    rulesContainer.classList.remove('hide');
+}
+
+//hides the rules and displays the game elements
+function startGame() {
+    rulesContainer.classList.add('hide');
+    gameContainer.classList.remove('hide');
+    flightContainer.classList.remove('hide');
+}
+
+rulesButton.addEventListener('click', showRules)
+startButton.addEventListener('click', startGame);
 
 
 //set the initial number of available attempts to answer question to 2. 
