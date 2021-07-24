@@ -32,6 +32,7 @@ const distance = document.getElementById('distance');
 const moons = document.getElementById('moons');
 
 //html elements for flight path
+const progressContainer = document.getElementById('progress');
 const flightContainer = document.getElementById('flight-container');
 
 //html modal elements
@@ -61,7 +62,8 @@ const questions = [
             aAnswer: 'smallest',
             bAnswer:'hottest',
             cAnswer:'largest',
-            correct:'A'
+            correct:'A',
+            info: 'Although Mercury is bigger than Pluto, which is a dwarf planet, it is only about a third of the size of the earth',
         },
         {
             question: 'In which item would you find the metal mercury used?',
@@ -69,7 +71,8 @@ const questions = [
             aAnswer: 'microwave',
             bAnswer:'thermometer',
             cAnswer:'radiator',
-            correct:'B'
+            correct:'B',
+            info: 'Mercury is used in thermometers as it expands and contracts according to the temperature',
         },
         {
             question: 'Mercury is the fastest planet to orbit the sun taking just 88 days.  How many birthdays would you have on Mercury in one earth year?',
@@ -77,7 +80,8 @@ const questions = [
             aAnswer: '2',
             bAnswer:'3',
             cAnswer:'4',
-            correct:'C'
+            correct:'C',
+            info: 'With 4 birthdays per Earth year. You\'d have plenty of parties and presents on Mercury!'
         },
     ],
     [
@@ -87,7 +91,8 @@ const questions = [
             aAnswer: 'hottest',
             bAnswer:'smallest',
             cAnswer:'coldest',
-            correct:'A'
+            correct:'A',
+            info: 'Despite being further from the sun, Venus is hotter than Mercury as it has a thick atmosphere of carbon dioxide that keeps the heat in',
         },
         {
             question: 'Venus is sometimes called this planet\'s twin as they are very similar in size',
@@ -95,7 +100,8 @@ const questions = [
             aAnswer: 'Neptune',
             bAnswer:'Earth',
             cAnswer:'Mars',
-            correct:'B'
+            correct:'B',
+            info: 'Venus is about 90% of the size of the earth',
         },
         {
             question: 'There\'s something unusual about the way Venus is spinning.  Can you guess what it is?',
@@ -103,7 +109,8 @@ const questions = [
             aAnswer: 'It spins the opposite way to Earth',
             bAnswer:'It spins on its side',
             cAnswer:'It\'s the fastest spinning planet in the solar system',
-            correct:'A'
+            correct:'A',
+            info: 'The Earth rotates from west to east whilst Venus rotates from east to west.',
         },
     ],
     [
@@ -113,7 +120,8 @@ const questions = [
             aAnswer: '51%',
             bAnswer:'61%',
             cAnswer:'71%',
-            correct:'C'
+            correct:'C',
+            info: 'With water covering over 70% of it\'s surface, Earth is sometimes referred to as the "blue planet"', 
         },
         {
             question: 'Wow! It\'s very crowded here compared the sparsely inhabited world of Pluto.  About how many people do think inhabit the earth',
@@ -121,16 +129,17 @@ const questions = [
             aAnswer: '700 million',
             bAnswer:'8 billion',
             cAnswer:'3 trillion',
-            correct:'B'
+            correct:'B',
+            info:  '100 years ago there were under 2 billion people on earth, meaning the word\'s population has quadrupled since then', 
         },
         {
-            question: 'earth3',
+            question: 'Earth is the first planet on Plutina\'s journey that has its own moon. Do you know when a man first walked on the moon?',
             qImg: '',
-            aAnswer: 'A',
-            bAnswer:'B',
-            cAnswer:'C',
-            dAnswer:'D',
-            correct:'B'
+            aAnswer: '1969',
+            bAnswer:'1979',
+            cAnswer:'1989',
+            correct:'A',            
+            info: 'Neil Armstrong was the first man to set foot on the moon on July 20th 1969'
         },
       
     ],
@@ -271,15 +280,15 @@ const questions = [
 
 //provides the user with additional information when they answer the question correctly
 const correctInfo = [
-    ['Although Mercury is bigger than Pluto, which is a dwarf planet, it is only about a third of the size of the earth',
-    'Mercury is used in thermometers as it expands and contracts according to the temperature',
-    'With 4 birthdays a year. You\'d have plenty of parties and presents on Mercury!'],
-    ['Despite being further from the sun, Venus is hotter than Mercury as it has a thick atmosphere of carbon dioxide that keeps the heat in',
-      'Venus is about 90% of the size of the earth',
-      'The Earth rotates from west to east whilst Venus rotates from east to west.'],
-    ['With water covering over 70% of it\'s surface, Earth is sometimes referred to as the "blue planet"', 
-    '100 years ago there were under 2 billion people on earth, meaning the word\'s population has quadrupled since then', 
-    'Neil Armstrong was the first man to set foot on the moon on July 20th 1969'],
+    [
+    
+    ],
+    [
+      
+      ],
+    [
+   
+    ],
 ]
 
 //variables to determine which question to display. Questions are related to the planet the user has just reached. Each planet has three possible questions one of which is selected at random.
