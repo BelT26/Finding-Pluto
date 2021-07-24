@@ -150,7 +150,8 @@ const questions = [
             aAnswer: 'the rusty planet',
             bAnswer:'the red planet',
             cAnswer:'the fiery planet',
-            correct:'B'
+            correct:'B',
+            info: ''
         },
         {
             question: 'Mars is home to Olympus Mons the largest volcano in the solar system.  How many times bigger than Mount Everest do you thinkit could be?',
@@ -158,7 +159,8 @@ const questions = [
             aAnswer: '2.5',
             bAnswer:'5',
             cAnswer:'10',
-            correct:'A'
+            correct:'A',
+            info: ''
         },
         {
             question: 'There\'s somebody else out here.  Plutina has just bumped into Nasa\'s latest space rover Perseverance.  Perseverance is busy trying to extract a gas from the atmosphere on Mars that could be used to allow astronauts on future explorations of the planet to breathe.  Which gas is Perseverance trying to extract?',
@@ -166,7 +168,8 @@ const questions = [
             aAnswer: 'Nitrogen',
             bAnswer:'Hydrogen',
             cAnswer:'Oxygen',
-            correct:'C'
+            correct:'C',
+            info: ''
         },
     ],
     [
@@ -176,7 +179,8 @@ const questions = [
             aAnswer: 'A storm',
             bAnswer: 'A crater',
             cAnswer:'A lake',
-            correct:'A'
+            correct:'A',
+            info: ''
         },
         {
             question: 'Jupiter is the immense giant of the solar system.  How many planets the size of the Earth do you think could fit inside Jupiter?',
@@ -184,7 +188,8 @@ const questions = [
             aAnswer: '195',
             bAnswer:'450',
             cAnswer:'1300',
-            correct:'C'
+            correct:'C',
+            info: ''
         },
         {
             question: 'Jupiter3',
@@ -192,8 +197,8 @@ const questions = [
             aAnswer: 'A',
             bAnswer:'B',
             cAnswer:'C',
-            dAnswer:'D',
-            correct:'B'
+            correct:'B',
+            info: ''
         },
     ],
     [
@@ -203,7 +208,8 @@ const questions = [
             aAnswer: 'Ice and rocks',
             bAnswer:'Gas',
             cAnswer:'Rays of light',
-            correct:'A'
+            correct:'A',
+            info: ''
         },
         {
             question:'If you could find an ocean large enough to put Saturn in what do you think would happen to it?',
@@ -211,7 +217,8 @@ const questions = [
             aAnswer: 'It would dissolve',
             bAnswer:'It would float',
             cAnswer:'It would sink',
-            correct:'B'
+            correct:'B',
+            info: ''
         },
         {
             question: 'Saturn3',
@@ -219,7 +226,8 @@ const questions = [
             aAnswer: 'A',
             bAnswer:'B',
             cAnswer:'C',
-            correct:'A'
+            correct:'A',
+            info: ''
         },
     ],
     [
@@ -229,7 +237,8 @@ const questions = [
             aAnswer: 'Uranus is the fastest spinning planet',
             bAnswer:'Uranus changes the direction it spins once a day',
             cAnswer:'Uranus spins on its side',
-            correct:'C'
+            correct:'C',
+            info: ''
         },
         {
             question: 'It\'s a bit lonely over in Uranus as it doesn\'t get many visitors.  How many times do you think a space ship from Earth has visited here',
@@ -237,7 +246,8 @@ const questions = [
             aAnswer: '0',
             bAnswer:'1',
             cAnswer:'3',
-            correct:'B'
+            correct:'B',
+            info: ''
         },
         {
             question: 'Uranus is the ________ planet',
@@ -245,7 +255,8 @@ const questions = [
             aAnswer: 'Stormiest',
             bAnswer:'Coldest',
             cAnswer:'Largest',
-            correct:'B'
+            correct:'B',
+            info: ''
         },
     ],
     [
@@ -255,7 +266,8 @@ const questions = [
             aAnswer: currentYear-165,
             bAnswer: currentYear-155,
             cAnswer: currentYear-145,
-            correct:'A'
+            correct:'A',
+            info: ''
         },
         {
             question: 'There\'s quite a storm here on Neptune.  Best not hang around too long or Plutina may be blown away. What speed do you think the winds on Neptune can reach?',
@@ -263,7 +275,8 @@ const questions = [
             aAnswer: '400 mph',
             bAnswer:'800 mph',
             cAnswer:'1200 mph',
-            correct:'C'
+            correct:'C',
+            info: ''
         },
         {
             question: 'Neptune was named after the roman god of ...',
@@ -271,25 +284,14 @@ const questions = [
             aAnswer: 'the sea',
             bAnswer:'war',
             cAnswer:'travel',
-            correct:'A'
+            correct:'A',
+            info: ''
         }
         
     ],
         
 ]
 
-//provides the user with additional information when they answer the question correctly
-const correctInfo = [
-    [
-    
-    ],
-    [
-      
-      ],
-    [
-   
-    ],
-]
 
 //variables to determine which question to display. Questions are related to the planet the user has just reached. Each planet has three possible questions one of which is selected at random.
 let planetQIndex = 0;
@@ -533,6 +535,7 @@ function checkAnswer(e) {
         }
         else {
             hideGame();
+            answerInfo.innerText = currentQuestion.info;
             correctModal.classList.remove('hide');         
         }           
     } 
