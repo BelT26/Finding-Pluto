@@ -39,6 +39,75 @@ header h1 {
     top: 0px;
 }
 
+/* styles for intro and rules modals*/
+#intro-container, #rules-container {
+    width: 70vw;
+    height: auto;
+    background-color: azure;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    top: 10vh;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: gold 5px solid;
+    box-shadow: 0px 0px 20px 20px gold; 
+}
+
+#intro-container h1, #rules-text h1 {
+    font-family: 'Nova Square', cursive;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+}    
+
+#intro-container p {
+    font-size: large;
+}
+
+#info-container {
+    padding: 20px;
+}
+
+#intro {
+    line-height: 2rem;
+}
+
+#intro h1 {
+    margin-bottom: 10px;
+}
+
+#rules-text li {
+    padding: 2px 10px;
+}
+
+#start, #rules-button {
+    background-color: rgb(2, 2, 41);
+    color:rgb(145, 216, 216);
+    font-family: 'Nova Square', cursive;
+    font-size:large;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 8px #558;
+}
+
+
+#start:hover, #rules-button:hover {
+    color: gold;
+    background-color: rgb(11, 11, 70);
+    box-shadow: 0 8px #558;
+}
+
+#start:active #rules-button:active {
+ box-shadow: 0px 4px #558;
+ background-color: rgb(11, 11, 70);
+ transform: translateY(4px)
+}
 
 /* styles for container holding elements of the game */
 #game-container {
