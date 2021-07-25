@@ -47,6 +47,9 @@ const tryNextButton = document.getElementById('try-next');
 const quitButtons = document.getElementsByClassName('quit');
 const continueButton = document.getElementById('continue');
 const endGameModal = document.getElementById('end-game');
+const reachPlutoModal = document.getElementById('reach-pluto');
+const finalFuel = document.getElementById('final-fuel');
+const playAgainButton = document.getElementById('play-again');
 
 //date variable for use in question about Neptune
 let date = new Date();
@@ -531,7 +534,8 @@ If fuel is already at 0 and current planet is not Mercury display a modal to inf
 function checkAnswer(e) {
     if (e.target.id === currentQuestion.correct) {
         if (planetQIndex == 7) {
-            alert('Reached Pluto');          
+            hideGame(); 
+            reachPlutoModal.classList.remove('hide');         
         }
         else {
             hideGame();

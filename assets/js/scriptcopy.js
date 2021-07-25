@@ -422,7 +422,7 @@ tries = 2;
 function checkAnswer(e) {
     if (e.target.id === currentQuestion.correct) {
         if(planetQIndex == 7) {
-            alert('You reached Pluto!')
+            reachPlutoModal.classList.remove('hide');
         }
         else {
             correctModal.classList.remove('hide')
