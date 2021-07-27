@@ -31,7 +31,7 @@ header h1 {
 /* styles for game background image */
 #background-container {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin: 0;
     background: url('../images/Space-background.jpg') no-repeat center center;
     background-size: cover;
@@ -374,4 +374,27 @@ header h1 {
  box-shadow: 0px 4px #558;
  background-color: rgb(11, 11, 70);
  transform: translateY(4px)
+}
+
+
+/*Media queries */
+
+@media screen and (max-width: 600px) {
+
+
+    #background-container {
+        height: 180vh;      
+
+    }
+    
+    
+    #intro-container, #rules-container {
+        width: 80vw;
+        top: 10vh;
+        padding: 15px;
+        border: greenyellow 5px solid;
+        box-shadow: 0px 0px 20px 20px greenyellow;
+        margin-bottom: 5vh;
+    } 
+
 }
