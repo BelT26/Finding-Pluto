@@ -49,6 +49,7 @@ const continueButton = document.getElementById('continue');
 const endGameModal = document.getElementById('end-game');
 const reachPlutoModal = document.getElementById('reach-pluto');
 const finalFuel = document.getElementById('final-fuel');
+const finalComment = document.getElementById('final-comment');
 const playAgainButton = document.getElementById('play-again');
 
 //date variable for use in question about Neptune
@@ -279,7 +280,7 @@ const questions = [
             bAnswer:'800 mph',
             cAnswer:'1200 mph',
             correct:'C',
-            info: ''
+            info: 'The winds on Neptune are so fast that they break the sound barrier'
         },
         {
             question: 'Neptune was named after the roman god of ...',
@@ -534,8 +535,11 @@ If fuel is already at 0 and current planet is not Mercury display a modal to inf
 function checkAnswer(e) {
     if (e.target.id === currentQuestion.correct) {
         if (planetQIndex == 7) {
+            if (tries > 0) {
+                addFuel();
+            }
             hideGame(); 
-            reachPlutoModal.classList.remove('hide');         
+            reachPluto();         
         }
         else {
             hideGame();
@@ -655,6 +659,43 @@ function secondQuestionSamePlanet() {
     tries = 2;
     showGame();
     displayQuestion();
+}
+
+let finalMessage = ''; 
+
+switch(currentFuel) {
+    case 0:
+        finalMessage = 'No fuel remaining';
+        break;
+    case 1:
+    case 2:
+    case 3:
+        finalMessage = 'Well done!';
+        break;
+    case 4:
+    case 5:
+    case 6:
+        finalMessage = 'A great score!';
+        break;
+    case 7:
+    case 8:
+        finalMessage = 'A fantastic voyage! Your planetary knowledge is amazing!';
+        break;
+    case 9:
+        finalMessage = 'The perfect score!  Absolutely out of this world!';
+        break;
+    default:
+        finalMessage = 'Fuel gauge malfunction!';                                
+}
+
+
+function reachPluto() {
+    hideGame(); 
+    if (currentFuel > 0) { 
+    finalFuel.innerText = `You have ${currentFuel} fuel units in the tank`;
+    }
+    finalComment.innerText = finalMessage;
+    reachPlutoModal.classList.remove('hide');
 }
 
 function endGame() {
