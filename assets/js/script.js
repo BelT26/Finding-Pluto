@@ -148,13 +148,13 @@ const questions = [
     ],
     [
         {
-            question: 'Mars has a distinctive reddish brown colour because it contains rusty iron because of this it is also know as...',
+            question: 'Mars has a distinctive reddish brown colour because of this it is also know as...',
             qImg: '',
             aAnswer: 'the rusty planet',
             bAnswer:'the red planet',
             cAnswer:'the fiery planet',
             correct:'B',
-            info: ''
+            info: 'Mars is red because its surface contains rusty iron oxide'
         },
         {
             question: 'Mars is home to Olympus Mons the largest volcano in the solar system.  How many times bigger than Mount Everest do you thinkit could be?',
@@ -163,7 +163,7 @@ const questions = [
             bAnswer:'5',
             cAnswer:'10',
             correct:'A',
-            info: ''
+            info: 'Mount Everest is 8,489m whilst Olmpus Mons is about 22km high'
         },
         {
             question: 'There\'s somebody else out here.  Plutina has just bumped into Nasa\'s latest space rover Perseverance.  Perseverance is busy trying to extract a gas from the atmosphere on Mars that could be used to allow astronauts on future explorations of the planet to breathe.  Which gas is Perseverance trying to extract?',
@@ -172,7 +172,7 @@ const questions = [
             bAnswer:'Hydrogen',
             cAnswer:'Oxygen',
             correct:'C',
-            info: ''
+            info: 'Only a limited amount of oxygen can be carried on a space craft. If a way is found of extracting oxygen, astronauts will be able to complete longer missions to Mars'
         },
     ],
     [
@@ -183,7 +183,7 @@ const questions = [
             bAnswer: 'A crater',
             cAnswer:'A lake',
             correct:'A',
-            info: ''
+            info: 'The red spot is about 1.3 times the size of Earth and the fierce winds rage at nearly 300 miles per hour!'
         },
         {
             question: 'Jupiter is the immense giant of the solar system.  How many planets the size of the Earth do you think could fit inside Jupiter?',
@@ -192,16 +192,16 @@ const questions = [
             bAnswer:'450',
             cAnswer:'1300',
             correct:'C',
-            info: ''
+            info: 'The surface of Jupiter is a massive 23,714 million square miles!'
         },
         {
-            question: 'Jupiter3',
+            question: 'Plutina isn\'t able to land her spacecraft on Jupiter so she docks instead on Ganymede, the largest of Jupiter\'s 79 moons.  Why do you think she was unable to touch down on Jupiter?',
             qImg: '',
-            aAnswer: 'A',
-            bAnswer:'B',
-            cAnswer:'C',
+            aAnswer: 'It\'s made of water',
+            bAnswer:'It\'s made of gas',
+            cAnswer:'It has no gravity',
             correct:'B',
-            info: ''
+            info: 'Whilst the planets we\'ve visited up until now have been solid, Jupiter, Saturn, Uranus and Neptune are all known as gas giants.'
         },
     ],
     [
@@ -212,7 +212,7 @@ const questions = [
             bAnswer:'Gas',
             cAnswer:'Rays of light',
             correct:'A',
-            info: ''
+            info: 'The icy chunks that make up the rings can be as small as a particle of dust or larger than a house.'
         },
         {
             question:'If you could find an ocean large enough to put Saturn in what do you think would happen to it?',
@@ -221,27 +221,27 @@ const questions = [
             bAnswer:'It would float',
             cAnswer:'It would sink',
             correct:'B',
-            info: ''
+            info: 'Saturn is the least dense of all the planets and is lighter than water.'
         },
         {
-            question: 'Saturn3',
+            question: 'As well as being surrounded by beautiful rings, Saturn has lot of moons orbiting around it.  How many do you think there are?',
             qImg: '',
-            aAnswer: 'A',
-            bAnswer:'B',
-            cAnswer:'C',
+            aAnswer: '82',
+            bAnswer:'54',
+            cAnswer:'21',
             correct:'A',
-            info: ''
+            info: 'Saturn has more moons than any other planet in the solar system. Jupiter is the next closest with 79 moons'
         },
     ],
     [
         {
             question: 'Plutina\'s head is starting to spin on Uranus.  Something doesn\'t feel quite right.  What could be causing the strange sensation?',
             qImg: '',
-            aAnswer: 'Uranus is the fastest spinning planet',
-            bAnswer:'Uranus changes the direction it spins once a day',
-            cAnswer:'Uranus spins on its side',
+            aAnswer: 'It is the fastest spinning planet',
+            bAnswer:'It changes the direction it spins',
+            cAnswer:'It spins on its side',
             correct:'C',
-            info: ''
+            info: 'Uranus is the only planet to spin on its side. Because of this half of the planet is in darkness for 42 years!'
         },
         {
             question: 'It\'s a bit lonely over in Uranus as it doesn\'t get many visitors.  How many times do you think a space ship from Earth has visited here',
@@ -250,7 +250,7 @@ const questions = [
             bAnswer:'1',
             cAnswer:'3',
             correct:'B',
-            info: ''
+            info: 'In 1986 NASA\'s Voyager 2 made the first and only mission to Uranus.'
         },
         {
             question: 'Uranus is the ________ planet',
@@ -258,19 +258,19 @@ const questions = [
             aAnswer: 'Stormiest',
             bAnswer:'Coldest',
             cAnswer:'Largest',
-            correct:'B',
-            info: ''
+            correct: 'B',
+            info: 'The average temperature on Uranus is -216 degrees centigrade.  Winter on Uranus lasts around 20 Earth years. Brrrr',
         },
     ],
     [
         {
-            question: 'Neptune takes the longest time of all plaents to orbit the sun.  One year on Neptune is the same as 165 years on earth. What year would it have been on Earth one Neptunian year ago?',
+            question: 'Neptune takes the longest time of all planets to orbit the sun.  One year on Neptune is the same as 165 years on earth. What year would it have been on Earth one Neptunian year ago?',
             qImg: '',
             aAnswer: currentYear-165,
             bAnswer: currentYear-155,
             cAnswer: currentYear-145,
             correct:'A',
-            info: ''
+            info: `If you started counting from now, the next year on Neptune would begin in ${currentYear + 165}`
         },
         {
             question: 'There\'s quite a storm here on Neptune.  Best not hang around too long or Plutina may be blown away. What speed do you think the winds on Neptune can reach?',
@@ -288,7 +288,7 @@ const questions = [
             bAnswer:'war',
             cAnswer:'travel',
             correct:'A',
-            info: ''
+            info: 'The roman sea god Neptune is the brother of Pluto, the god of the underworld, after whom Plutina\'s home was named'
         }
         
     ],
