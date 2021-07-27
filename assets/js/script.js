@@ -527,25 +527,16 @@ startButton.addEventListener('click', startGame);
 let tries = 2;
 
 
-/*Check if the answer given matches the correct answer. Display a success message as a modal 
-if answer is correct. If the next planet is Pluto display message to inform user that they have successfully completed their mission.
+/*Check if the answer given matches the correct answer.  
+if answer is correct, display a success message as a modal.
 If answer is incorrect decrement number of tries by 1. If remaining tries are greater than 0 display a modal to enable user to try again.  
 If remaining tries are 0, decrement fuel by 1 and display 'wrong again' modal.
 If fuel is already at 0 and current planet is not Mercury display a modal to inform user that they are moving back a planet*/
 function checkAnswer(e) {
     if (e.target.id === currentQuestion.correct) {
-        if (planetQIndex == 7) {
-            if (tries > 0) {
-                addFuel();
-            }
-            hideGame(); 
-            reachPluto();         
-        }
-        else {
-            hideGame();
-            answerInfo.innerText = currentQuestion.info;
-            correctModal.classList.remove('hide');         
-        }           
+        hideGame();
+        answerInfo.innerText = currentQuestion.info;
+        correctModal.classList.remove('hide');         
     } 
     else {
         tries --;
@@ -631,10 +622,21 @@ function changePlanetStats() {
     moons.innerText = pl.moons;
 }
 
-/*functions to move to next level after correctly answering question. Hides success modal. Increments fuel level by one.
-Moves active class on flight path to next planet. Updates the planet stats and question displayed. Resets number of tries*/
+/*functions to move to next level after correctly answering question. 
+Hides success modal.
+Increments fuel level by one.
+If the next planet is Pluto activates reachPluto function to inform user that they have successfully completed their mission. 
+Otherwise, moves active class on flight path to next planet. Updates the planet stats and question displayed. Resets number of tries*/
 
 function triggerBlastOff() {
+    if (planetQIndex == 7) {
+        if (tries > 0) {
+            addFuel();
+        }
+        hideGame(); 
+        reachPluto();         
+    }
+    else {
     correctModal.classList.add('hide');
     showGame();
     addFuel();
@@ -642,6 +644,7 @@ function triggerBlastOff() {
     changePlanetStats();
     updateQuestion();
     tries = 2;
+    }
 }
 
 /* hides modal to give user a second attempt to give a correct answer */
@@ -661,6 +664,7 @@ function secondQuestionSamePlanet() {
     displayQuestion();
 }
 
+// sets a message to display to the user depending on the fuel remaining
 let finalMessage = ''; 
 
 switch(currentFuel) {
