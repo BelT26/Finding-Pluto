@@ -420,118 +420,90 @@ header h1 {
         padding: 10px;        
     }
 
-    #gauge-container h2 {
-        display: inline;
-        font-family: 'Nova Square', cursive;
-    }
-
-    #fuel-number {
-        text-align: center;
-        height: 30px;
-        width: 30px;
-    }
-
-
+    
     #gauge {
-        border: solid black 1px;
-        width: 50px;
-        height: 250px;
-        border-radius: 10px;
-        display: flex;
-        align-items: flex-end;
-        margin: 20px;
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
         display: none;
     }
 
-    #fuel-in-gauge {
-        border: solid black 1px;
-        width: 50px;
-        height: 25px;
-        border-radius: 10px;
-        background-color: yellow;  
-        display: none;  
+    
+    /* styles for the questions section */
+    #questions-container {
+        height: auto;
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-self: center;
+        justify-items: center;
+        border-radius: 20px;
+        background-color: azure;
+        padding: 15px;
+        margin: 20px auto;
     }
 
-    /* styles for the questions section */
-#questions-container {
-    height: auto;
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-self: center;
-    justify-items: center;
-    border-radius: 20px;
-    background-color: azure;
-    padding: 15px;
-    margin: 20px auto;
-}
+    #question-image {
+        display: none;
+    }
 
-#question-image {
-    display: none;
+    #question-text {
+        text-align: center;
+        width: 80%;
+        height: auto;
+        margin: 0px auto;
+    }
 
-}
+        
+    #answers-container {
+        width: 80%;
+        height:auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0px auto;
+    }
 
-#question-text {
-    text-align: center;
-    width: 80%;
-    height: auto;
-    margin: 0px auto;
-}
-
-#question-text h2 {
-    font-size: 1.2rem;
-}
-  
-#answers-container {
-    width: 80%;
-    height:auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0px auto;
-}
-
-.answer {
-    height: auto;
-    width: 60%;
-    border-radius: 10px;
-    border: solid darkslategray 1px;
-    text-align: center;
-    background-color: rgb(10, 5, 77);
-    color: white;
-    font-weight: 600;
-    box-shadow: 0 8px #558;
-    margin: 15px;
-   }
+    .answer {
+        height: auto;
+        width: 60%;
+        margin: 15px;
+    }
 
 
-
-/* styles for planet-stats section */
-#current-planet {
-    margin-top: 5vh;
-    width: 80%;
-    height: auto;
-    display:flex;
-    padding: 5px;
-    border-radius: 20px;
-}
+    /* styles for planet-stats section */
+    #current-planet {
+        margin-top: 5vh;
+        width: 80%;
+        height: auto;
+        display:flex;
+        padding: 5px;
+    }
 
 
-#current-planet td {
-    display: none;
-}
+    #current-planet td {
+        display: none;
+    }
 
-#current-planet img {
-    display: none;
-}
+    #current-planet img {
+        display: none;
+    }
 
 
     #flight-container {
         display: none;
     }
+    
+
+    /*style modal elements */
+    .modal-info {
+        width: 70vw;
+        padding: 15px;
+        margin-top: 10px;
+    }
 }
+
+
+
+
+
+
+
