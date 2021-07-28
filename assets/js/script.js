@@ -363,7 +363,7 @@ let currentStatsIndex = 0;
 const planetStats = [
     {
         name: 'Mercury',
-        imgSrc: 'assets/images/flight1.jpg',
+        imgSrc: 'assets/images/stats1.jpg',
         dayLength: '59 days',
         yearLength: '88 days',
         size: '4,879',
@@ -372,7 +372,7 @@ const planetStats = [
     },
     {
         name: 'Venus',
-        imgSrc: 'assets/images/flight2.jpg',
+        imgSrc: 'assets/images/stats2.jpg',
         size: '12,104',
         yearLength: '243 days',
         dayLength: '224 days',
@@ -381,7 +381,7 @@ const planetStats = [
     },
     {
         name: 'Earth',
-        imgSrc: 'assets/images/flight3.jpg',
+        imgSrc: 'assets/images/stats3.jpg',
         size: '12,756',
         yearLength: '365.25 days',
         dayLength: '24 hours',
@@ -390,7 +390,7 @@ const planetStats = [
     },
     {
         name: 'Mars',
-        imgSrc: 'assets/images/flight4.jpg',
+        imgSrc: 'assets/images/stats4.jpg',
         size: '6,792',
         dayLength: '24.6 hours',
         yearLength: '687 days',
@@ -399,7 +399,7 @@ const planetStats = [
     },
     {
         name: 'Jupiter',
-        imgSrc: 'assets/images/flight5.jpg',
+        imgSrc: 'assets/images/stats5.jpg',
         size: '142,984',
         dayLength: '10 hours',
         yearLength: '12 years',
@@ -408,7 +408,7 @@ const planetStats = [
     },
     {
         name: 'Saturn',
-        imgSrc: 'assets/images/flight6.jpg',
+        imgSrc: 'assets/images/stats6.jpg',
         size: '120,536',
         dayLength: '10.6 hours',
         yearLength: '29 years',
@@ -417,7 +417,7 @@ const planetStats = [
     },
     {
         name: 'Uranus',
-        imgSrc: 'assets/images/flight6.jpg',
+        imgSrc: 'assets/images/stats7.jpg',
         size: '51,118',
         dayLength: '17 hours',
         yearLength: '84 hours',
@@ -426,7 +426,7 @@ const planetStats = [
     },
     {
         name: 'Neptune',
-        imgSrc: 'assets/images/flight8.jpg',
+        imgSrc: 'assets/images/stats8.jpg',
         size: '49,528',
         dayLength: '16 hours',
         yearLength: '165 years',
