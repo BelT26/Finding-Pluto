@@ -670,7 +670,6 @@ function updateMessage(fuel) {
         case 1:
         case 2:
         case 3:
-            console.log(`current fuel: ${currentFuel}`)
             finalMessage = 'Well done!';
             break;
         case 4:
@@ -696,9 +695,16 @@ function reachPluto() {
     hideGame(); 
     updateMessage(currentFuel);
     if (currentFuel > 0) { 
-    finalFuel.innerText = `You have ${currentFuel} fuel units in the tank`;
+        finalFuel.style.fontWeight = 'bold';
+         if(currentFuel > 1) {
+            finalFuel.innerText = `You have ${currentFuel} fuel units in the tank`;
+         }
+         else {
+            finalFuel.innerText = `You have ${currentFuel} fuel unit in the tank`;
+         }
     }
     finalComment.innerText = finalMessage;
+    finalComment.style.fontWeight = '800';
     reachPlutoModal.classList.remove('hide');
 }
 
