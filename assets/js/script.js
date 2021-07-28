@@ -44,13 +44,15 @@ const noFuelModal = document.getElementById('no-fuel');
 const blastOff = document.getElementById('blast-off');
 const tryAgainButton = document.getElementById('try-again');
 const tryNextButton = document.getElementById('try-next');
-const quitButtons = document.getElementsByClassName('quit');
+const quitButton1 = document.getElementsById('quit1');
+const quitButton2 = document.getElementById('quit2');
 const continueButton = document.getElementById('continue');
 const endGameModal = document.getElementById('end-game');
 const reachPlutoModal = document.getElementById('reach-pluto');
 const finalFuel = document.getElementById('final-fuel');
 const finalComment = document.getElementById('final-comment');
 const playAgainButton = document.getElementById('play-again');
+const closeButton = document.getElementById
 
 //date variable for use in question about Neptune
 let date = new Date();
@@ -315,7 +317,7 @@ displayQuestion();
 
 //variables to set and display gauge and fuel level
 let currentFuel = 1;
-const maxFuel = 10;
+const maxFuel = 9;
 const gaugeHeight = 250;
 const fuelUnit = gaugeHeight / maxFuel;
 
@@ -518,8 +520,7 @@ rulesButton.addEventListener('click', showRules)
 startButton.addEventListener('click', startGame);
 
 //resets all values and updates stats, fuel, progress and question displayed
-function playAgain() {
-    reachPlutoModal.classList.add('hide');
+function resetGame() {
     resetFuel();
     activePlanet.classList.remove('active');
     currentProgress = 1;
@@ -732,11 +733,26 @@ function endGame() {
     endGameModal.classList.remove('hide');
 }
 
+function endGameNoFuel() {
+    noFuelModal.classList.add('hide');
+    endGameModal.classList.remove('hide');
+}
+
+function playAgain() {
+    reachPlutoModal.classList.add('hide');
+    resetGame();
+}
+
+function closeModal() {
+    endGameModal.classList.add('hide');
+    resetGame();
+}
+
 //add event listeners to modal buttons
 blastOff.addEventListener('click', triggerBlastOff);
 tryAgainButton.addEventListener('click', secondTry);
 tryNextButton.addEventListener('click', secondQuestionSamePlanet);
-for (button of quitButtons) {
-    button.addEventListener('click', endGame);
-}
+quitButton1.addEventListener('click', endGame);
+quitButton2.addEventListener('click', endGameNoFuel);
 continueButton.addEventListener('click', retreat);
+closeButton.addEventListener('click', 'closeModal')
