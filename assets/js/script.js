@@ -125,16 +125,16 @@ const questions = [
             bAnswer:'61%',
             cAnswer:'71%',
             correct:'C',
-            info: 'With water covering over 70% of it\'s surface, Earth is sometimes referred to as the "blue planet"', 
+            info: 'With water covering over 70% of it\'s surface, Earth is sometimes referred to as the "blue planet".', 
         },
         {
-            question: 'Wow! It\'s very crowded here compared the sparsely inhabited world of Pluto.  About how many people do think inhabit the earth',
+            question: 'Wow! It\'s very crowded here compared the sparsely inhabited world of Pluto.  About how many people do think inhabit the earth?',
             qImg: '',
             aAnswer: '700 million',
             bAnswer:'8 billion',
             cAnswer:'3 trillion',
             correct:'B',
-            info:  '100 years ago there were under 2 billion people on earth, meaning the word\'s population has quadrupled since then', 
+            info:  '100 years ago there were under 2 billion people on earth, meaning the word\'s population has quadrupled since then.', 
         },
         {
             question: 'Earth is the first planet on Plutina\'s journey that has its own moon. Do you know when a man first walked on the moon?',
@@ -149,7 +149,7 @@ const questions = [
     ],
     [
         {
-            question: 'Mars has a distinctive reddish brown colour because of this it is also know as...',
+            question: 'Mars has a distinctive reddish brown colour and because of this it is also know as...',
             qImg: '',
             aAnswer: 'the rusty planet',
             bAnswer:'the red planet',
@@ -158,13 +158,13 @@ const questions = [
             info: 'Mars is red because its surface contains rusty iron oxide'
         },
         {
-            question: 'Mars is home to Olympus Mons the largest volcano in the solar system.  How many times bigger than Mount Everest do you thinkit could be?',
+            question: 'Mars is home to Olympus Mons the largest volcano in the solar system.  How many times bigger than Mount Everest do you think it could be?',
             qImg: '',
             aAnswer: '2.5',
             bAnswer:'5',
             cAnswer:'10',
             correct:'A',
-            info: 'Mount Everest is 8,489m whilst Olmpus Mons is about 22km high'
+            info: 'Mount Everest reaches 8.5km, whilst Olmpus Mons is about 22km high'
         },
         {
             question: 'There\'s somebody else out here.  Plutina has just bumped into Nasa\'s latest space rover Perseverance.  Perseverance is busy trying to extract a gas from the atmosphere on Mars that could be used to allow astronauts on future explorations of the planet to breathe.  Which gas is Perseverance trying to extract?',
@@ -662,34 +662,39 @@ function secondQuestionSamePlanet() {
 // sets a message to display to the user depending on the fuel remaining
 let finalMessage = ''; 
 
-switch(currentFuel) {
-    case 0:
-        finalMessage = 'No fuel remaining';
-        break;
-    case 1:
-    case 2:
-    case 3:
-        finalMessage = 'Well done!';
-        break;
-    case 4:
-    case 5:
-    case 6:
-        finalMessage = 'A great score!';
-        break;
-    case 7:
-    case 8:
-        finalMessage = 'A fantastic voyage! Your planetary knowledge is amazing!';
-        break;
-    case 9:
-        finalMessage = 'The perfect score!  Absolutely out of this world!';
-        break;
-    default:
-        finalMessage = 'Fuel gauge malfunction!';                                
+function updateMessage(fuel) {
+    switch(fuel) {
+        case 0:
+            finalMessage = 'No fuel remaining';
+            break;
+        case 1:
+        case 2:
+        case 3:
+            console.log(`current fuel: ${currentFuel}`)
+            finalMessage = 'Well done!';
+            break;
+        case 4:
+        case 5:
+        case 6:
+            finalMessage = 'A great score!';
+            break;
+        case 7:
+        case 8:
+            finalMessage = 'A fantastic voyage! Your planetary knowledge is amazing!';
+            break;
+        case 9:
+            finalMessage = 'The perfect score!  Absolutely out of this world!';
+            break;
+        default:
+            finalMessage = 'Fuel gauge malfunction!';                                
+    }
+    return finalMessage
 }
 
 
 function reachPluto() {
     hideGame(); 
+    updateMessage(currentFuel);
     if (currentFuel > 0) { 
     finalFuel.innerText = `You have ${currentFuel} fuel units in the tank`;
     }

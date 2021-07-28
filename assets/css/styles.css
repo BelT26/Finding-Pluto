@@ -317,7 +317,7 @@ header h1 {
 #intro-container, #rules-container {
     width: 70vw;
     height: auto;
-    background-color:azure;
+    background-color:rgb(243, 250, 248);
     display: block;
     position: relative;
     border-radius: 20px;
@@ -355,12 +355,12 @@ header h1 {
 }
 
 #rules-text li {
-    padding: 2px 10px;
+    padding: 5px 10px;
 }
 
 #start, #rules-button {
     background-color: rgb(2, 2, 41);
-    color:rgb(145, 216, 216);
+    color: gold;
     font-family: 'Nova Square', cursive;
     font-size:large;
     font-weight: 600;
@@ -373,7 +373,7 @@ header h1 {
 
 
 #start:hover, #rules-button:hover {
-    color: gold;
+    color:rgb(145, 216, 216);
     background-color: rgb(11, 11, 70);
     box-shadow: 0 8px #558;
 }
@@ -381,7 +381,7 @@ header h1 {
 #start:active #rules-button:active {
  box-shadow: 0px 4px #558;
  background-color: rgb(11, 11, 70);
- transform: translateY(4px)
+ transform: translateY(4px);
 }
 
 
