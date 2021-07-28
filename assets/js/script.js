@@ -517,6 +517,25 @@ function startGame() {
 rulesButton.addEventListener('click', showRules)
 startButton.addEventListener('click', startGame);
 
+//resets all values and updates stats, fuel, progress and question displayed
+function playAgain() {
+    reachPlutoModal.classList.add('hide');
+    resetFuel();
+    activePlanet.classList.remove('active');
+    currentProgress = 1;
+    activePlanet = flightPathPlanets[currentProgress];
+    activePlanet.classList.add('active');
+    currentStatsIndex = 0;
+    displayStats()
+    gameContainer.classList.remove('hide');
+    flightContainer.classList.remove('hide');
+    planetQIndex = 0;
+    qIndex = Math.floor(Math.random()*3);
+    currentQuestion = questions[planetQIndex][qIndex];
+    displayQuestion();
+}
+
+playAgainButton.addEventListener('click', playAgain);
 
 //set the initial number of available attempts to answer question to 2. 
 let tries = 2;
@@ -692,7 +711,7 @@ function updateMessage(fuel) {
 
 
 function reachPluto() {
-    hideGame(); 
+    correctModal.classList.add('hide'); 
     updateMessage(currentFuel);
     if (currentFuel > 0) { 
         finalFuel.style.fontWeight = 'bold';
