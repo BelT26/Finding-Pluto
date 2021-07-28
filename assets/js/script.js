@@ -490,7 +490,7 @@ for(let i=0; i<flightPathPlanetNames.length; i++) {
     planetLabel.style.fontFamily = 'Nova Square';
     const newImg = document.createElement('img');
     newImg.style.height = '70px';
-    if (i === 9) {
+    if (i === 0 || i === 9) {
         newImg.src = `assets/images/flight${i}.png`;
     }
     else {
