@@ -29,7 +29,7 @@ const size = document.getElementById('size');
 const year = document.getElementById('year');
 const day = document.getElementById('day');
 const distance = document.getElementById('distance');
-const moons = document.getElementById('moons');
+const type = document.getElementById('type');
 
 //html elements for flight path
 const progressContainer = document.getElementById('progress');
@@ -364,74 +364,74 @@ const planetStats = [
     {
         name: 'Mercury',
         imgSrc: 'assets/images/flight1.jpg',
-        size: '3,031 miles',
         dayLength: '59 days',
         yearLength: '88 days',
-        distance: '36 million',
-        moons: '0'
+        size: '4,879',
+        distance: '58 million',
+        type: 'terrestrial'    
     },
     {
         name: 'Venus',
         imgSrc: 'assets/images/flight2.jpg',
-        size: '7,521 miles',
+        size: '12,104',
         yearLength: '243 days',
         dayLength: '224 days',
-        distance: '67 million',
-        moons: '0'
+        distance: '108 million',
+        type: 'terrestrial'
     },
     {
         name: 'Earth',
         imgSrc: 'assets/images/flight3.jpg',
-        size: '7,926 miles',
+        size: '12,756',
         yearLength: '365.25 days',
         dayLength: '24 hours',
-        distance: '93 million',
-        moons: '1'
+        distance: '150 million',
+        type: 'terrestrial'
     },
     {
         name: 'Mars',
         imgSrc: 'assets/images/flight4.jpg',
-        size: '4,222 miles',
+        size: '6,792',
         dayLength: '24.6 hours',
         yearLength: '687 days',
-        distance: '142 million',
-        moons: '2'
+        distance: '228 million',
+        type: 'terrestrial'
     },
     {
         name: 'Jupiter',
         imgSrc: 'assets/images/flight5.jpg',
-        size: '88,846 miles',
+        size: '142,984',
         dayLength: '10 hours',
         yearLength: '12 years',
-        distance: '483 million',
-        moons: '79'
+        distance: '779 million',
+        type: 'gas giant'
     },
     {
         name: 'Saturn',
         imgSrc: 'assets/images/flight6.jpg',
-        size: '74,900 miles',
+        size: '120,536',
         dayLength: '10.6 hours',
         yearLength: '29 years',
-        distance: '889 million',
-        moons: '82'
+        distance: '1,434 million',
+        type: 'gas giant'        
     },
     {
         name: 'Uranus',
         imgSrc: 'assets/images/flight6.jpg',
-        size: '31,763 miles',
+        size: '51,118',
         dayLength: '17 hours',
         yearLength: '84 hours',
-        distance: '1,784 million',
-        moons: '27'
+        distance: '2,873 million',
+        type: 'ice giant'
     },
     {
         name: 'Neptune',
         imgSrc: 'assets/images/flight8.jpg',
-        size: '30,779 miles',
+        size: '49,528',
         dayLength: '16 hours',
         yearLength: '165 years',
-        distance: '2,798',
-        moons: '14'
+        distance: '4,495 million',
+        type: 'ice giant'
     },
 ]    
 let pl = planetStats[currentStatsIndex];
@@ -447,7 +447,7 @@ size.innerText = pl.size;
 year.innerText = pl.yearLength;
 day.innerText = pl.dayLength;
 distance.innerText = pl.distance;
-moons.innerText = pl.moons;
+type.innerText = pl.type;
 }
 
 displayStats()
@@ -619,7 +619,7 @@ function changePlanetStats() {
     year.innerText = pl.yearLength;
     day.innerText = pl.dayLength;
     distance.innerText = pl.distance;
-    moons.innerText = pl.moons;
+    type.innerText = pl.type;
 }
 
 /*functions to move to next level after correctly answering question. 
