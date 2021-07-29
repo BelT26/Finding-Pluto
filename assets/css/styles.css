@@ -30,7 +30,7 @@ header h1 {
 
 
 /* styles for game background image */
-#background-container {
+#background-container, #modal-background {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -111,10 +111,15 @@ header h1 {
 #question-image {
     height: 25vh;
     width: 80%;
-    border: solid darkslategray 1px;
     display: block;
     margin: 20px auto 10px;
+    border: none;
+    text-align: center;
 
+}
+
+#question-image img {
+    margin: 0 auto;
 }
 
 #question-text {
@@ -388,15 +393,12 @@ header h1 {
 
 /*Media queries */
 
-@media screen and (max-width: 600px) {
-
+@media screen and (max-width: 800px) {
 
     #background-container {
         height: 180vh;      
-
-    }
-    
-    
+    }    
+   
     #intro-container, #rules-container {
         width: 80vw;
         top: 10vh;

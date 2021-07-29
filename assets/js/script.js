@@ -75,7 +75,7 @@ const questions = [
             bAnswer:'hottest',
             cAnswer:'largest',
             correct:'A',
-            info: 'Although Mercury is bigger than Pluto, which is a dwarf planet, it is only about a third of the size of the earth',
+            info: 'Although Mercury is bigger than Pluto, which is a dwarf planet, it is only about a third of the size of the earth.',
         },
         {
             question: 'In which item would you find the metal mercury used?',
@@ -84,7 +84,7 @@ const questions = [
             bAnswer:'thermometer',
             cAnswer:'radiator',
             correct:'B',
-            info: 'Mercury is used in thermometers as it expands and contracts according to the temperature',
+            info: 'Mercury is used in thermometers as it expands and contracts according to the temperature.',
         },
         {
             question: 'Mercury is the fastest planet to orbit the sun taking just 88 days.  How many birthdays would you have on Mercury in one earth year?',
@@ -104,16 +104,16 @@ const questions = [
             bAnswer:'smallest',
             cAnswer:'coldest',
             correct:'A',
-            info: 'Despite being further from the sun, Venus is hotter than Mercury as it has a thick atmosphere of carbon dioxide that keeps the heat in',
+            info: 'Despite being further from the sun, Venus is hotter than Mercury as it has a thick atmosphere of carbon dioxide that keeps the heat in.',
         },
         {
-            question: 'Venus is sometimes called this planet\'s twin as they are very similar in size',
+            question: 'Venus is sometimes called this planet\'s twin as they are very similar in size.',
             qImg: '',
             aAnswer: 'Neptune',
             bAnswer:'Earth',
             cAnswer:'Mars',
             correct:'B',
-            info: 'Venus is about 90% of the size of the earth',
+            info: 'Venus is about 90% of the size of the earth.',
         },
         {
             question: 'There\'s something unusual about the way Venus is spinning.  Can you guess what it is?',
@@ -151,7 +151,7 @@ const questions = [
             bAnswer:'1979',
             cAnswer:'1989',
             correct:'A',            
-            info: 'Neil Armstrong was the first man to set foot on the moon on July 20th 1969'
+            info: 'Neil Armstrong was the first man to set foot on the moon on July 20th 1969.'
         },
       
     ],
@@ -163,7 +163,7 @@ const questions = [
             bAnswer:'the red planet',
             cAnswer:'the fiery planet',
             correct:'B',
-            info: 'Mars is red because its surface contains rusty iron oxide'
+            info: 'Mars is red because its surface contains rusty iron oxide.'
         },
         {
             question: 'Mars is home to Olympus Mons the largest volcano in the solar system.  How many times bigger than Mount Everest do you think it could be?',
@@ -172,7 +172,7 @@ const questions = [
             bAnswer:'5',
             cAnswer:'10',
             correct:'A',
-            info: 'Mount Everest reaches 8.5km, whilst Olmpus Mons is about 22km high'
+            info: 'Mount Everest is about 8.5km high, whilst Olmpus Mons is a towering 22km.'
         },
         {
             question: 'There\'s somebody else out here.  Plutina has just bumped into Nasa\'s latest space rover Perseverance.  Perseverance is busy trying to extract a gas from the atmosphere on Mars that could be used to allow astronauts on future explorations of the planet to breathe.  Which gas is Perseverance trying to extract?',
@@ -181,7 +181,7 @@ const questions = [
             bAnswer:'Hydrogen',
             cAnswer:'Oxygen',
             correct:'C',
-            info: 'Only a limited amount of oxygen can be carried on a space craft. If a way is found of extracting oxygen, astronauts will be able to complete longer missions to Mars'
+            info: 'Only a limited amount of oxygen can be carried on a space craft. If a way is found of extracting oxygen, astronauts will be able to complete longer missions to Mars.'
         },
     ],
     [
@@ -210,7 +210,7 @@ const questions = [
             bAnswer:'It\'s made of gas',
             cAnswer:'It has no gravity',
             correct:'B',
-            info: 'Whilst the planets we\'ve visited up until now have been solid, Jupiter, Saturn, Uranus and Neptune are all known as gas giants.'
+            info: 'Whilst the planets we\'ve visited up until now have been solid, Jupiter, Saturn, Uranus and Neptune are all mostly composed of gas.'
         },
     ],
     [
@@ -239,7 +239,7 @@ const questions = [
             bAnswer:'54',
             cAnswer:'21',
             correct:'A',
-            info: 'Saturn has more moons than any other planet in the solar system. Jupiter is the next closest with 79 moons'
+            info: 'Saturn has more moons than any other planet in the solar system. Jupiter is the next closest with 79 moons.'
         },
     ],
     [
@@ -268,7 +268,7 @@ const questions = [
             bAnswer:'Coldest',
             cAnswer:'Largest',
             correct: 'B',
-            info: 'The average temperature on Uranus is -216 degrees centigrade.  Winter on Uranus lasts around 20 Earth years. Brrrr',
+            info: 'The average temperature on Uranus is -216 degrees centigrade.  Winter on Uranus lasts around 20 Earth years. Brrrr!',
         },
     ],
     [
@@ -279,7 +279,7 @@ const questions = [
             bAnswer: currentYear-155,
             cAnswer: currentYear-145,
             correct:'A',
-            info: `If you started counting from now, the next year on Neptune would begin in ${currentYear + 165}`
+            info: `If you started counting from now, the next year on Neptune would begin in ${currentYear + 165}.`
         },
         {
             question: 'There\'s quite a storm here on Neptune.  Best not hang around too long or Plutina may be blown away. What speed do you think the winds on Neptune can reach?',
@@ -288,7 +288,7 @@ const questions = [
             bAnswer:'800 mph',
             cAnswer:'1200 mph',
             correct:'C',
-            info: 'The winds on Neptune are so fast that they break the sound barrier'
+            info: 'The winds on Neptune are so fast that they break the sound barrier!'
         },
         {
             question: 'Neptune was named after the roman god of ...',
@@ -312,7 +312,7 @@ let currentQuestion = questions[planetQIndex][qIndex];
 
 //set the image and the text of the questions and answers
 function displayQuestion() {
-    questionImage.innerHTML = `<img src="${currentQuestion.qImg}">`
+    //questionImage.innerHTML = `<img src="${currentQuestion.qImg}">`;
     questionText.innerText = currentQuestion.question;
     answerA.innerText = currentQuestion.aAnswer;
     answerB.innerText = currentQuestion.bAnswer;
@@ -670,21 +670,23 @@ Otherwise, moves active class on flight path to next planet. Updates the planet 
 
 function triggerBlastOff() {
     if (planetQIndex == 7) {
-        if (tries > 0) {
+        if (tries > 1) {
             addFuel();
         }
         hideGame(); 
         reachPluto();         
     }
     else {
-    correctModal.classList.add('hide');
-    showGame();
-    addFuel();
-    advanceFlightPath();
-    changePlanetStats();
-    updateQuestion();
-    tries = 2;
-    }
+        correctModal.classList.add('hide');
+        showGame();
+        if (tries > 1) {
+            addFuel();
+        }
+        advanceFlightPath();
+        changePlanetStats();
+        updateQuestion();
+        tries = 2;
+        }
 }
 
 /* hides modal to give user a second attempt to give a correct answer */
