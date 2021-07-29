@@ -31,6 +31,12 @@ const day = document.getElementById('day');
 const distance = document.getElementById('distance');
 const type = document.getElementById('type');
 
+//buttons to show and hide planet stats on modal devices and affected elements
+const showStatsButton = document.getElementById('show-stats');
+const hideStatsButton = document.getElementById('hide-stats');
+const tableData = document.querySelector('tbody');
+
+
 //html elements for flight path
 const progressContainer = document.getElementById('progress');
 const flightContainer = document.getElementById('flight-container');
@@ -44,7 +50,7 @@ const noFuelModal = document.getElementById('no-fuel');
 const blastOff = document.getElementById('blast-off');
 const tryAgainButton = document.getElementById('try-again');
 const tryNextButton = document.getElementById('try-next');
-const quitButton1 = document.getElementsById('quit1');
+const quitButton1 = document.getElementById('quit1');
 const quitButton2 = document.getElementById('quit2');
 const continueButton = document.getElementById('continue');
 const endGameModal = document.getElementById('end-game');
@@ -52,9 +58,9 @@ const reachPlutoModal = document.getElementById('reach-pluto');
 const finalFuel = document.getElementById('final-fuel');
 const finalComment = document.getElementById('final-comment');
 const playAgainButton = document.getElementById('play-again');
-const closeButton = document.getElementById
+const closeButton = document.getElementById('close-modal');
 
-//date variable for use in question about Neptune
+//date variable for use in question[0] about Neptune
 let date = new Date();
 let currentYear = date.getFullYear();
 
@@ -637,6 +643,25 @@ function changePlanetStats() {
     type.innerText = pl.type;
 }
 
+//displays stats on mobile devices
+function revealStats() {
+    planetImg.style.display = 'block';
+    tableData.style.display = 'block';
+    hideStatsButton.classList.add('reveal');
+    showStatsButton.classList.remove('reveal');
+}
+
+//hides stats on mobile devices
+function hideStats() {
+    planetImg.style.display = 'none';
+    tableData.style.display = 'none';
+    hideStatsButton.classList.remove('reveal');
+    showStatsButton.classList.add('reveal');
+}
+
+showStatsButton.addEventListener('click', revealStats);
+hideStatsButton.addEventListener('click', hideStats);
+
 /*functions to move to next level after correctly answering question. 
 Hides success modal.
 Increments fuel level by one.
@@ -755,4 +780,4 @@ tryNextButton.addEventListener('click', secondQuestionSamePlanet);
 quitButton1.addEventListener('click', endGame);
 quitButton2.addEventListener('click', endGameNoFuel);
 continueButton.addEventListener('click', retreat);
-closeButton.addEventListener('click', 'closeModal')
+closeButton.addEventListener('click', closeModal);
