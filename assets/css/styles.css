@@ -208,7 +208,6 @@ header h1 {
 
 .tooltip {
     position: relative;
-    display: inline-block;
     cursor: pointer;
   }
   
@@ -217,7 +216,6 @@ header h1 {
     width: 200px;
     background-color: gold;
     color: black;
-    text-align: center;
     border-radius: 10px;
     padding: 5px;  
     position: absolute;

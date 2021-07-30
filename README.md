@@ -21,7 +21,19 @@ Similar structure could be used for a geography quiz,
 When the fuel reached 0 the original effect was not very attractive as a very thin shape remained at the bottom of the gauge
 ![empty fuel gauge]
 I rectified this by including a conditional clause in the updateFuel function that set the display of the fuel to 'none' if the current fuel was ).
-The idea for the fuel gauge was taken from the following online tutorial in which a gauge is used to track the amount of time that a user has to answer a question.
+The idea for the fuel gauge was taken from the following online tutorial in which a gauge is used to track the amount of time that a user has to answer a question. https://www.codeexplained.org/2018/10/create-multiple-choice-quiz-using-javascript.html
+
+
+## Questions
+ 
+I based the structure of the question objects and the checkAnswer function on the Code Explained tutorial mentioned in the fuel gauge section above. 
+
+I wanted to include several questions for each of the planets and so I created a multidimensional array for the question objects.
+
+The currentQuestion variable contains two indices.  The first number relates to the index of the planet the user has reached and the second is a random number between 0 and 2.  I decided to use a random number for the second index to make the game more interesting by generation a different sequence of questions each time the user plays.
+
+With time I would like to add separate illustrations by friends' children for each question. I would do this by adding a questionImage property to all of the question objects and update the displayQuestion function to retrieve the image source.
+
 
 
 ## Flight Path
@@ -49,12 +61,15 @@ for (let i = 1; i <= 151; i++) {
 }
 
 
-
 As I wanted to include the names of the planets under the images, I created an array with the planet names and used the array length as the finishing condition for the loop. As I iterated over each item I added the image height and a class so that I could use css to add styles and used the strings in the array for the label content.
 
-I also created an empty array called flightPathPlanets and pushed each planet div into it so that I could use the index to apply an active class to indicate to the user their current location.  I made a variable called 'current location' which stores the index of the planet that has the active class applied.  This starts off as 1 as the starting location is Mercury, which is the second item in the array.
+I created an empty array called flightPathPlanets and pushed each planet div into it so that I could use the index to apply an active class to indicate to the user their current location.  
 
-I made functions to update the current location and apply the active class to the next planet or go back to the previous planet. I tested these by creating temporary buttons and adding event listeners to them.  They will eventually be called automatically when certain conditions are met during the game.
+I made a variable called 'current location' which stores the index of the planet that has the active class applied.  This starts off as 1 as the starting location is Mercury, which is the second item in the array.
+
+I created functions to update the current location and apply the active class to the next planet or go back to the previous planet. I tested these by creating temporary buttons and adding event listeners to them.  The buttons have been removed and the functions are called automatically when the user answers correctly and moves to the next planet or the fuel goes below 0 and they move backwards.
+
+
 
 
 ## Bugs
@@ -81,12 +96,17 @@ show stats button - display block commented out as being overridden by hide clas
 
 could not get table to appear centered on mobile devices using justify content or auto margins. realised table blank space taking up some of container width so set size of table to autofit content.
 
-User feedback indicated that it was not clear what was meant by day or year in the planet stats section. Added tool tips to provide an explanation.
+User feedback indicated that it was not clear what was meant by day or year in the planet stats section. Added tool tips to provide an explanation and an info icon from Font Awesome. Following code used as a guide for adding tool tips:
+https://www.w3schools.com/css/css_tooltip.asp
 
-## Favicon
-Generated using favicon.io (flying saucer emoji)
 
 ## Credits
-Cartoon images for flight path Pixabay Pauolo Cesar Ventura
-Sun cartoon  Microsoft paint sticker
+The favicon was generated using the flying saucer emoji from favicon.io.
+
+The sun cartoon image in the flight path is a sticker image from Microsoft Paint 3D.
+All other images were downloaded from Pixabay from the following contributors.
+Cartoon images for flight path: Pauolo Cesar Ventura
+Cartoon image above question: Julieta Mascarella
+Images for planet stats: WikiImages
+
 Information for questions, NASA website, National Geographic and www.SciFacts.net 

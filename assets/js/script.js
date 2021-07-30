@@ -448,6 +448,7 @@ let pl = planetStats[currentStatsIndex];
 
 function displayStats() { 
 planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="150px">`
+planetImg.classList.add('responsive');
 planetName.innerText = pl.name;
 planetName.style.fontFamily = 'Nova Square';
 planetName.style.textAlign = 'center';
