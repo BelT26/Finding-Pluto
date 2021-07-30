@@ -190,6 +190,10 @@ header h1 {
     padding-bottom: 10px;
 }
 
+.responsive-img img{
+    width: 150px;
+}
+
 #current-planet .darker {
     background-color: rgb(209, 231, 231);
 }
@@ -415,6 +419,16 @@ header h1 {
 
 /*Media queries */
 
+@media screen and (max-width: 1100px) and (min-width: 800px) {
+    .responsive-img img {
+        width: 100px;
+    }
+
+    
+
+}
+
+
 @media screen and (max-width: 800px) {
 
     #background-container {
@@ -507,6 +521,8 @@ header h1 {
     }
 
 
+
+
     /* styles for planet-stats section */
     #current-planet {
         margin-top: 5vh;
@@ -517,24 +533,39 @@ header h1 {
     }
 
     #current-planet h2, #current-planet th {
-        padding-bottom: 0px;
+        padding-bottom: 5px;
     }
 
+    table {
+        width: 60%;
+        margin: 5px auto;
+        
+    }
+
+    
+    #flight-container {
+        display: none;
+    }
+   
+    /*style modal elements */
+    .modal-info {
+        width: 70vw;
+        padding: 15px;
+        margin-top: 10px;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    #planet-img {
+        display: none;
+    }
 
     #current-planet tbody {
         display: none;
         margin: 5px auto;
         width: fit-content;
-    }
-
-    #planet-img {
-        display: none;
-    }
-
-
-    #flight-container {
-        display: none;
-    }
+    }   
 
     
     #hide-stats, #show-stats{
@@ -544,15 +575,8 @@ header h1 {
     .reveal {
         display: block !important;
     }
-
-    /*style modal elements */
-    .modal-info {
-        width: 70vw;
-        padding: 15px;
-        margin-top: 10px;
-    }
+    
 }
-
 
 
 

@@ -103,10 +103,15 @@ https://www.w3schools.com/css/css_tooltip.asp
 ## Credits
 The favicon was generated using the flying saucer emoji from favicon.io.
 
+Montserrat and Nova Square fonts were imported from google fonts.
+
+The info icon was imported from Font Awesome.
+
 The sun cartoon image in the flight path is a sticker image from Microsoft Paint 3D.
-All other images were downloaded from Pixabay from the following contributors.
+
+All other images were downloaded from Pixabay from the following contributors:
 Cartoon images for flight path: Pauolo Cesar Ventura
 Cartoon image above question: Julieta Mascarella
 Images for planet stats: WikiImages
 
-Information for questions, NASA website, National Geographic and www.SciFacts.net 
+Information and inspiration for the questions was taken from t NASA website, National Geographic and www.SciFacts.net. 
