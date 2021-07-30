@@ -1,102 +1,92 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Finding Pluto
 
-Welcome BelT26,
+## Contents
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. The last update to this file was: **July 2, 2021**
+## Motivation
 
-## Gitpod Reminders
+Background - office quiz. General lack of knowledge about the order of planets
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Educational game to teach children (and adults!) about the solar system.
 
-`python3 -m http.server`
+Used a story to add interest and incentivise user to continue to end of the game
 
-A blue button should appear to click: _Make Public_,
+## Future development possibilities
 
-Another blue button should appear to click: _Open Browser_.
+Increase number of questions
+Add individual images to illustrate each question.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Similar structure could be used for a geography quiz,
 
-A blue button should appear to click: _Make Public_,
+## Fuel Gauge
+When the fuel reached 0 the original effect was not very attractive as a very thin shape remained at the bottom of the gauge
+![empty fuel gauge]
+I rectified this by including a conditional clause in the updateFuel function that set the display of the fuel to 'none' if the current fuel was ).
+The idea for the fuel gauge was taken from the following online tutorial in which a gauge is used to track the amount of time that a user has to answer a question.
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Flight Path
+The flight path shows the position of the planets in the solar system. From an educational point it helps the user remember where the planets are located and for the purpose of the game it illustrates their progress.
+I was going to manually create the divs and add the image src and title in my HTML file however after watching an online demo in which a loop is used to add images from an API to the DOM I decided to see if a similar method would work for my project.
 
-To log into the Heroku toolbelt CLI:
+This is the source code which I used as a base. It is from the Web Developer Bootcamp 2021 by Colt Steele on Udemy.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+const container = document.querySelector('#container');
+const baseURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+for (let i = 1; i <= 151; i++) {
+    const pokemon = document.createElement('div');
+    pokemon.classList.add('pokemon');
+    const label = document.createElement('span');
+    label.innerText = `#${i}`;
+    const newImg = document.createElement('img');
+    newImg.src = `${baseURL}${i}.png`
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    pokemon.appendChild(newImg);
+    pokemon.appendChild(label);
+    container.appendChild(pokemon)
+}
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+As I wanted to include the names of the planets under the images, I created an array with the planet names and used the array length as the finishing condition for the loop. As I iterated over each item I added the image height and a class so that I could use css to add styles and used the strings in the array for the label content.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+I also created an empty array called flightPathPlanets and pushed each planet div into it so that I could use the index to apply an active class to indicate to the user their current location.  I made a variable called 'current location' which stores the index of the planet that has the active class applied.  This starts off as 1 as the starting location is Mercury, which is the second item in the array.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+I made functions to update the current location and apply the active class to the next planet or go back to the previous planet. I tested these by creating temporary buttons and adding event listeners to them.  They will eventually be called automatically when certain conditions are met during the game.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Bugs
+problems registering correct answer in quiz - needed to reference e.target.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+linking images to js - needed to reference path relative to html file rather than js script
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+problems connecting to css file - set styles of elements using js.  later discovered missing semi-colon
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+check answer function not displaying modals. Alerts working correctly Tried validating css through Jigsaw. No errors. console.log('hide removed') working.  dev tools showed that on line 43 of the css file the display was being set to none.  Game container positioning was relative.
+added hide class to game container and flight container.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+styles not being applied to intro container. does not appear on screen. css validated
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+info for Neptune not showing. moved clause checking planet index from checkAnswer function to triggerBlastOff.
 
-------
+background container sizing issues for modals.
 
-## FAQ about the uptime script
+switch statement not working - needed to wrap in function and call it
 
-**Why have you added this script?**
+Quit buttons - needed to separate them
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+show stats button - display block commented out as being overridden by hide class. then couldn't get rid of as if added important to display block overrode hide class.  Added reveal class to media queries.
 
-**How will this affect me?**
+could not get table to appear centered on mobile devices using justify content or auto margins. realised table blank space taking up some of container width so set size of table to autofit content.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+User feedback indicated that it was not clear what was meant by day or year in the planet stats section. Added tool tips to provide an explanation.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## Favicon
+Generated using favicon.io (flying saucer emoji)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+## Credits
+Cartoon images for flight path Pixabay Pauolo Cesar Ventura
+Sun cartoon  Microsoft paint sticker
+Information for questions, NASA website, National Geographic and www.SciFacts.net 
