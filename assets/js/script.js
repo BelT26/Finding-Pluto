@@ -286,9 +286,8 @@ let planetQIndex = 0;
 let qIndex = Math.floor(Math.random()*3);
 let currentQuestion = questions[planetQIndex][qIndex];
 
-//set the image and the text of the questions and answers
+//set the text of the questions and answers
 function displayQuestion() {
-    //questionImage.innerHTML = `<img src="${currentQuestion.qImg}">`;
     questionText.innerText = currentQuestion.question;
     answerA.innerText = currentQuestion.aAnswer;
     answerB.innerText = currentQuestion.bAnswer;
@@ -304,8 +303,6 @@ const gaugeHeight = 250;
 const fuelUnit = gaugeHeight / maxFuel;
 
 fuelNumber.innerHTML = `<h2>${currentFuel}</h2>`;
-
-
 
 //functions to amend fuel
 
@@ -333,7 +330,7 @@ function addFuel() {
     }
 }
 
-//decrements fuel by 1. If fuel is already at 0 moves user back to previous planet
+//decrements fuel by 1.
 function loseFuel() {
     currentFuel--;
     updateFuelDisplay();
@@ -424,10 +421,7 @@ let pl = planetStats[currentStatsIndex];
 
 function displayStats() { 
 planetImg.innerHTML = `<img src = "${pl.imgSrc}">`
-planetImg.classList.add('responsive-img');
 planetName.innerText = pl.name;
-planetName.style.fontFamily = 'Nova Square';
-planetName.style.textAlign = 'center';
 size.innerText = pl.size;
 year.innerText = pl.yearLength;
 day.innerText = pl.dayLength;
@@ -435,7 +429,14 @@ distance.innerText = pl.distance;
 type.innerText = pl.type;
 }
 
+function styleStats () {
+    planetImg.classList.add('responsive-img');
+    planetName.style.fontFamily = 'Nova Square';
+    planetName.style.textAlign = 'center';
+}
+
 displayStats()
+styleStats()
 
 //changes the planet displayed in the planet stats section
 function nextPlanetStats() {
@@ -455,16 +456,15 @@ function previousPlanetStats() {
 //Array with a list of planet names
 const flightPathPlanetNames = ['Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
 
-/*empty array to contain divs created within a loop containing each planets name and image. Created so that the active planet
+/*empty array to contain a div for each planet created within the for loop. Created so that the active planet
 can be higlighted and modified by functions*/
 const flightPathPlanets = [];
 
 
-
-/*for loop that loops through the list of planet names and creates a div element to each planet.
-An img element and span element that contain the image and name of each planet are created and appended to the div.
-The loop styles the divs and determines the image height. 
-The divs are appended to the flightContainer div and pushed to the flightPathPlanets array. */
+/*for loop that loops through the list of planet names and creates a flightPlanet div element for each planet.
+Creates an img element and span element containing the image and name of each planet are created and appends to the flightPlanet div.
+Styles the flightPlanet divs and determines the image height. 
+Appends flightPlanet divs to the flightContainer div and pushes them to the flightPathPlanets array. */
 for(let i=0; i<flightPathPlanetNames.length; i++) {
     const flightPlanet = document.createElement('div');
     flightPlanet.style.textAlign = 'center';
@@ -482,6 +482,7 @@ for(let i=0; i<flightPathPlanetNames.length; i++) {
     flightPathPlanets.push(flightPlanet);
 }
 
+//Creates variable for progress along the flight path and adds an active class to show progress along flight path.
 let currentProgress = 1;
 let activePlanet = flightPathPlanets[currentProgress];
 activePlanet.classList.add('active');
@@ -525,11 +526,11 @@ playAgainButton.addEventListener('click', playAgain);
 let tries = 2;
 
 
-/*Check if the answer given matches the correct answer.  
-if answer is correct, display a success message as a modal.
-If answer is incorrect decrement number of tries by 1. If remaining tries are greater than 0 display a modal to enable user to try again.  
-If remaining tries are 0, decrement fuel by 1 and display 'wrong again' modal.
-If fuel is already at 0 and current planet is not Mercury display a modal to inform user that they are moving back a planet*/
+/*Checks if the answer given matches the correct answer.  
+If answer is correct, displays a success message as a modal.
+If answer is incorrect, decrements number of tries by 1. If remaining tries are greater than 0 displays a modal to enable user to try again.  
+If remaining tries are 0, decrement fuel by 1 and displays 'wrong again' modal.
+If fuel is already at 0 and current planet is not Mercury, displays a modal to inform user that they are moving back a planet*/
 function checkAnswer(e) {
     if (e.target.id === currentQuestion.correct) {
         hideGame();
@@ -572,7 +573,7 @@ function showGame() {
     flightContainer.classList.remove('hide');
 }
 
-//update question index variables and display new question for next planet
+//updates question index variables and displays new question for next planet
 function updateQuestion() {
     planetQIndex++;
     qIndex = Math.floor(Math.random()*3);
@@ -610,15 +611,10 @@ function retreat () {
 //changes the planet displayed in the planet stats section
 function changePlanetStats() {
     currentStatsIndex++;
-    let pl = planetStats[currentStatsIndex];
-    planetImg.innerHTML = `<img src = "${pl.imgSrc}" width="150px">`
-    planetName.innerText = pl.name;
-    size.innerText = pl.size;
-    year.innerText = pl.yearLength;
-    day.innerText = pl.dayLength;
-    distance.innerText = pl.distance;
-    type.innerText = pl.type;
+    pl = planetStats[currentStatsIndex];
+    displayStats();
 }
+
 
 //displays stats on mobile devices
 function revealStats() {
