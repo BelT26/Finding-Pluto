@@ -55,7 +55,7 @@ header h1 {
 #gauge-container {
     display: flex;
     width: 60%;
-    height: 50vh;
+    min-height: 50vh;
     justify-self: center;
     flex-direction: column;
     align-items: center;
@@ -424,6 +424,20 @@ header h1 {
         width: 100px;
     }
 
+    #questions-container, #gauge-container, #current-planet {
+        min-height: 35vh;
+        margin-bottom: 50px;
+        padding: 20px 5px;
+    }
+
+    #question-image {
+        height: 15vh;
+    }
+
+    #flight-container {
+        height: 10vh;
+        padding: 5px 20px;
+    }
     
 
 }

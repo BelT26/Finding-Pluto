@@ -70,7 +70,6 @@ const questions = [
     [
         {
             question: 'Mercury is the ______ planet in the solar system',
-            qImg: '',
             aAnswer: 'smallest',
             bAnswer:'hottest',
             cAnswer:'largest',
@@ -79,7 +78,6 @@ const questions = [
         },
         {
             question: 'In which item would you find the metal mercury used?',
-            qImg: '',
             aAnswer: 'microwave',
             bAnswer:'thermometer',
             cAnswer:'radiator',
@@ -88,7 +86,6 @@ const questions = [
         },
         {
             question: 'Mercury is the fastest planet to orbit the sun taking just 88 days.  How many birthdays would you have on Mercury in one earth year?',
-            qImg: '',
             aAnswer: '2',
             bAnswer:'3',
             cAnswer:'4',
@@ -99,7 +96,6 @@ const questions = [
     [
         {
             question: 'Venus is the ________ planet in the solar system',
-            qImg: '',
             aAnswer: 'hottest',
             bAnswer:'smallest',
             cAnswer:'coldest',
@@ -108,7 +104,6 @@ const questions = [
         },
         {
             question: 'Venus is sometimes called this planet\'s twin as they are very similar in size.',
-            qImg: '',
             aAnswer: 'Neptune',
             bAnswer:'Earth',
             cAnswer:'Mars',
@@ -117,7 +112,6 @@ const questions = [
         },
         {
             question: 'There\'s something unusual about the way Venus is spinning.  Can you guess what it is?',
-            qImg: '',
             aAnswer: 'It spins the opposite way to Earth',
             bAnswer:'It spins on its side',
             cAnswer:'It\'s the fastest spinning planet in the solar system',
@@ -127,8 +121,7 @@ const questions = [
     ],
     [
         {
-            question: 'Splash!!! Plutina\'s spaceship belly flops into the ocean!  It\'s very wet here she thinks!  Do you know what percentage of the Earth\'s surface is covered in water?',
-            qImg: '',
+            question: 'Splash!!! Nuna\'s spaceship belly flops into the ocean!  It\'s very wet here she thinks!  Do you know what percentage of the Earth\'s surface is covered in water?',
             aAnswer: '51%',
             bAnswer:'61%',
             cAnswer:'71%',
@@ -137,7 +130,6 @@ const questions = [
         },
         {
             question: 'Wow! It\'s very crowded here compared the sparsely inhabited world of Pluto.  About how many people do think inhabit the earth?',
-            qImg: '',
             aAnswer: '700 million',
             bAnswer:'8 billion',
             cAnswer:'3 trillion',
@@ -145,8 +137,7 @@ const questions = [
             info:  '100 years ago there were under 2 billion people on earth, meaning the word\'s population has quadrupled since then.', 
         },
         {
-            question: 'Earth is the first planet on Plutina\'s journey that has its own moon. Do you know when a man first walked on the moon?',
-            qImg: '',
+            question: 'Earth is the first planet on Nuna\'s journey that has its own moon. Do you know when a man first walked on the moon?',
             aAnswer: '1969',
             bAnswer:'1979',
             cAnswer:'1989',
@@ -158,7 +149,6 @@ const questions = [
     [
         {
             question: 'Mars has a distinctive reddish brown colour and because of this it is also know as...',
-            qImg: '',
             aAnswer: 'the rusty planet',
             bAnswer:'the red planet',
             cAnswer:'the fiery planet',
@@ -167,7 +157,6 @@ const questions = [
         },
         {
             question: 'Mars is home to Olympus Mons the largest volcano in the solar system.  How many times bigger than Mount Everest do you think it could be?',
-            qImg: '',
             aAnswer: '2.5',
             bAnswer:'5',
             cAnswer:'10',
@@ -175,8 +164,7 @@ const questions = [
             info: 'Mount Everest is about 8.5km high, whilst Olmpus Mons is a towering 22km.'
         },
         {
-            question: 'There\'s somebody else out here.  Plutina has just bumped into Nasa\'s latest space rover Perseverance.  Perseverance is busy trying to extract a gas from the atmosphere on Mars that could be used to allow astronauts on future explorations of the planet to breathe.  Which gas is Perseverance trying to extract?',
-            qImg: '',
+            question: 'There\'s somebody else out here.  Nuna has just bumped into Nasa\'s latest space rover Perseverance.  Perseverance is busy trying to extract a gas from the atmosphere on Mars that could be used to allow astronauts on future explorations of the planet to breathe.  Which gas is Perseverance trying to extract?',
             aAnswer: 'Nitrogen',
             bAnswer:'Hydrogen',
             cAnswer:'Oxygen',
@@ -186,8 +174,7 @@ const questions = [
     ],
     [
         {
-            question: 'As Plutina\'s ship docks on one of Jupiter\'s moons she spots a huge red spot. If she moved closer what would she find there?',
-            qImg: '',
+            question: 'As Nuna\'s ship docks on one of Jupiter\'s moons she spots a huge red spot. If she moved closer what would she find there?',
             aAnswer: 'A storm',
             bAnswer: 'A crater',
             cAnswer:'A lake',
@@ -196,7 +183,6 @@ const questions = [
         },
         {
             question: 'Jupiter is the immense giant of the solar system.  How many planets the size of the Earth do you think could fit inside Jupiter?',
-            qImg: '',
             aAnswer: '195',
             bAnswer:'450',
             cAnswer:'1300',
@@ -204,8 +190,7 @@ const questions = [
             info: 'The surface of Jupiter is a massive 23,714 million square miles!'
         },
         {
-            question: 'Plutina isn\'t able to land her spacecraft on Jupiter so she docks instead on Ganymede, the largest of Jupiter\'s 79 moons.  Why do you think she was unable to touch down on Jupiter?',
-            qImg: '',
+            question: 'Nuna isn\'t able to land her spacecraft on Jupiter so she docks instead on Ganymede, the largest of Jupiter\'s 79 moons.  Why do you think she was unable to touch down on Jupiter?',
             aAnswer: 'It\'s made of water',
             bAnswer:'It\'s made of gas',
             cAnswer:'It has no gravity',
@@ -216,7 +201,6 @@ const questions = [
     [
         {
             question: 'What lovely rings Saturn has!  But what are them made of?',
-            qImg: '',
             aAnswer: 'Ice and rocks',
             bAnswer:'Gas',
             cAnswer:'Rays of light',
@@ -225,7 +209,6 @@ const questions = [
         },
         {
             question:'If you could find an ocean large enough to put Saturn in what do you think would happen to it?',
-            qImg: '',
             aAnswer: 'It would dissolve',
             bAnswer:'It would float',
             cAnswer:'It would sink',
@@ -234,7 +217,6 @@ const questions = [
         },
         {
             question: 'As well as being surrounded by beautiful rings, Saturn has lot of moons orbiting around it.  How many do you think there are?',
-            qImg: '',
             aAnswer: '82',
             bAnswer:'54',
             cAnswer:'21',
@@ -244,8 +226,7 @@ const questions = [
     ],
     [
         {
-            question: 'Plutina\'s head is starting to spin on Uranus.  Something doesn\'t feel quite right.  What could be causing the strange sensation?',
-            qImg: '',
+            question: 'Nuna\'s head is starting to spin on Uranus.  Something doesn\'t feel quite right.  What could be causing the strange sensation?',
             aAnswer: 'It is the fastest spinning planet',
             bAnswer:'It changes the direction it spins',
             cAnswer:'It spins on its side',
@@ -254,7 +235,6 @@ const questions = [
         },
         {
             question: 'It\'s a bit lonely over in Uranus as it doesn\'t get many visitors.  How many times do you think a space ship from Earth has visited here',
-            qImg: '',
             aAnswer: '0',
             bAnswer:'1',
             cAnswer:'3',
@@ -263,7 +243,6 @@ const questions = [
         },
         {
             question: 'Uranus is the ________ planet',
-            qImg: '',
             aAnswer: 'Stormiest',
             bAnswer:'Coldest',
             cAnswer:'Largest',
@@ -274,7 +253,6 @@ const questions = [
     [
         {
             question: 'Neptune takes the longest time of all planets to orbit the sun.  One year on Neptune is the same as 165 years on earth. What year would it have been on Earth one Neptunian year ago?',
-            qImg: '',
             aAnswer: currentYear-165,
             bAnswer: currentYear-155,
             cAnswer: currentYear-145,
@@ -282,8 +260,7 @@ const questions = [
             info: `If you started counting from now, the next year on Neptune would begin in ${currentYear + 165}.`
         },
         {
-            question: 'There\'s quite a storm here on Neptune.  Best not hang around too long or Plutina may be blown away. What speed do you think the winds on Neptune can reach?',
-            qImg: '',
+            question: 'There\'s quite a storm here on Neptune.  Best not hang around too long or Nuna may be blown away. What speed do you think the winds on Neptune can reach?',
             aAnswer: '400 mph',
             bAnswer:'800 mph',
             cAnswer:'1200 mph',
@@ -292,12 +269,11 @@ const questions = [
         },
         {
             question: 'Neptune was named after the roman god of ...',
-            qImg: '',
             aAnswer: 'the sea',
             bAnswer:'war',
             cAnswer:'travel',
             correct:'A',
-            info: 'The roman sea god Neptune is the brother of Pluto, the god of the underworld, after whom Plutina\'s home was named'
+            info: 'The roman sea god Neptune is the brother of Pluto, the god of the underworld, after whom Nuna\'s home was named'
         }
         
     ],
