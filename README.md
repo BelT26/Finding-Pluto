@@ -1,8 +1,22 @@
 # Finding Pluto
 
 ## Contents
+* Overview
+* Features
+    * Introduction
+    * Rules
+    * Fuel Gauge
+    * Question Section
+        * Modals
+    * Planet statistics
+    * Flight Path
+    * Winning message
+* Deployment
+* Testing & Bugs
+* Credits
+* Future Development Opportunities
 
-## Motivation
+## Overview
 
 Background - office quiz. General lack of knowledge about the order of planets
 
@@ -10,12 +24,6 @@ Educational game to teach children (and adults!) about the solar system.
 
 Used a story to add interest and incentivise user to continue to end of the game
 
-## Future development possibilities
-
-Increase number of questions
-Add individual images to illustrate each question.
-
-Similar structure could be used for a geography quiz,
 
 ## Fuel Gauge
 When the fuel reached 0 the original effect was not very attractive as a very thin shape remained at the bottom of the gauge
@@ -30,7 +38,7 @@ I based the structure of the question objects and the checkAnswer function on th
 
 I wanted to include several questions for each of the planets and so I created a multidimensional array for the question objects.
 
-The currentQuestion variable contains two indices.  The first number relates to the index of the planet the user has reached and the second is a random number between 0 and 2.  I decided to use a random number for the second index to make the game more interesting by generation a different sequence of questions each time the user plays.
+The currentQuestion variable contains two indices.  The first number relates to the index of the planet the user has reached and the second is a random number between 0 and 2.  I used a random number for the second index to make the game more interesting by generating a different sequence of questions each time the user plays.
 
 With time I would like to add separate illustrations by friends' children for each question. I would do this by adding a questionImage property to all of the question objects and update the displayQuestion function to retrieve the image source.
 
@@ -117,9 +125,15 @@ The info icon was imported from Font Awesome.
 The sun cartoon image in the flight path is a sticker image from Microsoft Paint 3D.
 
 All other images were downloaded from Pixabay from the following contributors:
-Cartoon images for flight path: Pauolo Cesar Ventura
-Ufo illustration above question: Julieta Mascarella
-Star illustration on final modal: Katherine Ab
-Images for planet stats: WikiImages
+* Planet pictures for flight path: Pauolo Cesar Ventura
+* Ufo illustration above question: Julieta Mascarella
+* Star illustration on final modal: Katherine Ab
+* Images for planet stats: WikiImages
 
-Information and inspiration for the questions was taken from t NASA website, National Geographic and www.SciFacts.net. 
+Information and inspiration for the questions were taken from the NASA website, National Geographic and www.SciFacts.net. 
+
+## Future development possibilities
+
+* Increase number of questions
+* Add individual images to illustrate each question.
+*A similar structure could be used for a geography quiz, or a history quiz in which the user travels through time.
