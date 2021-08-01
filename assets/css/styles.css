@@ -332,6 +332,11 @@ header h1 {
        box-shadow: 0 8px #558;
    }
 
+#reach-pluto {
+    width: 60vw;
+    margin-top: 15vh;
+}
+
 /* add effect that button is depressed when user clicks */   
 .modal-info button:active {
     box-shadow: 0px 4px #558;

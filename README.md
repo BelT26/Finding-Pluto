@@ -99,6 +99,13 @@ could not get table to appear centered on mobile devices using justify content o
 User feedback indicated that it was not clear what was meant by day or year in the planet stats section. Added tool tips to provide an explanation and an info icon from Font Awesome. Following code used as a guide for adding tool tips:
 https://www.w3schools.com/css/css_tooltip.asp
 
+## Deployment  
+The site was deployed to GitHub pages following the steps below: 
+
+* From the project repositoy I navigated to the Settings tab.  
+* I selected the Master Branch from the source section drop-down menu.  
+* The page refreshed automatically with a message confirming successful deployment.  
+* The live link can be found here https://belt26.github.io/Finding-Pluto/
 
 ## Credits
 The favicon was generated using the flying saucer emoji from favicon.io.
@@ -111,7 +118,8 @@ The sun cartoon image in the flight path is a sticker image from Microsoft Paint
 
 All other images were downloaded from Pixabay from the following contributors:
 Cartoon images for flight path: Pauolo Cesar Ventura
-Cartoon image above question: Julieta Mascarella
+Ufo illustration above question: Julieta Mascarella
+Star illustration on final modal: Katherine Ab
 Images for planet stats: WikiImages
 
 Information and inspiration for the questions was taken from t NASA website, National Geographic and www.SciFacts.net. 

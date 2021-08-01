@@ -710,7 +710,7 @@ function updateMessage(fuel) {
     return finalMessage
 }
 
-
+// displays reachPluto modal. Sets content of final fuel and final message.
 function reachPluto() {
     correctModal.classList.add('hide'); 
     updateMessage(currentFuel);
@@ -738,6 +738,7 @@ function endGameNoFuel() {
     endGameModal.classList.remove('hide');
 }
 
+// hides reachPluto modal and resets game so that user can play again
 function playAgain() {
     reachPlutoModal.classList.add('hide');
     resetGame();
