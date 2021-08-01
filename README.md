@@ -44,7 +44,7 @@ With time I would like to add separate illustrations by friends' children for ea
 
 ## Planet Stats
 
-The planet stats section shows a photo and provides the user with extra information about the planet they have reached.
+The planet stats section shows a photo and provides the user with extra information about the planet they have reached. Each time the user answers a question correctly the information is updated.
 
 For each planet in the solar system I created an object containing an image and the statistics and stored them in an array.
 The array of objects is used to populate the contents of the html table using the displayStats function.
@@ -54,8 +54,9 @@ User feedback indicated that it was not clear what was meant by 'day' or 'year' 
 
 
 ## Flight Path
-The flight path shows the position of the planets in the solar system. From an educational point it helps the user remember where the planets are located and for the purpose of the game it illustrates their progress.
-I was going to manually create the divs and add the image src and title in my HTML file however after watching an online demo in which a loop is used to add images from an API to the DOM I decided to see if a similar method would work for my project.
+The flight path shows the position of the planets in the solar system. From an educational point it helps the user remember where the planets are located and for the purpose of the game it illustrates their progress on their journet to Pluto.
+
+I originally intended to create the divs and add the image src and title in my HTML file however after watching an online demo in which a loop is used to add images from an API to the DOM I decided to see if a similar method would work for my project.
 
 This is the source code which I used as a base. It is from the Web Developer Bootcamp 2021 by Colt Steele on Udemy.
 

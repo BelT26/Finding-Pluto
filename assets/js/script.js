@@ -38,7 +38,6 @@ const tableData = document.querySelector('tbody');
 
 
 //html elements for flight path
-const progressContainer = document.getElementById('progress');
 const flightContainer = document.getElementById('flight-container');
 
 //html modal elements
