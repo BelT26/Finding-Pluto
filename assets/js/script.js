@@ -286,7 +286,7 @@ let planetQIndex = 0;
 let qIndex = Math.floor(Math.random()*3);
 let currentQuestion = questions[planetQIndex][qIndex];
 
-//set the text of the questions and answers
+//sets the text of the questions and answers
 function displayQuestion() {
     questionText.innerText = currentQuestion.question;
     answerA.innerText = currentQuestion.aAnswer;
@@ -330,12 +330,11 @@ function addFuel() {
     }
 }
 
-//decrements fuel by 1.
+//decrements fuel by 1 and updtes the display.
 function loseFuel() {
     currentFuel--;
     updateFuelDisplay();
 }
-
 
 //variable to keep track of current stats to display
 let currentStatsIndex = 0;
@@ -418,7 +417,6 @@ const planetStats = [
 let pl = planetStats[currentStatsIndex];
 
 //sets content of planet stats by retrieving information from planetStats array
-
 function displayStats() { 
 planetImg.innerHTML = `<img src = "${pl.imgSrc}">`
 planetName.innerText = pl.name;
@@ -429,6 +427,7 @@ distance.innerText = pl.distance;
 type.innerText = pl.type;
 }
 
+//styles the content of the planet stats
 function styleStats () {
     planetImg.classList.add('responsive-img');
     planetName.style.fontFamily = 'Nova Square';
@@ -451,7 +450,7 @@ function previousPlanetStats() {
     displayStats()
 }
 
-//set content of flight path
+//sets content of flight path
 
 //Array with a list of planet names
 const flightPathPlanetNames = ['Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
@@ -462,7 +461,7 @@ const flightPathPlanets = [];
 
 
 /*for loop that loops through the list of planet names and creates a flightPlanet div element for each planet.
-Creates an img element and span element containing the image and name of each planet are created and appends to the flightPlanet div.
+Creates an img element and span element containing the image and name of each planet and appends to the flightPlanet div.
 Styles the flightPlanet divs and determines the image height. 
 Appends flightPlanet divs to the flightContainer div and pushes them to the flightPathPlanets array. */
 for(let i=0; i<flightPathPlanetNames.length; i++) {
@@ -482,7 +481,7 @@ for(let i=0; i<flightPathPlanetNames.length; i++) {
     flightPathPlanets.push(flightPlanet);
 }
 
-//Creates variable for progress along the flight path and adds an active class to show progress along flight path.
+//Creates variable to track progress along the flight path and adds an active class to show progress along flight path.
 let currentProgress = 1;
 let activePlanet = flightPathPlanets[currentProgress];
 activePlanet.classList.add('active');
@@ -493,6 +492,8 @@ function showRules() {
     rulesContainer.classList.remove('hide');
 }
 
+rulesButton.addEventListener('click', showRules);
+
 //hides the rules and displays the game elements
 function startGame() {
     rulesContainer.classList.add('hide');
@@ -500,24 +501,20 @@ function startGame() {
     flightContainer.classList.remove('hide');
 }
 
-rulesButton.addEventListener('click', showRules)
 startButton.addEventListener('click', startGame);
 
 //resets all values and updates stats, fuel, progress and question displayed
 function resetGame() {
     resetFuel();
-    activePlanet.classList.remove('active');
-    currentProgress = 1;
-    activePlanet = flightPathPlanets[currentProgress];
-    activePlanet.classList.add('active');
+    changeActivePlanet(-7);
     currentStatsIndex = 0;
     displayStats()
-    gameContainer.classList.remove('hide');
-    flightContainer.classList.remove('hide');
     planetQIndex = 0;
     qIndex = Math.floor(Math.random()*3);
     currentQuestion = questions[planetQIndex][qIndex];
     displayQuestion();
+    gameContainer.classList.remove('hide');
+    flightContainer.classList.remove('hide');
 }
 
 playAgainButton.addEventListener('click', playAgain);
@@ -586,27 +583,6 @@ answerA.addEventListener('click', checkAnswer);
 answerB.addEventListener('click', checkAnswer);
 answerC.addEventListener('click', checkAnswer);
 
-//functions to update currentProgress variable and active planet on flight path
-function advanceFlightPath() {
-    activePlanet.classList.remove('active');
-    currentProgress++; 
-    activePlanet = flightPathPlanets[currentProgress];
-    activePlanet.classList.add('active');
-}
-
-function retreat () {
-    noFuelModal.classList.add('hide');
-    showGame();
-    activePlanet.classList.remove('active');
-    currentProgress--; 
-    activePlanet = flightPathPlanets[currentProgress];
-    activePlanet.classList.add('active');
-    planetQIndex--;
-    qIndex = Math.floor(Math.random()*3);
-    currentQuestion = questions[planetQIndex][qIndex];
-    displayQuestion();
-    previousPlanetStats();
-}
 
 //changes the planet displayed in the planet stats section
 function changePlanetStats() {
@@ -614,7 +590,6 @@ function changePlanetStats() {
     pl = planetStats[currentStatsIndex];
     displayStats();
 }
-
 
 //displays stats on mobile devices
 function revealStats() {
@@ -655,7 +630,7 @@ function triggerBlastOff() {
         if (tries > 1) {
             addFuel();
         }
-        advanceFlightPath();
+        changeActivePlanet(1);
         changePlanetStats();
         updateQuestion();
         tries = 2;
@@ -677,6 +652,25 @@ function secondQuestionSamePlanet() {
     tries = 2;
     showGame();
     displayQuestion();
+}
+
+//function to move user back one planet if they have no fuel and second guess is incorrect
+function retreat () {
+    noFuelModal.classList.add('hide');
+    showGame();
+    changeActivePlanet(-1);
+    planetQIndex--;
+    qIndex = Math.floor(Math.random()*3);
+    currentQuestion = questions[planetQIndex][qIndex];
+    displayQuestion();
+    previousPlanetStats();
+}
+
+function changeActivePlanet(progress) {
+    activePlanet.classList.remove('active');
+    currentProgress += progress; 
+    activePlanet = flightPathPlanets[currentProgress];
+    activePlanet.classList.add('active');
 }
 
 // sets a message to display to the user depending on the fuel remaining

@@ -42,6 +42,8 @@ The currentQuestion variable contains two indices.  The first number relates to 
 
 With time I would like to add separate illustrations by friends' children for each question. I would do this by adding a questionImage property to all of the question objects and update the displayQuestion function to retrieve the image source.
 
+## Planet Stats
+
 
 
 ## Flight Path
