@@ -44,6 +44,13 @@ With time I would like to add separate illustrations by friends' children for ea
 
 ## Planet Stats
 
+The planet stats section shows a photo and provides the user with extra information about the planet they have reached.
+
+For each planet in the solar system I created an object containing an image and the statistics and stored them in an array.
+The array of objects is used to populate the contents of the html table using the displayStats function.
+
+User feedback indicated that it was not clear what was meant by 'day' or 'year' in the planet stats section. To resolve this issue I added tool tips to provide an explanation and an info icon from Font Awesome to indicate that further information is available. The following code was used as a guide for adding tool tips: https://www.w3schools.com/css/css_tooltip.asp
+
 
 
 ## Flight Path
@@ -106,8 +113,7 @@ show stats button - display block commented out as being overridden by hide clas
 
 could not get table to appear centered on mobile devices using justify content or auto margins. realised table blank space taking up some of container width so set size of table to autofit content.
 
-User feedback indicated that it was not clear what was meant by day or year in the planet stats section. Added tool tips to provide an explanation and an info icon from Font Awesome. Following code used as a guide for adding tool tips:
-https://www.w3schools.com/css/css_tooltip.asp
+
 
 ## Deployment  
 The site was deployed to GitHub pages following the steps below: 
