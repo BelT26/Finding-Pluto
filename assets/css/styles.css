@@ -314,6 +314,7 @@ header h1 {
 button a {
     text-decoration: none;
     color:rgb(145, 216, 216);
+    font-family: 'Nova Square', cursive;
 }
 
 .modal-info button {
@@ -336,7 +337,7 @@ button a {
    }
 
 #reach-pluto {
-    top: 10vh;
+    top: 5vh;
 }
 
 #reach-pluto-contents {
@@ -444,7 +445,6 @@ button a {
     }
     
     #flight-container {
-        height: 10vh;
         padding: 5px 20px;
     }  
 }
