@@ -1,3 +1,6 @@
+//html background container element
+const backgroundContainer = document.getElementById('background-container');
+
 //html elements in intro container
 const introContainer = document.getElementById('intro-container');
 const rulesButton = document.getElementById('rules-button');
@@ -40,7 +43,7 @@ const tableData = document.querySelector('tbody');
 //html elements for flight path
 const flightContainer = document.getElementById('flight-container');
 
-//html modal elements
+//html modal elements and their contents
 const correctModal = document.getElementById('correct');
 const answerInfo = document.getElementById('answer-info');
 const tryAgainModal = document.getElementById('incorrect');

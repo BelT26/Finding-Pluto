@@ -30,7 +30,7 @@ header h1 {
 
 
 /* styles for game background image */
-#background-container, #modal-background {
+#background-container  {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -109,24 +109,25 @@ header h1 {
 }
 
 #question-image {
-    height: 25vh;
+    height: 20vh;
     width: 80%;
-    display: block;
+    display: flex;
     margin: 20px auto 10px;
     border: none;
     text-align: center;
-
-}
+    align-content: center;
+    }
 
 #question-image img {
-    margin: 0 auto;
+    margin: auto;
 }
 
 #question-text {
     text-align: center;
     width: 80%;
     height: auto;
-    margin: 0px auto;
+    margin: 10px auto;
+    padding: 15px 2px;
 }
 
 #question-text h2 {
@@ -141,6 +142,8 @@ header h1 {
     align-items: flex-start;
     flex-wrap: wrap;
     margin: 0px auto;
+    padding-bottom: 15px;
+    padding-top: 20px;
 }
 
 .answer {
@@ -243,7 +246,7 @@ header h1 {
     width: 90%;
     border-radius: 20px;
     padding: 10px;
-    margin: 8vh auto 2vh;
+    margin: 7vh auto 2vh;
     grid-column: 2 / span 3;
     position: relative;
     top: 20vh;
@@ -256,9 +259,6 @@ header h1 {
 
 
 /*style modal elements */
-
-
-
 .modal {
     position:absolute;
     height: 100%;
@@ -301,8 +301,6 @@ header h1 {
     box-shadow: 0px 0px 20px 20px rgb(106, 255, 47);
 }
 
-
-
 #incorrect-contents {
     border: #ffae00 5px solid;
     box-shadow: 0px 0px 30px 30px #ffae00;  
@@ -311,6 +309,11 @@ header h1 {
 #wrong-again-contents, #no-fuel-contents {
     border: red 5px solid;
     box-shadow: 0px 0px 30px 30px red;
+}
+
+button a {
+    text-decoration: none;
+    color:rgb(145, 216, 216);
 }
 
 .modal-info button {
@@ -333,9 +336,14 @@ header h1 {
    }
 
 #reach-pluto {
-    width: 60vw;
-    margin-top: 15vh;
+    top: 10vh;
 }
+
+#reach-pluto-contents {
+    width: 70vw;
+}
+
+
 
 /* add effect that button is depressed when user clicks */   
 .modal-info button:active {
@@ -434,24 +442,18 @@ header h1 {
         margin-bottom: 50px;
         padding: 20px 5px;
     }
-
-    #question-image {
-        height: 15vh;
-    }
-
+    
     #flight-container {
         height: 10vh;
         padding: 5px 20px;
-    }
-    
-
+    }  
 }
 
 
 @media screen and (max-width: 800px) {
 
     #background-container {
-        height: 180vh;      
+        height: 120vh;      
     }    
    
     #intro-container, #rules-container {
@@ -479,19 +481,12 @@ header h1 {
 
     /* styles for the fuel gauge */
     #gauge-container {
-        display: flex;
         width: 80%;
-        height: auto;
-        justify-self: center;
-        flex-direction: column;
-        align-items: center;
-        background-color: azure;
-        border-radius: 20px;
-        padding: 10px; 
+        min-height: fit-content;
         margin-left: 0px;       
     }
 
-    
+        
     #gauge {
         display: none;
     }
@@ -576,6 +571,18 @@ header h1 {
 
 
 @media screen and (max-width: 500px) {
+
+    #background-container {
+        height: 170vh;      
+    } 
+
+        
+    #answers-container {
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    
+
     #planet-img {
         display: none;
     }
@@ -585,7 +592,6 @@ header h1 {
         margin: 5px auto;
         width: fit-content;
     }   
-
     
     #hide-stats, #show-stats{
         margin: 7px auto 11px;  
@@ -596,6 +602,17 @@ header h1 {
     }
     
 }
+
+@media screen and (max-width: 400px) {
+
+    #background-container {
+        height: 190vh;      
+    }
+
+    .game-background {
+        height: 120vh !important;
+    }
+} 
 
 
 
