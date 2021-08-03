@@ -10,6 +10,16 @@
     box-sizing: border-box;
 }
 
+/* styles for background image */
+body {
+    background-image: url(../images/Space-background.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #000;
+    }
+
 /* styles for header section */
 header {
     text-align:center;
@@ -26,18 +36,6 @@ header h1 {
     margin: 0;
     font-size: 3rem;
 
-}
-
-
-/* styles for game background image */
-#background-container  {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    background: url('../images/Space-background.jpg') no-repeat center center;
-    background-size: cover;
-    position: absolute;
-    top: 0px;
 }
 
 
@@ -455,6 +453,10 @@ button a {
         width: 100px;
     }
 
+    #game-container {
+        top: 140px;
+    }
+
     #questions-container, #gauge-container, #current-planet {
         min-height: 35vh;
         margin-bottom: 50px;
@@ -462,18 +464,16 @@ button a {
     }
     
     #flight-container {
-        padding: 5px 20px;
+        padding: 20px;
+        top: 120px;
+        height: 12vh;
     }  
 }
 
 
 @media screen and (max-width: 800px) {
-
-    #background-container {
-        height: 120vh;      
-    }    
    
-    #intro-container, #rules-container {
+       #intro-container, #rules-container {
         width: 80vw;
         top: 10vh;
         padding: 15px;
@@ -486,17 +486,15 @@ button a {
         font-size: medium;
     }
 
-
    
-
     /* styles for container holding elements of the game */
     #game-container {
         position: relative; 
-        top: 10vh;
         display: flex;
         flex-direction: column-reverse;
         justify-content: space-around;
-        align-items: center;   
+        align-items: center; 
+        top: -5px;  
     }
 
     /* styles for the fuel gauge */
@@ -505,8 +503,7 @@ button a {
         min-height: fit-content;
         margin-left: 0px;       
     }
-
-        
+      
     #gauge {
         display: none;
     }
@@ -536,8 +533,7 @@ button a {
         height: fit-content;
         margin: 0px auto;
     }
-
-        
+       
     #answers-container {
         width: 80%;
         height:auto;
@@ -555,8 +551,6 @@ button a {
     }
 
 
-
-
     /* styles for planet-stats section */
     #current-planet {
         margin-top: 5vh;
@@ -572,8 +566,7 @@ button a {
 
     table {
         width: 60%;
-        margin: 5px auto;
-        
+        margin: 5px auto;        
     }
 
     
@@ -592,15 +585,10 @@ button a {
 
 @media screen and (max-width: 500px) {
 
-    #background-container {
-        height: 170vh;      
-    } 
-
     #nuna-lost {
         border-radius: 0px;
         border: none;
     }
-
         
     #answers-container {
         padding-bottom: 10px;
@@ -630,14 +618,6 @@ button a {
     }
     
 }
-
-@media screen and (max-width: 400px) {
-
-    #background-container {
-        height: 190vh;      
-    }
-
-} 
 
 
 @media screen and (max-height: 770px) {
