@@ -362,7 +362,7 @@ header h1 {
     display: block;
     position: relative;
     border-radius: 20px;
-    top: 10vh;
+    top: 9vh;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
@@ -392,9 +392,21 @@ header h1 {
 }
 
 #intro h1 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
+#nuna-lost-container {
+    overflow: hidden;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#nuna-lost {
+    border-radius: 20px;
+    border: yellowgreen 5px solid;
+
+}
 
 #rules-text li {
     padding: 5px 10px;
@@ -473,6 +485,9 @@ button a {
     #intro-container p, #rules-container li {
         font-size: medium;
     }
+
+
+   
 
     /* styles for container holding elements of the game */
     #game-container {
@@ -581,13 +596,17 @@ button a {
         height: 170vh;      
     } 
 
+    #nuna-lost {
+        border-radius: 0px;
+        border: none;
+    }
+
         
     #answers-container {
         padding-bottom: 10px;
         padding-top: 10px;
     }
     
-
     #planet-img {
         display: none;
     }
@@ -605,6 +624,10 @@ button a {
     .reveal {
         display: block !important;
     }
+
+    #reach-pluto {
+        top: 15vh;
+    }
     
 }
 
@@ -614,10 +637,34 @@ button a {
         height: 190vh;      
     }
 
-    .game-background {
-        height: 120vh !important;
-    }
 } 
+
+
+@media screen and (max-height: 770px) {
+
+    #reach-pluto {
+        margin-top: 30px;
+    }
+
+}
+@media screen and (max-height: 670px) {
+
+    #reach-pluto {
+        margin-top: 100px;
+    }
+
+}
+@media screen and (max-height: 580px) {
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    #reach-pluto {
+        margin-top: 100px;
+    }
+
+}
 
 
 
