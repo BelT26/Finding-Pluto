@@ -15,73 +15,71 @@
     <header id="page-top">
         <h1>Finding Pluto</h1>
     </header>
-    <main>
-        
-            <div id="game-container" class="hide">
-                <div id="gauge-container">
-                    <h2>Fuel Remaining</h2>
-                    <div id="fuel-number"></div>
-                    <div id="gauge">
-                        <div id="fuel-in-gauge"></div>
-                    </div>
-                </div>
-                <div id="questions-container">
-                    <div id="question-image">
-                        <img src="assets/images/ufo-placeholder.png" height="200px">
-                    </div>
-                    <div id="question-text">
-                    <h2>Question goes here</h2>
-                    </div>
-                    <div id="answers-container">
-                        <div class="answer" id="A"></div>
-                        <div class="answer" id="B"></div>
-                        <div class="answer" id="C"></div>
-                    </div> 
-                </div>                         
-                <div id="current-planet">
-                    <div id="current-title">
-                        <h2>Current Planet</h2>                    
-                    </div>
-                    <div id="planet-img"></div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th id="planet-name" colspan="2"></th>
-                            </tr>
-                        </thead>
-                        <tbody>   
-                            <tr class="darker">
-                                <td class="tooltip">day: <i class="fas fa-info-circle"></i>
-                                    <span class="tooltiptext">The amount of time in earth days that the planet takes to make a complete rotation on its own axis</span>
-                                </td>
-                                <td id="day"></td>
-                            </tr>
-                            <tr>
-                                <td class="tooltip">year: <i class="fas fa-info-circle"></i>
-                                    <span class="tooltiptext">The amount of time in earth days that the planet takes to orbit the sun</span>
-                                </td>
-                                <td id="year"></td>
-                            </tr>
-                            <tr class="darker">
-                                <td>diameter (km):</td>
-                                <td id="size"></td>
-                            </tr>
-                            <tr>
-                                <td>km from sun:</td>
-                                <td id="distance"></td>
-                            </tr>
-                            <tr class="darker">
-                                <td>type:</td>
-                                <td id="type"></td>
-                            </tr>
-                        </tbody> 
-                    </table>  
-                    <button class="hide reveal answer" id="show-stats">Show Info</button> 
-                    <button class="hide answer" id="hide-stats">Close</button>                                            
+    <main>        
+        <div id="game-container" class="hide">
+            <div id="gauge-container">
+                <h2>Fuel Remaining</h2>
+                <div id="fuel-number"></div>
+                <div id="gauge">
+                    <div id="fuel-in-gauge"></div>
                 </div>
             </div>
-            <div id="flight-container" class="hide"></div>                    
-        
+            <div id="questions-container">
+                <div id="question-image">
+                    <img src="assets/images/nuna.png" height="200px">
+                </div>
+                <div id="question-text">
+                    <h2>Question goes here</h2>
+                </div>
+                <div id="answers-container">
+                    <div class="answer" id="A"></div>
+                    <div class="answer" id="B"></div>
+                    <div class="answer" id="C"></div>
+                </div> 
+            </div>                         
+            <div id="current-planet">
+                <div id="current-title">
+                    <h2>Current Planet</h2>                    
+                </div>
+                <div id="planet-img"></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="planet-name" colspan="2"></th>
+                        </tr>
+                    </thead>
+                    <tbody>   
+                        <tr class="darker">
+                            <td class="tooltip">day: <i class="fas fa-info-circle"></i>
+                                <span class="tooltiptext">The amount of time in earth days that the planet takes to make a complete rotation on its own axis</span>
+                            </td>
+                            <td id="day"></td>
+                        </tr>
+                        <tr>
+                            <td class="tooltip">year: <i class="fas fa-info-circle"></i>
+                                <span class="tooltiptext">The amount of time in earth days that the planet takes to orbit the sun</span>
+                            </td>
+                            <td id="year"></td>
+                        </tr>
+                        <tr class="darker">
+                            <td>diameter (km):</td>
+                            <td id="size"></td>
+                        </tr>
+                        <tr>
+                            <td>km from sun:</td>
+                            <td id="distance"></td>
+                        </tr>
+                        <tr class="darker">
+                            <td>type:</td>
+                            <td id="type"></td>
+                        </tr>
+                    </tbody> 
+                </table>  
+                <button class="hide reveal answer" id="show-stats">Show Info</button> 
+                <button class="hide answer" id="hide-stats">Close</button>                                            
+            </div>
+        </div>
+        <div id="flight-container" class="hide"></div>                 
     </main> 
     <div id="intro-container">
         <div id="nuna-lost-container">

@@ -1,6 +1,3 @@
-//html background container element
-const backgroundContainer = document.getElementById('background-container');
-
 //html elements in intro container
 const introContainer = document.getElementById('intro-container');
 const rulesButton = document.getElementById('rules-button');
