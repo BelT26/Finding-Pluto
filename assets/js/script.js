@@ -417,7 +417,7 @@ let pl = planetStats[currentStatsIndex];
 
 //sets content of planet stats by retrieving information from planetStats array
 function displayStats() { 
-planetImg.innerHTML = `<img src = "${pl.imgSrc}">`
+planetImg.innerHTML = `<img src = "${pl.imgSrc}" alt= "photograph of current planet">`;
 planetName.innerText = pl.name;
 size.innerText = pl.size;
 year.innerText = pl.yearLength;
@@ -473,6 +473,7 @@ for(let i=0; i<flightPathPlanetNames.length; i++) {
     planetLabel.style.fontFamily = 'Nova Square';
     const newImg = document.createElement('img');
     newImg.style.height = '70px';
+    newImg.alt = "drawing of planet with a smiling face";
     newImg.src = `assets/images/flight${i}.png`;    
     flightPlanet.appendChild(newImg);
     flightPlanet.appendChild(planetLabel);
@@ -740,6 +741,7 @@ function playAgain() {
 
 function closeModal() {
     endGameModal.classList.add('hide');
+    currentProgress = 8;
     resetGame();
 }
 
