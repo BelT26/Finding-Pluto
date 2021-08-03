@@ -507,7 +507,8 @@ function resetGame() {
     resetFuel();
     changeActivePlanet(-7);
     currentStatsIndex = 0;
-    displayStats()
+    pl = planetStats[currentStatsIndex];
+    displayStats();
     planetQIndex = 0;
     qIndex = Math.floor(Math.random()*3);
     currentQuestion = questions[planetQIndex][qIndex];
