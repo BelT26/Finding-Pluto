@@ -42,7 +42,7 @@ header h1 {
 /* styles for container holding elements of the game */
 #game-container {
     position: relative; 
-    top: 20vh;
+    top: 10vh;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     justify-content: space-around;
@@ -247,7 +247,7 @@ header h1 {
     margin: 7vh auto 2vh;
     grid-column: 2 / span 3;
     position: relative;
-    top: 20vh;
+    top: 10vh;
 }
 
 /* shows user their progress through the flight path */
@@ -370,7 +370,7 @@ header h1 {
 
 }
 
-#intro-container h1, #rules-text h1 {
+#intro-container h1, #rules-container h1 {
     font-family: 'Nova Square', cursive;
     text-transform: uppercase;
     font-weight: 800;
@@ -381,12 +381,9 @@ header h1 {
     font-size: large;
 }
 
-#info-container {
-    padding: 20px;
-}
-
 #intro {
     line-height: 2rem;
+    padding: 20px;
 }
 
 #intro h1 {
@@ -406,7 +403,7 @@ header h1 {
 
 }
 
-#rules-text li {
+#rules-container li {
     padding: 5px 10px;
     font-size: large;
     list-style-image: url(../images/star-bullet.png);
