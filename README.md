@@ -1,5 +1,14 @@
 # Finding Pluto
 
+https://belt26.github.io/Finding-Pluto/
+
+## Author: Helen Taylor  
+## Version 1.0.0
+
+![Site preview on a variety of devices](https://github.com/BelT26/Finding-Pluto/blob/main/assets/images/responsive-preview.PNG)
+
+
+
 ## Contents
 * Overview
 * Features
@@ -113,6 +122,10 @@ Quit buttons - needed to separate them
 show stats button - display block commented out as being overridden by hide class. then couldn't get rid of as if added important to display block overrode hide class.  Added reveal class to media queries.
 
 could not get table to appear centered on mobile devices using justify content or auto margins. realised table blank space taking up some of container width so set size of table to autofit content.
+
+site not reloading from quit buttons after refactoring set up code.  Problem with current progress variable
+
+background image added originally to container div rather than body.  Spoke to Sean at tutor support
 
 
 

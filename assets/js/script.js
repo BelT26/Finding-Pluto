@@ -399,7 +399,7 @@ const planetStats = [
         imgSrc: 'assets/images/stats7.jpg',
         size: '51,118',
         dayLength: '17 hours',
-        yearLength: '84 hours',
+        yearLength: '84 years',
         distance: '2,873 million',
         type: 'ice giant'
     },
