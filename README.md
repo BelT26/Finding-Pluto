@@ -5,8 +5,7 @@ https://belt26.github.io/Finding-Pluto/
 ## Author: Helen Taylor  
 ## Version 1.0.0
 
-![Site preview on a variety of devices](https://github.com/BelT26/Finding-Pluto/blob/main/assets/images/responsive-preview.PNG)
-
+![site preview on a variety of devices](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/responsive-preview.png)
 
 
 ## Contents
@@ -17,7 +16,7 @@ https://belt26.github.io/Finding-Pluto/
     * Fuel Gauge
     * Question Section
         * Modals
-    * Planet statistics
+    * Planet Statistics
     * Flight Path
     * Winning message
 * Deployment
@@ -26,23 +25,40 @@ https://belt26.github.io/Finding-Pluto/
 * Future Development Opportunities
 
 ## Overview
+Finding Pluto is an educational game, created to teach children about the solar system. 
 
-Background - office quiz. General lack of knowledge about the order of planets
+The aim of the game is to help a little lost alien, named Nuna, reach her home on Pluto by answering multiple choice questions related to each of the planets in our solar system to earn fuel for her spaceship.  The user starts on Mercury and each time they guess the correct answer they move one planet closer to Nuna's home. If they get the answer correct on their first try they are rewarded with a bonus block of fuel which counts towards their final score. 
 
-Educational game to teach children (and adults!) about the solar system.
+I felt that by using a story as a background to the quiz this could engage the user and motivate them to continue to end of the game.
 
-Used a story to add interest and incentivise user to continue to end of the game
+To maximize the educational impact I added a couple of features to the game.  The section next to the quiz container contains statistics about the planet that the user has reached and underneath the quiz the planets are depicted in relation to their position between the sun and Pluto.
+
+Although my main target audience are primary school children older children and adults may also improve their solar system knowledge by playing!
+
+## Introduction
+![introduction giving background to the game](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/introduction.PNG)
+This page sets the scene for the game, explaining how Nuna came to be lost at the other end of the solar system and advising the user how they can help her get home.
+I superimposed a picture of Nuna over an image of the solar system to portray her as lost in space.
+I chose a simple background with stars to convey the idea of space without detracting from the main content.  The same background is repeated throughout the game.
+The introduction is a modal that lays over the main game page that is hidden until the user starts playing. 
+
+## Rules
+![section advising users how to play the game](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/rules.png)
+The rules section tells users how they can help Nuna reach Pluto and what happens when they answer questions correctly or incorrectly.
+A used a star image as bullets to improve the look of the page.
+When the user clicks on the 'START MISSION' button the rules are hidden and the game is revealed.
 
 
 ## Fuel Gauge
+![image of fuel gauge](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/fuel-gauge.png)
 When the fuel reached 0 the original effect was not very attractive as a very thin shape remained at the bottom of the gauge
-![empty fuel gauge]
+![empty fuel gauge](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/empty-fuel.png)
 I rectified this by including a conditional clause in the updateFuel function that set the display of the fuel to 'none' if the current fuel was ).
 The idea for the fuel gauge was taken from the following online tutorial in which a gauge is used to track the amount of time that a user has to answer a question. https://www.codeexplained.org/2018/10/create-multiple-choice-quiz-using-javascript.html
 
 
 ## Questions
- 
+![question and answers container](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/question-container.png) 
 I based the structure of the question objects and the checkAnswer function on the Code Explained tutorial mentioned in the fuel gauge section above. 
 
 I wanted to include several questions for each of the planets and so I created a multidimensional array for the question objects.
@@ -51,9 +67,20 @@ The currentQuestion variable contains two indices.  The first number relates to 
 
 With time I would like to add separate illustrations by friends' children for each question. I would do this by adding a questionImage property to all of the question objects and update the displayQuestion function to retrieve the image source.
 
-## Planet Stats
+### Feedback Modals
+Each time the user submits an answer the main game screen disappears and a modal appears to let them know whether their guess was correct.
+![correct answer message](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/correct-modal.png)
+The modal borders are colour coded - green if the answer is correct, amber if the first guess is wrong and red if the second guess is also incorrect.
+Inside the correct answer message additional information is also provided about the answer to add to the educational value of the quiz.  This information is stored in the question objects.
 
+
+## Planet Stats
+![image of current planet and related statistics](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/planet-stats.png)
 The planet stats section shows a photo and provides the user with extra information about the planet they have reached. Each time the user answers a question correctly the information is updated.
+
+Because of space constraints this information is initially hidden on a mobile device but a button appears allowing the user to open and close the stats.
+![mobile preview with stats hidden](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/mobile-preview.png)
+![mobile preview with stats displayed](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/mobile-stats.png)
 
 For each planet in the solar system I created an object containing an image and the statistics and stored them in an array.
 The array of objects is used to populate the contents of the html table using the displayStats function.
@@ -61,9 +88,11 @@ The array of objects is used to populate the contents of the html table using th
 User feedback indicated that it was not clear what was meant by 'day' or 'year' in the planet stats section. To resolve this issue I added tool tips to provide an explanation and an info icon from Font Awesome to indicate that further information is available. The following code was used as a guide for adding tool tips: https://www.w3schools.com/css/css_tooltip.asp
 
 
-
 ## Flight Path
+![illustration of the sun, the planets of the solar system and Pluto](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/flight-path.png)
 The flight path shows the position of the planets in the solar system. From an educational point it helps the user remember where the planets are located and for the purpose of the game it illustrates their progress on their journet to Pluto.
+
+Due to a lack of space, this feature is not available on mobiles or tablets. On these devices the user is still able to view their current location through the planet stats section at the top of the screen.
 
 I originally intended to create the divs and add the image src and title in my HTML file however after watching an online demo in which a loop is used to add images from an API to the DOM I decided to see if a similar method would work for my project.
 
@@ -96,8 +125,8 @@ I made a variable called 'current location' which stores the index of the planet
 
 I created functions to update the current location and apply the active class to the next planet or go back to the previous planet. I tested these by creating temporary buttons and adding event listeners to them.  The buttons have been removed and the functions are called automatically when the user answers correctly and moves to the next planet or the fuel goes below 0 and they move backwards.
 
-
-
+## Final Message
+![modal displaying message congratulating user](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/congratulations.png)
 
 ## Bugs
 problems registering correct answer in quiz - needed to reference e.target.
