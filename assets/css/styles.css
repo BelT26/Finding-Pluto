@@ -71,8 +71,9 @@ header h1 {
 
 #fuel-number {
     text-align: center;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
 }
 
 
@@ -91,7 +92,7 @@ header h1 {
     width: 50px;
     height: 25px;
     border-radius: 10px;
-    background-color: yellow;    
+    background-color: rgb(250, 224, 75);    
 }
 
 /* styles for the questions section */
@@ -505,7 +506,14 @@ button a {
         display: none;
     }
 
-    
+    #fuel-number {
+        border: solid 1px black;
+        background-color: rgb(250, 224, 75); 
+        border-radius: 50%;
+        padding: 3px;  
+    }
+
+   
     /* styles for the questions section */
     #questions-container {
         min-height: fit-content;

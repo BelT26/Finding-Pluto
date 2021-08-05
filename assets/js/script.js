@@ -299,7 +299,7 @@ const maxFuel = 9;
 const gaugeHeight = 250;
 const fuelUnit = gaugeHeight / maxFuel;
 
-fuelNumber.innerHTML = `<h2>${currentFuel}</h2>`;
+fuelNumber.innerHTML = `<img src="assets/images/fuel-star.png" class="hide" id="fuel-star"><h2>${currentFuel}</h2>`;
 
 //functions to amend fuel
 
