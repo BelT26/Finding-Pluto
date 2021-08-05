@@ -10,12 +10,10 @@ const startButton = document.getElementById('start');
 const gameContainer = document.getElementById('game-container');
 
 //html elements in fuel gauge
-const gauge = document.getElementById('gauge');
 const fuelGauge = document.getElementById('fuel-in-gauge');
 const fuelNumber = document.getElementById("fuel-number");
 
 //html elements in quiz container
-const questionImage = document.getElementById('question-image');
 const questionText = document.getElementById('question-text');
 const answerA = document.getElementById('A');
 const answerB = document.getElementById('B');
@@ -44,7 +42,7 @@ const flightContainer = document.getElementById('flight-container');
 const correctModal = document.getElementById('correct');
 const answerInfo = document.getElementById('answer-info');
 const tryAgainModal = document.getElementById('incorrect');
-const wrongAgainModal = document.getElementById('wrong-again')
+const wrongAgainModal = document.getElementById('wrong-again');
 const noFuelModal = document.getElementById('no-fuel');
 const blastOff = document.getElementById('blast-off');
 const tryAgainButton = document.getElementById('try-again');
@@ -277,7 +275,7 @@ const questions = [
         
     ],
         
-]
+];
 
 
 //variables to determine which question to display. Questions are related to the planet the user has just reached. Each planet has three possible questions one of which is selected at random.
@@ -412,7 +410,7 @@ const planetStats = [
         distance: '4,495 million',
         type: 'ice giant'
     },
-]    
+];    
 let pl = planetStats[currentStatsIndex];
 
 //sets content of planet stats by retrieving information from planetStats array
@@ -433,20 +431,20 @@ function styleStats () {
     planetName.style.textAlign = 'center';
 }
 
-displayStats()
-styleStats()
+displayStats();
+styleStats();
 
 //changes the planet displayed in the planet stats section
 function nextPlanetStats() {
     currentStatsIndex++;
     pl = planetStats[currentStatsIndex];
-    displayStats()
+    displayStats();
 }
 
 function previousPlanetStats() {
     currentStatsIndex--;
     pl = planetStats[currentStatsIndex];
-    displayStats()
+    displayStats();
 }
 
 //sets content of flight path
@@ -576,7 +574,7 @@ function updateQuestion() {
     planetQIndex++;
     qIndex = Math.floor(Math.random()*3);
     currentQuestion = questions[planetQIndex][qIndex];
-    displayQuestion()
+    displayQuestion();
 }
 
 //event listeners for answer buttons
@@ -584,13 +582,6 @@ answerA.addEventListener('click', checkAnswer);
 answerB.addEventListener('click', checkAnswer);
 answerC.addEventListener('click', checkAnswer);
 
-
-//changes the planet displayed in the planet stats section
-function changePlanetStats() {
-    currentStatsIndex++;
-    pl = planetStats[currentStatsIndex];
-    displayStats();
-}
 
 //displays stats on mobile devices
 function revealStats() {
@@ -632,7 +623,7 @@ function triggerBlastOff() {
             addFuel();
         }
         changeActivePlanet(1);
-        changePlanetStats();
+        nextPlanetStats();
         updateQuestion();
         tries = 2;
         }
@@ -647,7 +638,7 @@ function secondTry() {
 /* after 2 incorrect tries, hides the wrong answer modal, updates the question by generating a new question index but using the
 same planet index. Resets the number of tries to 2 */
 function secondQuestionSamePlanet() {
-    wrongAgainModal.classList.add('hide')
+    wrongAgainModal.classList.add('hide');
     qIndex = Math.floor(Math.random()*3);
     currentQuestion = questions[planetQIndex][qIndex];
     tries = 2;
@@ -702,7 +693,7 @@ function updateMessage(fuel) {
         default:
             finalMessage = 'Fuel gauge malfunction!';                                
     }
-    return finalMessage
+    return finalMessage;
 }
 
 // displays reachPluto modal. Sets content of final fuel and final message.
