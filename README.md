@@ -36,7 +36,7 @@ To maximize the educational impact I added a couple of features to the game.  Th
 Although my main target audience are primary school children older children and adults may also improve their solar system knowledge by playing!
 
 ## Introduction
-![introduction giving background to the game](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/introduction.PNG)
+![introduction giving background to the game](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/introduction.png)
 This page sets the scene for the game, explaining how Nuna came to be lost at the other end of the solar system and advising the user how they can help her get home.
 I superimposed a picture of Nuna over an image of the solar system to portray her as lost in space.
 I chose a simple background with stars to convey the idea of space without detracting from the main content.  The same background is repeated throughout the game.
@@ -51,9 +51,12 @@ When the user clicks on the 'START MISSION' button the rules are hidden and the 
 
 ## Fuel Gauge
 ![image of fuel gauge](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/fuel-gauge.png)
+
 When the fuel reached 0 the original effect was not very attractive as a very thin shape remained at the bottom of the gauge
 ![empty fuel gauge](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/empty-fuel.png)
+
 I rectified this by including a conditional clause in the updateFuel function that set the display of the fuel to 'none' if the current fuel was ).
+
 The idea for the fuel gauge was taken from the following online tutorial in which a gauge is used to track the amount of time that a user has to answer a question. https://www.codeexplained.org/2018/10/create-multiple-choice-quiz-using-javascript.html
 
 
@@ -69,18 +72,21 @@ With time I would like to add separate illustrations by friends' children for ea
 
 ### Feedback Modals
 Each time the user submits an answer the main game screen disappears and a modal appears to let them know whether their guess was correct.
+
 ![correct answer message](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/correct-modal.png)
+
 The modal borders are colour coded - green if the answer is correct, amber if the first guess is wrong and red if the second guess is also incorrect.
 Inside the correct answer message additional information is also provided about the answer to add to the educational value of the quiz.  This information is stored in the question objects.
 
 
 ## Planet Stats
+
 ![image of current planet and related statistics](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/planet-stats.png)
 The planet stats section shows a photo and provides the user with extra information about the planet they have reached. Each time the user answers a question correctly the information is updated.
 
 Because of space constraints this information is initially hidden on a mobile device but a button appears allowing the user to open and close the stats.
-![mobile preview with stats hidden](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/mobile-preview.png)
-![mobile preview with stats displayed](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/mobile-stats.png)
+
+![mobile previews with stats hidden and displayed](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/mobile-preview.png)
 
 For each planet in the solar system I created an object containing an image and the statistics and stored them in an array.
 The array of objects is used to populate the contents of the html table using the displayStats function.
