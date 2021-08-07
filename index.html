@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="solar system, planets, game, educational, kids, children, alien">
+    <meta name="author" content="Helen Taylor">
     <title>Finding Pluto</title> 
     <link href="assets/css/styles.css" rel="stylesheet"> 
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
@@ -12,11 +14,14 @@
     <link rel="manifest" href="assets/favicon/site.webmanifest">
 </head>
 <body>
+    <!--header element with title visible at all stages of the game-->
     <header id="page-top">
         <h1>Finding Pluto</h1>
     </header>
-    <main>        
+    <main> 
+        <!--Section containing the fuel level, question container and planet stats-->       
         <div id="game-container" class="hide">
+            <!--Container holding image and number of fuel remaining-->
             <div id="gauge-container">
                 <h2>Fuel Remaining</h2>
                 <div id="fuel-number"></div>
@@ -24,6 +29,7 @@
                     <div id="fuel-in-gauge"></div>
                 </div>
             </div>
+            <!--Container for questions and selection of possible answers-->
             <div id="questions-container">
                 <div id="question-image">
                     <img src="assets/images/nuna.png" height="200px" alt="cute alien in a ufo">
@@ -36,7 +42,8 @@
                     <div class="answer" id="B"></div>
                     <div class="answer" id="C"></div>
                 </div> 
-            </div>                         
+            </div> 
+            <!--Container holding an image and statistical information about the planet the user has reached-->                        
             <div id="current-planet">
                 <div id="current-title">
                     <h2>Current Planet</h2>                    
@@ -74,13 +81,17 @@
                             <td id="type"></td>
                         </tr>
                     </tbody> 
-                </table>  
+                </table> 
+                <!--Buttons that appear only on mobile devices to show and reveal the statistics of the current planet--> 
                 <button class="hide reveal answer" id="show-stats">Show Info</button> 
                 <button class="hide answer" id="hide-stats">Close</button>                                            
             </div>
         </div>
+        <!--Container element holding images and names of all the planets in the solar system-->
         <div id="flight-container" class="hide"></div>                 
     </main> 
+    <!--Modal with background to game that appears when page is loaded.
+    The 'how to play' button hides the modal and displays the rules modal-->
     <div id="intro-container">
         <div id="nuna-lost-container">
             <img src="assets/images/nuna-lost.jpg" id="nuna-lost"  alt ="image of cute alien in ufo lost in the solar system" height="120px">   
@@ -94,7 +105,9 @@
             <br>Can you come to Nuna's rescue and help her to make her way home?</p>
             <button id="rules-button"><a href="#page-top">HOW TO PLAY</a></button>              
         </div>        
-    </div>       
+    </div>
+    <!--Modal describing how to play the game.
+    The 'start' button hides the rules modal and displays the game-->       
     <div id="rules-container" class="hide">  
         <h1>RULES</h1>
         <br>
@@ -109,7 +122,9 @@
             <li>Your mission is to help Nuna reach Pluto with as much remaining fuel as possible.</li>
         </ul>
         <button id="start"><a href="#page-top">START MISSION</a></button>
-    </div>     
+    </div> 
+    <!--Modal that appears when the user guesses the correct answer.
+    The 'blast off' button hides the modal, updates the planet stats and the flight path and displays a question about the next planet-->    
     <div class="modal hide" id="correct">
         <div class="modal-info" id="correct-contents">
             <h2>Correct! Congratulations!</h2>
@@ -118,6 +133,8 @@
             <button id="blast-off">Blast Off</button>
         </div>    
     </div>
+    <!--Modal that is displayed if the user's first guess is incorrect.
+    The 'try again' button hides the modal and displays the same question again-->
     <div class="modal hide" id="incorrect">
         <div class="modal-info" id="incorrect-contents">
             <h2>Sorry that's not the correct answer</h2>
@@ -125,6 +142,9 @@
             <button id="try-again">Try Again</button>
         </div>    
     </div>
+    <!--Modal that appears if the user's second guess is wrong and their fuel level is above 0. 
+    The 'next question' button hides the modal, decrements the fuel by 1 and displays a new question.
+    The 'abort mission' button hides the modal and displays the 'end-game' modal-->    
     <div class="modal hide" id="wrong-again">
         <div class="modal-info" id="wrong-again-contents">
             <h2>Sorry that's wrong too</h2>
@@ -133,6 +153,9 @@
             <button id="quit1">ABORT MISSION</button>
         </div>    
     </div>
+    <!--Modal that appears if the user's second guess is wrong,their fuel level is at 0 and they are not still on Mercury. 
+    The continue button hides the modal, takes the user back to the previous planet and changes the question, planet stats and active planet.
+    The 'abort mission' hides the modal and displays the 'end-game' modal-->
     <div class="modal hide" id="no-fuel">
         <div class="modal-info" id="no-fuel-contents">
             <h2>EMERGENCY!<br>
@@ -142,6 +165,7 @@
             <button id="quit2">ABORT MISSION</button>
         </div>    
     </div>
+    <!--Modal displayed after the user selects 'abort-mission'. The close button hides the modal and resets the game-->
     <div class="modal hide" id="end-game">
         <div class="modal-info" id="end-game-contents">
             <h2>Sorry to see you go</h2>
@@ -149,6 +173,8 @@
             <button id="close-modal">Close</button>
         </div>   
     </div>
+    <!--Modal displayed with custom message when the user successfully completes the game. The play again button
+    hides the modal and resets the game-->
     <div class="modal hide" id="reach-pluto">
         <div class="modal-info" id="reach-pluto-contents">
             <div id="pluto-image">
@@ -163,6 +189,7 @@
             <button id="play-again">Play Again</button>
         </div>
     </div>
+    <!--links to javascript files-->
     <script src="assets/js/script.js"></script> 
     <script src="https://kit.fontawesome.com/5f4fa16565.js" crossorigin="anonymous"></script>
 </body>
