@@ -100,39 +100,25 @@ The flight path shows the position of the planets in the solar system. From an e
 
 Due to a lack of space, this feature is not available on mobiles or tablets. On these devices the user is still able to view their current location through the planet stats section at the top of the screen.
 
-I originally intended to create the divs and add the image src and title in my HTML file however after watching an online demo in which a loop is used to add images from an API to the DOM I decided to see if a similar method would work for my project.
+I originally intended to create the divs and add the image src and title in my HTML file however after watching an  demo in which a loop is used to add images from an API to the DOM I decided to see if a similar method would work for my project.
 
-This is the source code which I used as a base. It is from the Web Developer Bootcamp 2021 by Colt Steele on Udemy.
+The code which I used as a base is from the Web Developer Bootcamp 2021 by Colt Steele on Udemy and stored in the assets/source-code/pokemon folder. I then modified it as detailed below:
 
-const container = document.querySelector('#container');
-const baseURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/'
+* As I wanted to include the names of the planets under the images, I created an array with the planet names and used the array length as the finishing condition for the loop. As I iterated over each item I added the image height and a class so that I could use css to add styles and used the strings in the array for the label content.
 
+* I created an empty array called flightPathPlanets and pushed each planet div into it so that I could use the index to apply an active class to indicate to the user their current location.  
 
-for (let i = 1; i <= 151; i++) {
-    const pokemon = document.createElement('div');
-    pokemon.classList.add('pokemon');
-    const label = document.createElement('span');
-    label.innerText = `#${i}`;
-    const newImg = document.createElement('img');
-    newImg.src = `${baseURL}${i}.png`
+* I made a variable called 'current location' which stores the index of the planet that has the active class applied.  This starts off as 1 as the starting location is Mercury, which is the second item in the array.
 
-
-    pokemon.appendChild(newImg);
-    pokemon.appendChild(label);
-    container.appendChild(pokemon)
-}
-
-
-As I wanted to include the names of the planets under the images, I created an array with the planet names and used the array length as the finishing condition for the loop. As I iterated over each item I added the image height and a class so that I could use css to add styles and used the strings in the array for the label content.
-
-I created an empty array called flightPathPlanets and pushed each planet div into it so that I could use the index to apply an active class to indicate to the user their current location.  
-
-I made a variable called 'current location' which stores the index of the planet that has the active class applied.  This starts off as 1 as the starting location is Mercury, which is the second item in the array.
-
-I created functions to update the current location and apply the active class to the next planet or go back to the previous planet. I tested these by creating temporary buttons and adding event listeners to them.  The buttons have been removed and the functions are called automatically when the user answers correctly and moves to the next planet or the fuel goes below 0 and they move backwards.
+* I created functions to update the current location and apply the active class to the next planet or go back to the previous planet which are called when the user answers correctly and moves to the next planet or the fuel goes below 0 and they move backwards.
 
 ## Final Message
 ![modal displaying message congratulating user](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/congratulations.png)
+
+This modal is displayed once the user has correctly answered a question on each planet and successfully completed their mission to help Nuna reach Pluto.
+The screen shows the user their final score and displays a custom message of congratulations determined by a switch statement, based on how many fuel units they have showing in their tank.
+
+The play again button hides the modal and resets and displays the game.
 
 ## Bugs
 problems registering correct answer in quiz - needed to reference e.target.
@@ -162,6 +148,18 @@ site not reloading from quit buttons after refactoring set up code.  Problem wit
 
 background image added originally to container div rather than body.  Spoke to Sean at tutor support
 
+## Testing
+
+### Validator testing  
+
+* HTML
+No errors were returned when passing through the official [W3C validator: Finding Pluto]
+
+* CSS
+No errors were returned when passing through the official [Jigsaw validator: Finding Pluto]
+
+The contrast between the font colour of the page heading and it's background were checked using the Webaim contrast checker and scored 10.9:1.[WebAim contrast checker](https://webaim.org/resources/contrastchecker/?fcolor=6EC4F7&bcolor=000000)
+
 
 
 ## Deployment  
@@ -183,14 +181,16 @@ The sun cartoon image in the flight path is a sticker image from Microsoft Paint
 
 All other images were downloaded from Pixabay from the following contributors:
 * Planet pictures for flight path: Pauolo Cesar Ventura
+* Solar system on intro page: MD Herren
 * Ufo illustration above question: Julieta Mascarella
 * Star illustration on final modal: Katherine Ab
+* Space background : Nikiko
 * Images for planet stats: WikiImages
 
 Information and inspiration for the questions were taken from the NASA website, National Geographic and www.SciFacts.net. 
 
 ## Future development possibilities
 
-* Increase number of questions
-* Add individual images to illustrate each question.
-*A similar structure could be used for a geography quiz, or a history quiz in which the user travels through time.
+* Increase number of questions for each planet.
+* Add individual images could be added to illustrate each question.
+* A similar structure could be used for a geography quiz, or a history quiz in which the user travels through time.
