@@ -10,6 +10,8 @@ https://belt26.github.io/Finding-Pluto/
 
 ## Contents
 * Overview
+* Planning
+* Stucture
 * Features
     * Introduction
     * Rules
@@ -19,8 +21,9 @@ https://belt26.github.io/Finding-Pluto/
     * Planet Statistics
     * Flight Path
     * Winning message
+* Bugs and challenges
+* Testing
 * Deployment
-* Testing & Bugs
 * Credits
 * Future Development Opportunities
 
@@ -34,6 +37,26 @@ I felt that by using a story as a background to the quiz this could engage the u
 To maximize the educational impact I added a couple of features to the game.  The section next to the quiz container contains statistics about the planet that the user has reached and underneath the quiz the planets are depicted in relation to their position between the sun and Pluto.
 
 Although my main target audience are primary school children older children and adults may also improve their solar system knowledge by playing!
+
+## Planning
+
+The original wireframes can be found in the assets directory.
+
+The game was initially designed to be played on a desktop so that the screen is large enough to display all of the available features.  It was later adapeted for tablet and mobile devices.
+
+I initially designed the fuel gauge, questions, planet-stats and flight path independently and tested that they worked before adding them to the game. I later constructed functions that would update all items based on the user's response.
+
+Once the game was working correctly I added and styled the modals. I then adapted the layout and the elements displayed so that the game could be played on smaller devices.
+
+## Structure
+
+The site consists of a single page.  Modals are used for the introduction, rules and various user feedback messages. The appearance of the main game and the modals are controlled by using a CSS 'hide' class that is applied and removed via javascript functions linked to buttons via event listeners.
+
+The site consists of a header displaying the title of the game and a main section displaying either the game elements or a modal.  A footer was omitted as it detracted from the game and did not add any user benefits.
+
+All user input is provided by clicking on buttons rather then entering text, therefore user validation checks have not been included.
+
+## Features
 
 ## Introduction
 ![introduction giving background to the game](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/introduction.png)
@@ -91,8 +114,6 @@ Because of space constraints this information is initially hidden on a mobile de
 For each planet in the solar system I created an object containing an image and the statistics and stored them in an array.
 The array of objects is used to populate the contents of the html table using the displayStats function.
 
-User feedback indicated that it was not clear what was meant by 'day' or 'year' in the planet stats section. To resolve this issue I added tool tips to provide an explanation and an info icon from Font Awesome to indicate that further information is available. The following code was used as a guide for adding tool tips: https://www.w3schools.com/css/css_tooltip.asp
-
 
 ## Flight Path
 ![illustration of the sun, the planets of the solar system and Pluto](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/flight-path.png)
@@ -116,6 +137,7 @@ The code which I used as a base is from the Web Developer Bootcamp 2021 by Colt 
 ![modal displaying message congratulating user](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/congratulations.png)
 
 This modal is displayed once the user has correctly answered a question on each planet and successfully completed their mission to help Nuna reach Pluto.
+
 The screen shows the user their final score and displays a custom message of congratulations determined by a switch statement, based on how many fuel units they have showing in their tank.
 
 The play again button hides the modal and resets and displays the game.
@@ -158,8 +180,16 @@ No errors were returned when passing through the official [W3C validator: Findin
 * CSS
 No errors were returned when passing through the official [Jigsaw validator: Finding Pluto]
 
+* JavaScript
+No errors were returned when passing through JSHint
+
 The contrast between the font colour of the page heading and it's background were checked using the Webaim contrast checker and scored 10.9:1.[WebAim contrast checker](https://webaim.org/resources/contrastchecker/?fcolor=6EC4F7&bcolor=000000)
 
+### User testing
+
+User feedback indicated that it was not clear what was meant by 'day' or 'year' in the planet stats section. To resolve this issue I added tool tips to provide an explanation and an info icon from Font Awesome to indicate that further information is available. The following code was used as a guide for adding tool tips: https://www.w3schools.com/css/css_tooltip.asp.
+
+When a user tried to play the game again, the planet stats were not being reset to Mercury.  I rectified this by adding the following line of code to the resetGame function: pl = planetStats[currentStatsIndex];
 
 
 ## Deployment  
