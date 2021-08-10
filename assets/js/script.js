@@ -73,7 +73,7 @@ const questions = [
             bAnswer:'hottest',
             cAnswer:'largest',
             correct:'A',
-            info: 'Although Mercury is bigger than Pluto, which is a dwarf planet, it is only about a third of the size of the earth.',
+            info: 'Although Mercury is bigger than Pluto, which is too small to count as a planet, it is only about a third of the size of the earth.',
         },
         {
             question: 'In which item would you find the metal mercury used?',

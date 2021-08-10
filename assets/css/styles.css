@@ -509,6 +509,7 @@ button a:hover {
 
     #fuel-number {
         background-color: rgb(255, 240, 152); 
+        border: solid 1px orange;
         margin-top: 8px;
         margin-bottom: 3px;
         border-radius: 50%;
