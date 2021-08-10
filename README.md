@@ -9,23 +9,23 @@ https://belt26.github.io/Finding-Pluto/
 
 
 ## Contents
-* Overview
-* Planning
-* Stucture
-* Features
-    * Introduction
-    * Rules
-    * Fuel Gauge
-    * Question Section
-        * Modals
-    * Planet Statistics
-    * Flight Path
-    * Final message
-* Bugs and challenges
-* Testing
-* Deployment
-* Credits
-* Future Development Opportunities
+* ![Overview](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#overview)
+* ![Planning](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#planning)
+* ![Stucture](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#structure)
+* ![Features](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#features)
+    * ![Introduction](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#introduction)
+    * ![Rules](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#rules)
+    * ![Fuel Gauge](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#fuel-gauge)
+    * ![Question Section](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#questions)
+        * ![Feedback Modals](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#feedback-modals)
+    * ![Planet Statistics](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#planet-stats)
+    * ![Flight Path](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#flight-path)
+    * ![Final message](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#final-message)
+* ![Bugs and challenges](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#bugs)
+* ![Testing](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#testing)
+* ![Deployment](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#deployment)
+* ![Credits](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#credits)
+* ![Future Development Opportunities](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#future-development-possibilities)
 
 ## Overview
 Finding Pluto is an educational game, created to teach children about the solar system. 
@@ -88,9 +88,10 @@ When the user clicks on the 'START MISSION' button the rules are hidden and the 
 The fuel gauge reflects the user's current score which increases each time their first guess is correct and decreases if they don't provide the right answer on their second attempt.
 
 When the fuel reached 0 the original effect was not very attractive as a very thin shape remained at the bottom of the gauge
+
 ![empty fuel gauge](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/empty-fuel.png)
 
-I rectified this by including a conditional clause in the updateFuel function that set the display of the fuel to 'none' if the current fuel was ).
+I rectified this by including a conditional clause in the updateFuel function that set the display of the fuel to 'none' if the current fuel was 0.
 
 The idea for the fuel gauge was taken from the following online tutorial in which a gauge is used to track the amount of time that a user has to answer a question. https://www.codeexplained.org/2018/10/create-multiple-choice-quiz-using-javascript.html
 
