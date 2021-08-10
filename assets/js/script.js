@@ -62,7 +62,9 @@ let date = new Date();
 let currentYear = date.getFullYear();
 
 
-//multi dimensional array containing quiz question objects
+/*multi dimensional array containing quiz question objects.
+The structure of the question objects was based on the code explained tutorial mentioned in the README*/
+
 const questions = [
     [
         {
@@ -283,7 +285,7 @@ let planetQIndex = 0;
 let qIndex = Math.floor(Math.random()*3);
 let currentQuestion = questions[planetQIndex][qIndex];
 
-//sets the text of the questions and answers
+//sets the text of the questions and answers. Based on the code explained tutorial mentioned in the README
 function displayQuestion() {
     questionText.innerText = currentQuestion.question;
     answerA.innerText = currentQuestion.aAnswer;
@@ -293,7 +295,9 @@ function displayQuestion() {
 
 displayQuestion();
 
-//variables to set and display gauge and fuel level
+/*variables to set and display gauge and fuel level. 
+The idea came from the timer in the code explained tutorial in the README*/
+
 let currentFuel = 1;
 const maxFuel = 9;
 const gaugeHeight = 250;
@@ -449,7 +453,7 @@ function previousPlanetStats() {
 
 //sets content of flight path
 
-//Array with a list of planet names
+//array with a list of planet names
 const flightPathPlanetNames = ['Sun', 'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto'];
 
 /*empty array to contain a div for each planet created within the for loop. Created so that the active planet
@@ -459,8 +463,9 @@ const flightPathPlanets = [];
 
 /*for loop that loops through the list of planet names and creates a flightPlanet div element for each planet.
 Creates an img element and span element containing the image and name of each planet and appends to the flightPlanet div.
-Styles the flightPlanet divs and determines the image height. 
-Appends flightPlanet divs to the flightContainer div and pushes them to the flightPathPlanets array. */
+Styles the flightPlanet divs, determines the image height and adds alt attribute with a description. 
+Appends flightPlanet divs to the flightContainer div and pushes them to the flightPathPlanets array. 
+The code that was used as a basis is stored in the assets folder in the source-code/pokemon folder*/
 for(let i=0; i<flightPathPlanetNames.length; i++) {
     const flightPlanet = document.createElement('div');
     flightPlanet.style.textAlign = 'center';
@@ -591,6 +596,8 @@ function revealStats() {
     showStatsButton.classList.remove('reveal');
 }
 
+showStatsButton.addEventListener('click', revealStats);
+
 //hides stats on mobile devices
 function hideStats() {
     planetImg.style.display = 'none';
@@ -599,14 +606,14 @@ function hideStats() {
     showStatsButton.classList.add('reveal');
 }
 
-showStatsButton.addEventListener('click', revealStats);
 hideStatsButton.addEventListener('click', hideStats);
 
 /*functions to move to next level after correctly answering question. 
 Hides success modal.
 Increments fuel level by one.
 If the next planet is Pluto activates reachPluto function to inform user that they have successfully completed their mission. 
-Otherwise, moves active class on flight path to next planet. Updates the planet stats and question displayed. Resets number of tries*/
+Otherwise, moves active class on flight path to next planet, updates the planet stats and question displayed and 
+resets number of tries*/
 
 function triggerBlastOff() {
     if (planetQIndex == 7) {
@@ -629,7 +636,7 @@ function triggerBlastOff() {
         }
 }
 
-/* hides modal to give user a second attempt to give a correct answer */
+// hides modal after one wrong try to give user a second attempt to give a correct answer
 function secondTry() {
     tryAgainModal.classList.add('hide');
     showGame();
@@ -658,6 +665,7 @@ function retreat () {
     previousPlanetStats();
 }
 
+//changes the planet highlighted in the flight path section
 function changeActivePlanet(progress) {
     activePlanet.classList.remove('active');
     currentProgress += progress; 
@@ -665,7 +673,7 @@ function changeActivePlanet(progress) {
     activePlanet.classList.add('active');
 }
 
-// sets a message to display to the user depending on the fuel remaining
+// sets a message of congratulations to display to the user depending on the fuel remaining
 let finalMessage = ''; 
 
 function updateMessage(fuel) {
@@ -696,7 +704,7 @@ function updateMessage(fuel) {
     return finalMessage;
 }
 
-// displays reachPluto modal. Sets content of final fuel and final message.
+// displays reachPluto modal. Sets content of final fuel if the user has any fuel remaining. Shows final message
 function reachPluto() {
     correctModal.classList.add('hide'); 
     updateMessage(currentFuel);
@@ -714,11 +722,13 @@ function reachPluto() {
     reachPlutoModal.classList.remove('hide');
 }
 
+//hides wrongAgainModal and displays endGameModal if the user selects to abandon their mission after 2 incorrect tries 
 function endGame() {
     wrongAgainModal.classList.add('hide');
     endGameModal.classList.remove('hide');
 }
 
+//hides noFuelModal and displays endGameModal if the user has no fuel left and decides to abandon the game after 2 wrong answwers
 function endGameNoFuel() {
     noFuelModal.classList.add('hide');
     endGameModal.classList.remove('hide');
@@ -730,6 +740,7 @@ function playAgain() {
     resetGame();
 }
 
+// hides the modal displayed when the user decides to end the game and resets the game
 function closeModal() {
     endGameModal.classList.add('hide');
     currentProgress = 8;

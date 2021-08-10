@@ -99,6 +99,7 @@ Each time the user submits an answer the main game screen disappears and a modal
 ![correct answer message](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/correct-modal.png)
 
 The modal borders are colour coded - green if the answer is correct, amber if the first guess is wrong and red if the second guess is also incorrect.
+
 Inside the correct answer message additional information is also provided about the answer to add to the educational value of the quiz.  This information is stored in the question objects.
 
 
