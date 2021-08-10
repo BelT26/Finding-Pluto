@@ -9,7 +9,7 @@ https://belt26.github.io/Finding-Pluto/
 
 
 ## Contents
-* ![Overview](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#overview)
+* ![Overview](#overview)
 * ![Planning](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#planning)
 * ![Stucture](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#structure)
 * ![Features](https://github.com/BelT26/Finding-Pluto/blob/main/README.md#features)
