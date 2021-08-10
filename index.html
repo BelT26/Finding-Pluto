@@ -32,7 +32,7 @@
             <!--Container for questions and selection of possible answers-->
             <div id="questions-container">
                 <div id="question-image">
-                    <img src="assets/images/nuna.png" height="200px" alt="cute alien in a ufo">
+                    <img src="assets/images/nuna.png" alt="cute alien in a ufo">
                 </div>
                 <div id="question-text">
                     <h2>Question goes here</h2>
@@ -94,7 +94,7 @@
     The 'how to play' button hides the modal and displays the rules modal-->
     <div id="intro-container">
         <div id="nuna-lost-container">
-            <img src="assets/images/nuna-lost.jpg" id="nuna-lost"  alt ="image of cute alien in ufo lost in the solar system" height="120px">   
+            <img src="assets/images/nuna-lost.jpg" id="nuna-lost"  alt ="image of cute alien in ufo lost in the solar system" >   
             </div>
         <div id="intro">
             <h1>URGENT ASSISTANCE REQUIRED!</h1> 
@@ -103,7 +103,7 @@
             <br>It runs on the fuel of knowledge but unfortunately the fuel tank is nearly dry.  
             <br>To refuel she needs to provide the answers to some questions but she's feeling a bit confused after her voyage through space. 
             <br>Can you come to Nuna's rescue and help her to make her way home?</p>
-            <button id="rules-button"><a href="#page-top">HOW TO PLAY</a></button>              
+            <a id="rules-button" href="#page-top">HOW TO PLAY</a>             
         </div>        
     </div>
     <!--Modal describing how to play the game.
@@ -121,7 +121,7 @@
             <li>If your fuel is at 0 and your second guess is wrong you move back to the previous planet.</li>
             <li>Your mission is to help Nuna reach Pluto with as much remaining fuel as possible.</li>
         </ul>
-        <button id="start"><a href="#page-top">START MISSION</a></button>
+        <a href="#page-top" id="start">START MISSION</a>
     </div> 
     <!--Modal that appears when the user guesses the correct answer.
     The 'blast off' button hides the modal, updates the planet stats and the flight path and displays a question about the next planet-->    
@@ -177,10 +177,8 @@
     hides the modal and resets the game-->
     <div class="modal hide" id="reach-pluto">
         <div class="modal-info" id="reach-pluto-contents">
-            <div id="pluto-image">
-                <img src="assets/images/star.png" width="200px" alt ="illustration of a smiling star">
-            </div>
-            <h2>CONGRATULATIONS!<h2></h2>  
+            <img src="assets/images/star.png" alt ="illustration of a smiling star" id="smiling-star">
+            <h2>CONGRATULATIONS!</h2>
             <h3>You have reached Pluto!</h3>
             <h3 id="final-fuel"></h3>
             <h3 id="final-comment"></h3>

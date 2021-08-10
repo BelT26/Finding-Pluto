@@ -42,7 +42,7 @@ Although my main target audience are primary school children older children and 
 
 The original wireframes can be found in the assets directory.
 
-The game was initially designed to be played on a desktop so that the screen is large enough to display all of the available features.  It was later adapeted for tablet and mobile devices.
+The game was initially designed to be played on a desktop so that the screen is large enough to display all of the available features.  It was later adapted for tablet and mobile devices.
 
 I initially designed the fuel gauge, questions, planet-stats and flight path independently and tested that they worked before adding them to the game. I later constructed functions that would update all items based on the user's response.
 
@@ -75,9 +75,11 @@ The introduction is a modal that lays over the main game page that is hidden unt
 ![section advising users how to play the game](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/rules.png)
 The rules section tells users how they can help Nuna reach Pluto and what happens when they answer questions correctly or incorrectly.
 
-I used a star image as bullets to improve the look of the page.
+I used a star image for the bullet points to improve the look of the page.
 
 When the user clicks on the 'START MISSION' button the rules are hidden and the game is revealed.
+
+![image of game](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/main-game.png)
 
 ## Fuel Gauge
 
@@ -140,7 +142,7 @@ I decided to keep the statistics rather than the fuel gauge or flight path on de
 
 ![illustration of the sun, the planets of the solar system and Pluto](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/flight-path.png)
 
-The flight path shows the position of the planets in the solar system. From an educational point it helps the user remember where the planets are located and for the purpose of the game it illustrates their progress on their journet to Pluto.
+The flight path shows the position of the planets in the solar system. From an educational point it helps the user remember where the planets are located and for the purpose of the game it illustrates their progress on their journey to Pluto.
 
 Due to a lack of space, this feature is not available on mobiles or tablets. On these devices the user is still able to view their current location through the planet stats section at the top of the screen.
 

@@ -119,6 +119,7 @@ header h1 {
 
 #question-image img {
     margin: auto;
+    height: 200px;
 }
 
 #question-text {
@@ -304,7 +305,7 @@ header h1 {
 #nuna-lost {
     border-radius: 20px;
     border: yellowgreen 5px solid;
-
+    height: 120px;
 }
 
 #rules-container li {
@@ -312,16 +313,6 @@ header h1 {
     font-size: large;
     list-style-image: url(../images/star-bullet.png);
     margin-left: 25px;
-}
-
-button a {
-    text-decoration: none;
-    color: gold;
-    font-family: 'Nova Square', cursive;
-}
-
-button a:hover {
-    color:rgb(145, 216, 216);
 }
 
 #start, #rules-button {
@@ -333,21 +324,18 @@ button a:hover {
     display: block;
     margin: 20px auto;
     box-shadow: 0 8px #558;
+    width: 180px;
+    text-align: center;
+    text-decoration: none;
+    color: gold;
+    font-family: 'Nova Square', cursive;
 }
 
 #start:hover, #rules-button:hover {    
     background-color: rgb(11, 11, 70);
     box-shadow: 0 8px #558;
+    color:rgb(145, 216, 216);
 }
-
-#start:active #rules-button:active {
- box-shadow: 0px 4px #558;
- background-color: rgb(11, 11, 70);
- transform: translateY(4px);
-}
-
-
-
 
 /*style modal elements */
 .modal {
@@ -402,24 +390,22 @@ button a:hover {
     box-shadow: 0px 0px 30px 30px red;
 }
 
-
 .modal-info button {
-       background-color: rgb(2, 2, 41);
-       color:rgb(145, 216, 216);
-       font-family: 'Nova Square', cursive;
-       font-size:large;
-       font-weight: 600;
-       padding: 10px;
-       border-radius: 10px;
-       margin: 20px auto;
-       box-shadow: 0 8px #558;
+    background-color: rgb(2, 2, 41);
+    color:rgb(145, 216, 216);
+    font-family: 'Nova Square', cursive;
+    font-size:large;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 8px #558;
 }
-
    
 .modal-info button:hover {
-       color: gold;
-       background-color: rgb(11, 11, 70);
-       box-shadow: 0 8px #558;
+    color: gold;
+    background-color: rgb(11, 11, 70);
+    box-shadow: 0 8px #558;
    }
 
 #reach-pluto {
@@ -430,6 +416,9 @@ button a:hover {
     width: 70vw;
 }
 
+#smiling-star {
+    width: 200px;
+}
 
 
 /* add effect that button is depressed when user clicks */   
@@ -472,7 +461,7 @@ button a:hover {
 
 @media screen and (max-width: 920px) {
    
-       #intro-container, #rules-container {
+    #intro-container, #rules-container {
         width: 80vw;
         top: 10vh;
         padding: 15px;
