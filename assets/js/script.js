@@ -745,7 +745,9 @@ function playAgain() {
 
 playAgainButton.addEventListener('click', playAgain);
 
-// hides the modal displayed when the user decides to end the game and resets the game
+/* hides the modal displayed when the user decides to end the game and resets the game. 
+currentProgress is amended to 8 so that when the changeActivePlanet function is called 
+with an argument of -7 in resetGame, the currentProgress will be set to 1*/
 function closeModal() {
     endGameModal.classList.add('hide');
     currentProgress = 8;

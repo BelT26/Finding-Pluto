@@ -35,9 +35,7 @@ header h1 {
     padding: 20px;
     margin: 0;
     font-size: 3rem;
-
 }
-
 
 /* styles for container holding elements of the game */
 #game-container {
@@ -75,7 +73,6 @@ header h1 {
     width: 40px;
     margin-top: 5px;
 }
-
 
 #gauge {
     border: solid black 1px;
@@ -164,13 +161,12 @@ header h1 {
     box-shadow: 0 8px #558;
 } 
 
-/* create effect that button is being pressed when clicked */
+/* creates effect that button is being pressed when clicked */
 .answer:active {
     box-shadow: 0 4px #558;
     background-color: rgb(11, 11, 70);
     transform: translateY(4px);
 }  
-
 
 
 /* styles for planet-stats section */
@@ -216,7 +212,7 @@ header h1 {
 .tooltip {
     position: relative;
     cursor: pointer;
-  }
+}
   
   .tooltip .tooltiptext {
     display: none;
@@ -230,11 +226,11 @@ header h1 {
     left: 50%;
     margin-left: -100px;
     z-index: 1;
-  }
+}
   
   .tooltip:hover .tooltiptext {
     display: block;
-  }
+}
 
 /*styles for flight path */
 #flight-container {
@@ -272,7 +268,6 @@ header h1 {
     padding: 25px;
     border: greenyellow 5px solid;
     box-shadow: 0px 0px 40px 40px greenyellow; 
-
 }
 
 #intro-container h1, #rules-container h1 {
@@ -347,7 +342,6 @@ header h1 {
     align-items: center; 
     display: flex;    
 }
-
  
 .modal-info {
     border-radius: 20px;
@@ -406,7 +400,7 @@ header h1 {
     color: gold;
     background-color: rgb(11, 11, 70);
     box-shadow: 0 8px #558;
-   }
+}
 
 #reach-pluto {
     top: 5vh;
@@ -419,7 +413,6 @@ header h1 {
 #smiling-star {
     width: 200px;
 }
-
 
 /* add effect that button is depressed when user clicks */   
 .modal-info button:active {
@@ -474,8 +467,7 @@ header h1 {
         font-size: medium;
     }
 
-   
-    /* styles for container holding elements of the game */
+    /* changes the layout of the game elements so that items are stacked vertically on small screens*/
     #game-container {
         position: relative; 
         display: flex;
@@ -485,17 +477,18 @@ header h1 {
         top: -5px;  
     }
 
-    /* styles for the fuel gauge */
     #gauge-container {
         width: 80%;
         min-height: fit-content;
         margin-left: 0px;       
     }
-      
+    
+    /* hides the gauge on small screens */
     #gauge {
         display: none;
     }
 
+    /*creates a 'sun' effect background for the fuel number*/
     #fuel-number {
         background-color: rgb(255, 240, 152); 
         border: solid 1px orange;
@@ -506,39 +499,28 @@ header h1 {
         box-shadow: 0px 0px 7px 7px  rgb(255, 223, 42);
     }
    
-    /* styles for the questions section */
     #questions-container {
         min-height: fit-content;
-        width: 80%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-self: center;
-        justify-items: center;
-        border-radius: 20px;
-        background-color: azure;
         padding: 15px;
         margin: 20px auto;
     }
 
+    
+    /*hides the question image on small screens*/
     #question-image {
         display: none;
     }
 
     #question-text {
-        text-align: center;
-        width: 80%;
         height: fit-content;
         margin: 0px auto;
     }
        
+    /*stacks answer buttons vertically on small screens*/
     #answers-container {
-        width: 80%;
-        height:auto;
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0px auto;
     }
 
     .answer {
@@ -547,8 +529,6 @@ header h1 {
         margin: 15px;
     }
 
-
-    /* styles for planet-stats section */
     #current-planet {
         margin-top: 5vh;
         width: 80%;
@@ -565,13 +545,12 @@ header h1 {
         width: 60%;
         margin: 5px auto;        
     }
-
     
+    /* hides flight container on small screens */
     #flight-container {
         display: none;
     }
    
-    /*style modal elements */
     .modal-info {
         width: 70vw;
         padding: 15px;
@@ -582,6 +561,7 @@ header h1 {
 
 @media screen and (max-width: 500px) {
 
+    /*formats image displayed on intro page for mobiles*/
     #nuna-lost {
         border-radius: 0px;
         border: none;
@@ -596,16 +576,19 @@ header h1 {
         display: none;
     }
 
+    /* hides planet stats on mobiles */
     #current-planet tbody {
         display: none;
         margin: 5px auto;
         width: fit-content;
     }   
     
+    /*styles buttons to hide and reveal planet stats*/
     #hide-stats, #show-stats{
         margin: 7px auto 11px;  
     }
     
+    /* used to display planet stats show info button on mobiles */
     .reveal {
         display: block !important;
     }
@@ -624,6 +607,7 @@ header h1 {
     }
 
 }
+
 @media screen and (max-height: 670px) {
 
     #reach-pluto {
@@ -635,10 +619,6 @@ header h1 {
 
     header h1 {
         font-size: 2rem;
-    }
-
-    #reach-pluto {
-        margin-top: 100px;
     }
 
 }
