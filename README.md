@@ -21,7 +21,7 @@ https://belt26.github.io/Finding-Pluto/
     * [Planet Statistics](#planet-stats)
     * [Flight Path](#flight-path)
     * [Final message](#final-message)
-* [Bugs and challenges](#bugs)
+* [Bugs and challenges](#bugs-and-challenges)
 * [Testing](#testing)
 * [Deployment](#deployment)
 * [Credits](#credits)
@@ -176,9 +176,9 @@ The next most challenging issue was how to adapt the game for mobile and tablet 
 
 I encountered several issues constructing the checkAnswer function.  Initially it was not working as I was just checking the event on which the element fired  rather than its target.id.  By inspecting the properties of the element I realised the error, amended the code to check the 'e.target.id' and the function worked as expected.
 
-I originally intended for the feedback modals to appear on top of the gamecontainer with an overlay to obscure the background. The checkAnswer function was not displaying the feedback modals although no errors were showing. I tested the function by replacing the modals with alert messages which appeared without any problems. I suspect that the problem was being caused by the position of the game container and the flight container which was set to relative. To resolve the issue I created a hideGame function to add the hide class and called it within the checkAnswer function.
+I originally intended for the feedback modals to appear on top of the game container, with an overlay to obscure the background. The checkAnswer function was not displaying the feedback modals although no errors were showing. I tested the function by replacing the modals with alert messages which appeared without any problems. I suspect that the problem was being caused by the position of the game container and the flight container which was set to relative. To resolve the issue I created a hideGame function to add the hide class and called it within the checkAnswer function.
 
-The images to that I added through JavaScript were throwing errors when the page was loaded. By checking the html file in Chrome Developper tools I realised that the problem was being caused as the file paths were relative to the JavaScript file. Once I updated them with the relative paths to the HTML file they loaded correctly.
+The images that I added through JavaScript were throwing errors when the page was loaded. By checking the html file in Chrome Developper tools I realised that the problem was being caused as the file paths were relative to the JavaScript file. Once I updated them with the relative paths to the HTML file they loaded correctly.
 
 The background was originally attached to a background container div and was not displaying as intended on modal devices.  I tried to resolve the issue using media queries but wasn't happy with the result.  After contacting tutor support and speaking to Sean the issue was resolved by removing the background container and attaching the background to the body element.
 
@@ -191,21 +191,28 @@ Although the other planet stats were displayed correctly the information for Nep
 ### Validator testing  
 
 * HTML
-No errors were returned when passing through the official [W3C validator: Finding Pluto]
+No errors were returned when passing through the official [W3C validator: Finding Pluto](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbelt26.github.io%2FFinding-Pluto%2F).
+The 3 warnings about empty headers relate to elements whose content is populated through the javascript file. 
 
 * CSS
-No errors were returned when passing through the official [Jigsaw validator: Finding Pluto]
+No errors were returned when passing through the official [Jigsaw validator: Finding Pluto](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbelt26.github.io%2FFinding-Pluto%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
+
+* The contrast between the font colour of the page heading and it's background were checked using the Webaim contrast checker and scored 10.9:1.[WebAim contrast checker](https://webaim.org/resources/contrastchecker/?fcolor=6EC4F7&bcolor=000000)
 
 * JavaScript
-No errors were returned when passing through JSHint
+No errors were returned when passing through JSHint.
+The following metrics were returned:
+- There are 29 functions in this file.
+- Function with the largest signature take 1 arguments, while the median is 0.
+- Largest function has 17 statements in it, while the median is 3.
+- The most complex function has a cyclomatic complexity value of 11 while the median is 1.
 
-The contrast between the font colour of the page heading and it's background were checked using the Webaim contrast checker and scored 10.9:1.[WebAim contrast checker](https://webaim.org/resources/contrastchecker/?fcolor=6EC4F7&bcolor=000000)
 
 ### User testing
 
 User feedback indicated that it was not clear what was meant by 'day' or 'year' in the planet stats section. To resolve this issue I added tool tips to provide an explanation and an info icon from Font Awesome to indicate that further information is available. The following code was used as a guide for adding tool tips: https://www.w3schools.com/css/css_tooltip.asp.
 
-When a user tried to play the game again, the planet stats were not being reset to Mercury.  I rectified this by adding the following line of code to the resetGame function: pl = planetStats[currentStatsIndex];
+When a user tried to play the game again, the planet stats were not being reset to Mercury.  I rectified this by adding the following line of code to the displayStats function: pl = planetStats[currentStatsIndex] and updating the other functions that call displayStats;
 
 
 ## Deployment  
@@ -226,7 +233,7 @@ The info icon was imported from Font Awesome.
 The sun cartoon image in the flight path is a sticker image from Microsoft Paint 3D.
 
 All other images were downloaded from Pixabay from the following contributors:
-* Planet pictures for flight path: Pauolo Cesar Ventura
+* Planet pictures for flight path: Paulo Cesar Ventura
 * Solar system on intro page: MD Herren
 * Ufo illustration above question: Julieta Mascarella
 * Star illustration on final modal: Katherine Ab
