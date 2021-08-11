@@ -296,7 +296,7 @@ function displayQuestion() {
 displayQuestion();
 
 /*variables to set and display gauge and fuel level. 
-The idea came from the timer in the code explained tutorial in the README*/
+The idea came from the timer in the code explained tutorial mentioned in the README*/
 
 let currentFuel = 1;
 const maxFuel = 9;
@@ -505,11 +505,8 @@ function startGame() {
 
 startButton.addEventListener('click', startGame);
 
-
-
 //set the initial number of available attempts to answer question to 2. 
 let tries = 2;
-
 
 /*Checks if the answer given matches the correct answer.  
 If answer is correct, displays a success message as a modal.
@@ -548,17 +545,19 @@ function checkAnswer(e) {
     }  
 }
 
+//hides the game when displaying modals
 function hideGame() {
     gameContainer.classList.add('hide');
     flightContainer.classList.add('hide');
 }
 
+//displays the game when modals are closed
 function showGame() {
     gameContainer.classList.remove('hide');
     flightContainer.classList.remove('hide');
 }
 
-//updates question index variables and displays new question for next planet
+//updates question index variables and displays new question
 function updateQuestion() {
     qIndex = Math.floor(Math.random()*3);
     currentQuestion = questions[planetQIndex][qIndex];
