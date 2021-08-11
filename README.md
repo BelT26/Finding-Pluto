@@ -130,7 +130,7 @@ Because of space constraints this information is initially hidden on a mobile de
 
 ![mobile previews with stats hidden and displayed](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/mobile-preview.png)
 
-On a table the stats appear at the top of the page.
+On a tablet the stats appear at the top of the page.
 
 ![tablet preview displaying planet stats at top](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/ipad-preview.png)
 
@@ -143,7 +143,7 @@ I decided to keep the statistics rather than the fuel gauge or flight path on de
 
 ![illustration of the sun, the planets of the solar system and Pluto](https://github.com/BelT26/Finding-Pluto/blob/main/assets/screenshots/flight-path.png)
 
-The flight path shows the position of the planets in the solar system. From an educational point it helps the user remember where the planets are located and for the purpose of the game it illustrates their progress on their journey to Pluto.
+The flight path shows the position of the planets in the solar system. From an educational point it helps the user remember where the planets are located and for the purpose of the game it illustrates their progress on their journey to Pluto by highlighting the planet they have reached.
 
 Due to a lack of space, this feature is not available on mobiles or tablets. On these devices the user is still able to view their current location through the planet stats section at the top of the screen.
 
@@ -172,7 +172,7 @@ The play again button hides the modal and resets and displays the game.
 ## Bugs and Challenges
 The biggest challenge for me was to construct functions that brought to together all the elements of the game and ensured that all the relevant features were updated appropriately when the user gave an answer. The more complex functions, such as triggerBlastOff, resetGame and retreat were very lengthy at the start and were refactored.  By breaking down the lines of code that were being repeated and storing them as clearly named functions I hope to have improved the readibility.
 
-The next most challenging issue was how to adapt the game for mobile and tablet devices without affecting the readability or lessening the educational value.  I decided that the main feature to retain along with the question was the planet stats. On mobiles this still took up too much of the screen so I included buttons to hide and show the image and table.  Instead of an image of a fuel gauge I superimposed the current fuel score on top of an image of the sun. 
+The next most challenging issue was how to adapt the game for mobile and tablet devices without affecting the readability or lessening the educational value.  I decided that the main feature to retain along with the question was the planet stats section. On mobiles this still took up too much of the screen so I included buttons to hide and show the image and table.  Instead of an image of a fuel gauge I superimposed the current fuel score on top of an image of the sun. 
 
 I encountered several issues constructing the checkAnswer function.  Initially it was not working as I was just checking the event on which the element fired  rather than its target.id.  By inspecting the properties of the element I realised the error, amended the code to check the 'e.target.id' and the function worked as expected.
 
@@ -200,12 +200,12 @@ No errors were returned when passing through the official [Jigsaw validator: Fin
 * The contrast between the font colour of the page heading and it's background were checked using the Webaim contrast checker and scored 10.9:1.[WebAim contrast checker](https://webaim.org/resources/contrastchecker/?fcolor=6EC4F7&bcolor=000000)
 
 * JavaScript
-No errors were returned when passing through JSHint.
-The following metrics were returned:
-- There are 29 functions in this file.
-- Function with the largest signature take 1 arguments, while the median is 0.
-- Largest function has 17 statements in it, while the median is 3.
-- The most complex function has a cyclomatic complexity value of 11 while the median is 1.
+No errors were returned when passing through JSHint. The following metrics were returned:
+
+There are 29 functions in this file.
+Function with the largest signature take 1 arguments, while the median is 0.
+Largest function has 17 statements in it, while the median is 3.
+The most complex function has a cyclomatic complexity value of 11 while the median is 1.
 
 
 ### User testing
