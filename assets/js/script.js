@@ -506,22 +506,7 @@ function startGame() {
 
 startButton.addEventListener('click', startGame);
 
-//resets all values and updates stats, fuel, progress and question displayed
-function resetGame() {
-    resetFuel();
-    changeActivePlanet(-7);
-    currentStatsIndex = 0;
-    pl = planetStats[currentStatsIndex];
-    displayStats();
-    planetQIndex = 0;
-    qIndex = Math.floor(Math.random()*3);
-    currentQuestion = questions[planetQIndex][qIndex];
-    displayQuestion();
-    gameContainer.classList.remove('hide');
-    flightContainer.classList.remove('hide');
-}
 
-playAgainButton.addEventListener('click', playAgain);
 
 //set the initial number of available attempts to answer question to 2. 
 let tries = 2;
@@ -576,7 +561,6 @@ function showGame() {
 
 //updates question index variables and displays new question for next planet
 function updateQuestion() {
-    planetQIndex++;
     qIndex = Math.floor(Math.random()*3);
     currentQuestion = questions[planetQIndex][qIndex];
     displayQuestion();
@@ -631,10 +615,13 @@ function triggerBlastOff() {
         }
         changeActivePlanet(1);
         nextPlanetStats();
+        planetQIndex++;
         updateQuestion();
         tries = 2;
         }
 }
+
+blastOff.addEventListener('click', triggerBlastOff);
 
 // hides modal after one wrong try to give user a second attempt to give a correct answer
 function secondTry() {
@@ -642,16 +629,18 @@ function secondTry() {
     showGame();
 }
 
+tryAgainButton.addEventListener('click', secondTry);
+
 /* after 2 incorrect tries, hides the wrong answer modal, updates the question by generating a new question index but using the
 same planet index. Resets the number of tries to 2 */
 function secondQuestionSamePlanet() {
     wrongAgainModal.classList.add('hide');
-    qIndex = Math.floor(Math.random()*3);
-    currentQuestion = questions[planetQIndex][qIndex];
+    updateQuestion();
     tries = 2;
-    showGame();
-    displayQuestion();
+    showGame();   
 }
+
+tryNextButton.addEventListener('click', secondQuestionSamePlanet);
 
 //function to move user back one planet if they have no fuel and second guess is incorrect
 function retreat () {
@@ -659,11 +648,11 @@ function retreat () {
     showGame();
     changeActivePlanet(-1);
     planetQIndex--;
-    qIndex = Math.floor(Math.random()*3);
-    currentQuestion = questions[planetQIndex][qIndex];
-    displayQuestion();
+    updateQuestion();
     previousPlanetStats();
 }
+
+continueButton.addEventListener('click', retreat);
 
 //changes the planet highlighted in the flight path section
 function changeActivePlanet(progress) {
@@ -728,10 +717,27 @@ function endGame() {
     endGameModal.classList.remove('hide');
 }
 
+quitButton1.addEventListener('click', endGame);
+
 //hides noFuelModal and displays endGameModal if the user has no fuel left and decides to abandon the game after 2 wrong answwers
 function endGameNoFuel() {
     noFuelModal.classList.add('hide');
     endGameModal.classList.remove('hide');
+}
+
+quitButton2.addEventListener('click', endGameNoFuel);
+
+//resets all values and updates stats, fuel, progress and question displayed
+function resetGame() {
+    resetFuel();
+    changeActivePlanet(-7);
+    currentStatsIndex = 0;
+    pl = planetStats[currentStatsIndex];
+    displayStats();
+    planetQIndex = 0;
+    updateQuestion();
+    gameContainer.classList.remove('hide');
+    flightContainer.classList.remove('hide');
 }
 
 // hides reachPluto modal and resets game so that user can play again
@@ -740,6 +746,8 @@ function playAgain() {
     resetGame();
 }
 
+playAgainButton.addEventListener('click', playAgain);
+
 // hides the modal displayed when the user decides to end the game and resets the game
 function closeModal() {
     endGameModal.classList.add('hide');
@@ -747,11 +755,4 @@ function closeModal() {
     resetGame();
 }
 
-//add event listeners to modal buttons
-blastOff.addEventListener('click', triggerBlastOff);
-tryAgainButton.addEventListener('click', secondTry);
-tryNextButton.addEventListener('click', secondQuestionSamePlanet);
-quitButton1.addEventListener('click', endGame);
-quitButton2.addEventListener('click', endGameNoFuel);
-continueButton.addEventListener('click', retreat);
 closeButton.addEventListener('click', closeModal);
