@@ -419,13 +419,14 @@ let pl = planetStats[currentStatsIndex];
 
 //sets content of planet stats by retrieving information from planetStats array
 function displayStats() { 
-planetImg.innerHTML = `<img src = "${pl.imgSrc}" alt= "photograph of ${pl.name}">`;
-planetName.innerText = pl.name;
-size.innerText = pl.size;
-year.innerText = pl.yearLength;
-day.innerText = pl.dayLength;
-distance.innerText = pl.distance;
-type.innerText = pl.type;
+    pl = planetStats[currentStatsIndex];
+    planetImg.innerHTML = `<img src = "${pl.imgSrc}" alt= "photograph of ${pl.name}">`;
+    planetName.innerText = pl.name;
+    size.innerText = pl.size;
+    year.innerText = pl.yearLength;
+    day.innerText = pl.dayLength;
+    distance.innerText = pl.distance;
+    type.innerText = pl.type;
 }
 
 //styles the content of the planet stats
@@ -441,13 +442,11 @@ styleStats();
 //changes the planet displayed in the planet stats section
 function nextPlanetStats() {
     currentStatsIndex++;
-    pl = planetStats[currentStatsIndex];
     displayStats();
 }
 
 function previousPlanetStats() {
     currentStatsIndex--;
-    pl = planetStats[currentStatsIndex];
     displayStats();
 }
 
@@ -727,12 +726,11 @@ function endGameNoFuel() {
 
 quitButton2.addEventListener('click', endGameNoFuel);
 
-//resets all values and updates stats, fuel, progress and question displayed
+//resets all values, updates stats, fuel, progress and question and displays game
 function resetGame() {
     resetFuel();
     changeActivePlanet(-7);
     currentStatsIndex = 0;
-    pl = planetStats[currentStatsIndex];
     displayStats();
     planetQIndex = 0;
     updateQuestion();
