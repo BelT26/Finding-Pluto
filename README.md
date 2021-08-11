@@ -169,33 +169,22 @@ The screen shows the user their final score and displays a custom message of con
 
 The play again button hides the modal and resets and displays the game.
 
-## Bugs
-problems registering correct answer in quiz - needed to reference e.target.
+## Bugs and Challenges
+The biggest challenge for me was to construct functions that brought to together all the elements of the game and ensured that all the relevant features were updated appropriately when the user gave an answer. The more complex functions, such as triggerBlastOff, resetGame and retreat were very lengthy at the start and were refactored.  By breaking down the lines of code that were being repeated and storing them as clearly named functions I hope to have improved the readibility.
 
-linking images to js - needed to reference path relative to html file rather than js script
+The next most challenging issue was how to adapt the game for mobile and tablet devices without affecting the readability or lessening the educational value.  I decided that the main feature to retain along with the question was the planet stats. On mobiles this still took up too much of the screen so I included buttons to hide and show the image and table.  Instead of an image of a fuel gauge I superimposed the current fuel score on top of an image of the sun. 
 
-problems connecting to css file - set styles of elements using js.  later discovered missing semi-colon
+I encountered several issues constructing the checkAnswer function.  Initially it was not working as I was just checking the event on which the element fired  rather than its target.id.  By inspecting the properties of the element I realised the error, amended the code to check the 'e.target.id' and the function worked as expected.
 
-check answer function not displaying modals. Alerts working correctly Tried validating css through Jigsaw. No errors. console.log('hide removed') working.  dev tools showed that on line 43 of the css file the display was being set to none.  Game container positioning was relative.
-added hide class to game container and flight container.
+I originally intended for the feedback modals to appear on top of the gamecontainer with an overlay to obscure the background. The checkAnswer function was not displaying the feedback modals although no errors were showing. I tested the function by replacing the modals with alert messages which appeared without any problems. I suspect that the problem was being caused by the position of the game container and the flight container which was set to relative. To resolve the issue I created a hideGame function to add the hide class and called it within the checkAnswer function.
 
-styles not being applied to intro container. does not appear on screen. css validated
+The images to that I added through JavaScript were throwing errors when the page was loaded. By checking the html file in Chrome Developper tools I realised that the problem was being caused as the file paths were relative to the JavaScript file. Once I updated them with the relative paths to the HTML file they loaded correctly.
 
-info for Neptune not showing. moved clause checking planet index from checkAnswer function to triggerBlastOff.
+The background was originally attached to a background container div and was not displaying as intended on modal devices.  I tried to resolve the issue using media queries but wasn't happy with the result.  After contacting tutor support and speaking to Sean the issue was resolved by removing the background container and attaching the background to the body element.
 
-background container sizing issues for modals.
+The game was not reloading if the user tried to abort their mission before reaching Pluto. I realised that the problem was being caused by calling the changeActivePlanet function with an argument of -7 within reset game as the currentProgress variable would be lower if somebody quit mid game rather than playing to the end.  I rectified this by setting the progress to 8 before the resetGame function was called in the closeModal function.
 
-switch statement not working - needed to wrap in function and call it
-
-Quit buttons - needed to separate them
-
-show stats button - display block commented out as being overridden by hide class. then couldn't get rid of as if added important to display block overrode hide class.  Added reveal class to media queries.
-
-could not get table to appear centered on mobile devices using justify content or auto margins. realised table blank space taking up some of container width so set size of table to autofit content.
-
-site not reloading from quit buttons after refactoring set up code.  Problem with current progress variable
-
-background image added originally to container div rather than body.  Spoke to Sean at tutor support
+Although the other planet stats were displayed correctly the information for Neptune not showing. To solve this issue I moved a clause checking the current planet index from the checkAnswer function to the triggerBlastOff function.
 
 ## Testing
 
